@@ -15,4 +15,4 @@ function gameLoop() {
   });
 };
 
-//gameLoop();
+gameLoop();
