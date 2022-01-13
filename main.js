@@ -7,13 +7,13 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 function gameLoop() {
-  requestAnimationFrame(() => {
-    alert('sas');
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    ctx.fillStyle = 'black';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-  });
+  alert('sas');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = 'black';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  
+  requestAnimationFrame(gameLoop);
 };
 
 gameLoop();
