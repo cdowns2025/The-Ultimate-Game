@@ -8,6 +8,7 @@ canvas.height = window.innerHeight;
 
 function gameLoop() {
   requestAnimationFrame(() => {
+    alert('sas');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
     ctx.fillStyle = 'black';
