@@ -1,6 +1,6 @@
 alert('starting');
 
-let canvas = document.getElementById('game_canvas');
+let canvas = document.getElementById('canvas');
 alert(canvas);
 //let ctx = canvas.getContext('2d');
 
