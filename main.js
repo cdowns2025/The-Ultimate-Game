@@ -7,9 +7,10 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 function loop() {
-  requestAnimationFrame(() => {
-    alert('I am cool');           
-  });
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  ctx.fillStyle = 'black';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
 loop();
