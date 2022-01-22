@@ -21,7 +21,7 @@ window.addEventListener('load', () => {
 
     ctx.font = '100px VT323';
     ctx.fillStyle = 'white';
-    ctx.fillText('SHIP DEFENDERS', 100, 100);
+    ctx.fillText('SHIP DEFENDERS', 100, canvas.height / 2);
     
     requestAnimationFrame(animate);
   }
