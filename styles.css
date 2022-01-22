@@ -12,6 +12,7 @@ canvas {
 }
 
 #publishers {
+  font-family: 'VT323';
   position: absolute;
   top: 95%;
   left: 50%;
