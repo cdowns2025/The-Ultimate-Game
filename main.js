@@ -3,7 +3,7 @@ window.addEventListener('load', () => {
   let ctx = canvas.getContext('2d');
 
   canvas.width = 800;
-  canvas.height = winodw.height - 50;
+  canvas.height = window.height - 100;
 
   function animate() {
   }
