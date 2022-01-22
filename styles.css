@@ -10,3 +10,9 @@ canvas {
   transform: translate(-50%, -50%);
   border: white solid 5px;
 }
+
+#publishers {
+  position: absolute;
+  top: 90%;
+  left: 90%;
+}
