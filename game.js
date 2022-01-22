@@ -1,16 +1,17 @@
 window.addEventListener('load', () => {
   const canvas = document.getElementById('canvas');
   const ctx = canvas.getContext('2d');
+  
+  // Game Variables
+  GAME_STATES = {
+    START: true,
+    ACTIVE: false,
+    PAUSED: false,
+    GAME_OVER: false,
+  };
 
   canvas.width = 720;
   canvas.height = window.innerHeight - 100;
-
-  ctx.fillStyle = 'black';
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-  ctx.font = '100px VT323';
-  ctx.fillStyle = 'white';
-  ctx.fillText('SHIP DEFENDERS', 100, 100);
 
   function animate() {
     // clear the screen
