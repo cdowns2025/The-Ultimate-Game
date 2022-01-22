@@ -3,7 +3,7 @@ window.addEventListener('load', () => {
   const ctx = canvas.getContext('2d');
   
   // Game Variables
-  GAME_STATES = {
+  let GAME_STATES = {
     START: true,
     ACTIVE: false,
     PAUSED: false,
