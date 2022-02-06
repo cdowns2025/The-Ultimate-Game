@@ -10,14 +10,6 @@ window.addEventListener('load', () => {
     GAME_OVER: false,
   };
 
-  const player = {
-    x: 300,
-    y: 300,
-    width: 30,
-    height: 30,
-    health: 3
-  }
-
   canvas.width = 720;
   canvas.height = window.innerHeight - 100;
 
@@ -45,8 +37,7 @@ window.addEventListener('load', () => {
       ctx.fillText("Press 'enter' to start", 180, (canvas.height / 2) + 70);
     }
     if (GAME_STATES.ACTIVE == true) { //draws the active state of the game
-      ctx.fillStyle = 'blue';
-      ctx.fillRect(player.x, player.y, player.width, player.height);
+    
     }
   }
 
