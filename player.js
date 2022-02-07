@@ -16,31 +16,33 @@ window.addEventListener('load', () => {
     }
 
     document.addEventListener('keydown', function(event) {
-        keysDown[event.keyCode] = true;
+        keysDown[event.key] = true;
     });
 
     document.addEventListener('keyup', function(event) {
-        delete keysDown[event.keyCode];
+        delete keysDown[event.key];
     });
 
     function input() {
-        if (87 in keysDown) {
-            player.y = player.y - player.speed;
+        if ("w" in keysDown) {
+            player.y -= player.speed;
         }
-        if (83 in keysDown) {
-            player.y = player.y + player.speed;
+        if ("s" in keysDown) {
+            player.y += player.speed;
         }
-        if (68 in keysDown) {
-            player.x = player.x + player.speed;
+        if ("d" in keysDown) {
+            player.x += player.speed;
         }
-        if (65 in keysDown) {
-            player.x = player.x - player.speed;
+        if ("a" in keysDown) {
+            player.x -= player.speed;
         }
     }
 
     function draw() {
-        ctx.fillStyle = 'blue';
-        ctx.fillRect(player.x, player.y, player.width, player.height);
+        if (GAME_STATES.ACTIVE == true) {
+            ctx.fillStyle = 'blue';
+            ctx.fillRect(player.x, player.y, player.width, player.height);
+        }
     }
     
     function main() {

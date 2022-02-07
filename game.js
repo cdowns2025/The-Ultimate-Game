@@ -15,7 +15,7 @@ window.addEventListener('load', () => {
 
   //Inputs
   document.addEventListener('keypress', function(event) {
-    if (event.keyCode == 13) { //starts the game when "+" is pressed
+    if (event.key == "=") { //starts the game when "+" is pressed
       if (GAME_STATES.START == true) {
         GAME_STATES.ACTIVE = true;
         GAME_STATES.START = false;
@@ -32,9 +32,9 @@ window.addEventListener('load', () => {
 
       ctx.font = '100px VT323';
       ctx.fillStyle = 'white';
-      ctx.fillText('SHIP DEFENDERS', 100, canvas.height / 2);
+      ctx.fillText('SHIP DEFENDERS', 90, canvas.height / 2);
       ctx.font = '50px VT323';
-      ctx.fillText("Press 'enter' to start", 180, (canvas.height / 2) + 70);
+      ctx.fillText("Press '+' to start", 180, (canvas.height / 2) + 70);
     }
     if (GAME_STATES.ACTIVE == true) { //draws the active state of the game
     
