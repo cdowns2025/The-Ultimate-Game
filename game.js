@@ -1,24 +1,54 @@
+// Global Game Variables
+let GAME_STATES = {
+  START: true,
+  ACTIVE: false,
+  PAUSED: false,
+  GAME_OVER: false,
+};
+
+let currentlevel;
+
 window.addEventListener('load', () => {
+  //sets up the canvas
   const canvas = document.getElementById('canvas');
   const ctx = canvas.getContext('2d');
   
-  // Game Variables
-  let GAME_STATES = {
-    START: true,
-    ACTIVE: false,
-    PAUSED: false,
-    GAME_OVER: false,
-  };
-
   canvas.width = 720;
   canvas.height = window.innerHeight - 100;
 
+  //private game variables
+
+  const level1 = `1111111111111111111111111111111111111111
+  1100000000000000000000000000000000000011
+  1000000010000000000100000000000000000001
+  1000000000000000000000100000000000000001
+  1000000000000000000000000000000100000001
+  1000000000100000000000000000000000000001
+  1000000000000000000001000000000010000001
+  1000000010000000000000000000000000000001
+  1100000000000000000000000000000000000011
+  1111111111111111111111111111111111111111`;
+
+    //groups the 0s and 1s of the level above into a state the code can organize.
+function parse(lvl) {
+  const lines = lvl.split("\n");
+  const characters = lines.map(l => l.split(""));
+  return characters;
+} //dormant functions for now
+
   //Inputs
   document.addEventListener('keypress', function(event) {
-    if (event.key == "=") { //starts the game when "+" is pressed
+    if (event.key == "=") { //starts the game when "+" is pressed, toggles pause and play
       if (GAME_STATES.START == true) {
         GAME_STATES.ACTIVE = true;
         GAME_STATES.START = false;
+      }
+      if (GAME_STATES.ACTIVE == true) {
+        GAME_STATES.PAUSED == true;
+        GAME_STATES.ACTIVE == false;
+      } else if (GAME_STATES.PAUSED == true) {
+        GAME_STATES.ACTIVE == true;
+        GAME_STATES.PAUSED == false;
       }
     }
   });
