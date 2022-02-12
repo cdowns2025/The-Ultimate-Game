@@ -1,5 +1,6 @@
 class Ship {
   constructor(config) {
+    alert('hello');
     this.level = new Image();
     this.level.src = "grid.png";
     this.level.onload = () => {
