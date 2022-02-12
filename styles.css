@@ -5,7 +5,10 @@
 }
 
 .game-container {
-  margin: auto 0;
+  position: asbolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .game-canvas {
