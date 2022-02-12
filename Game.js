@@ -6,7 +6,7 @@ class Game {
   }
   
   step() {
-    //this.player.draw();
+    this.player.draw(this.ctx);
     //this.ship.draw(this.ctx);
     
     requestAnimation(() => {
@@ -15,7 +15,7 @@ class Game {
   }
   
   init() {
-    //this.player = new Player(50, 50, 30, 30, 1);
+    this.player = new Player(50, 50, 30, 30, 1);
     
     //his.ship = new Ship();
     alert('hias');
