@@ -32,6 +32,8 @@ class Game {
       height: 5,
     });
     
+    this.input = new Input();
+    
     this.startGameLoop();
   }
 }
