@@ -5,6 +5,14 @@ class Game {
     
   }
   
+  step() {
+    this.player.draw();
+    
+    requestAnimation(() => {
+      step();
+    });
+  }
+  
   init() {
     this.player = new Player(50, 50, 30, 30, 1);
   }
