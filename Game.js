@@ -7,7 +7,9 @@ class Game {
   
   step() {
     //this.ship.draw(this.ctx);
-    this.ctx.drawImage(this.image, 0, 0);
+    if (this.imageLoaded) {
+      this.ctx.drawImage(this.image, 0, 0);
+    }
     this.player.draw(this.ctx);    
     
     requestAnimation(() => {
