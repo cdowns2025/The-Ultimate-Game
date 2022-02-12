@@ -12,7 +12,8 @@
 }
 
 .game-canvas {
-  background: black;
-  width: 400px;
-  height: 400px;
+  outline: 1px solid white;
+  width: 200px;
+  height: 200px;
+  transform: scale(2);
 }
