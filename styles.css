@@ -1,20 +1,13 @@
-body {
+* {
+  margin: 0;
+  padding: 0;
   background: lightblue;
-  overflow: hidden;
 }
 
-canvas {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border: white solid 5px;
+.game-container {
+  margin: auto 0;
 }
 
-#publishers {
-  font-family: 'VT323';
-  position: absolute;
-  top: 95%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.game-canvas {
+  background: black;
 }
