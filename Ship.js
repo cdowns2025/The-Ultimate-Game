@@ -10,9 +10,9 @@ class Ship {
   
   draw(ctx) {
     //alert('drawing');
-    //setTimeout(() => {
+    if (this.levelLoaded) {
       ctx.drawImage(this.image, 0, 0); 
-    //},100);
+    }
   }
   
   init() {
