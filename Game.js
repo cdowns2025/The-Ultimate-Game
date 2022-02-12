@@ -15,5 +15,6 @@ class Game {
   
   init() {
     this.player = new Player(50, 50, 30, 30, 1);
+    this.step();
   }
 }
