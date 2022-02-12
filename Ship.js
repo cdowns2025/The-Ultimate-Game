@@ -10,9 +10,9 @@ class Ship {
   
   draw(ctx) {
     //alert('drawing');
-    setTimeout(() => {
+    //setTimeout(() => {
       ctx.drawImage(this.image, 0, 0); 
-    },100);
+    //},100);
   }
   
   init() {
