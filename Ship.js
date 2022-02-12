@@ -5,6 +5,7 @@ class Ship {
     this.image.onload = () => {
       alert('loaded');
       this.levelLoaded = true;
+      alert(this.levelLoaded);
     };
     //alert('hias');
   }
