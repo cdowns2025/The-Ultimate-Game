@@ -1,15 +1,26 @@
-const player = {// the player's global attributes
-    x: 300,
-    y: 300,
-    width: 30,
-    height: 30,
-    speed: 5,
-    health: 3
+class Player {// the player class global attributes
+    constructor(x, y, width, height, src) {
+        this.x = x;
+        this.y = y;
+        this.cx = Math.floor(this.x / globalRatio);
+        this.cy = Math.floor(this.y / globalRatio);
+        this.width = width;
+        this.height = height;
+        this.src = src;
+        this.dir = 1;
+        this.vAxis = 0;
+        this.hAxis = 0;
+    }
+    move() {
+
+    }
+    draw(ctx) {
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+    }
 }
 
-window.addEventListener('load', () => {//calling the rest of the code when the page loads
-    const canvas = document.getElementById('canvas');//sets up the canvas
-    const ctx = canvas.getContext('2d');
+    
 
     let keysDown = {};
 
@@ -42,18 +53,4 @@ window.addEventListener('load', () => {//calling the rest of the code when the p
             player.x -= player.speed;
         }
     }
-
-    function draw() {
-        if (GAME_STATES.ACTIVE == true) {
-            ctx.fillStyle = 'blue';
-            ctx.fillRect((canvas.width / 2) - (player.width / 2), player.y, player.width, player.height);
-        }
-    }
     
-    function main() {
-        draw();
-        input();
-        requestAnimationFrame(main);
-    }
-    main();
-});
