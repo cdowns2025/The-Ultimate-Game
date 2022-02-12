@@ -1,5 +1,5 @@
 class Game {
   constructor(config) {
-    this.canvas = config.querySelector(".game-canvas");
+    this.canvas = config.element.querySelector(".game-canvas");
   }
 }
