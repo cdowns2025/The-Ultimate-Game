@@ -5,25 +5,33 @@ class Game {
     
   }
   
-  step() {
-    //this.ship.draw(this.ctx);
-    this.player.draw(this.ctx);    
-    
-    requestAnimation(() => {
-      step();
-    });
+  startGameLoop() {
+    const step = () => {
+      //Clear the screen
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+      this.player.update({
+        
+      });
+      this.player.draw(this.ctx);  
+
+
+
+      requestAnimationFrame(() => {
+        step();
+      });
+    };
+    step();
   }
   
   init() {
-    this.player = new Player(50, 50, 30, 30, 1);
+    this.player = new Player({
+      x: 10,
+      y: 10,
+      width: 5,
+      height: 5,
+    });
     
-    //this.ship = new Ship();
-    this.image = new Image();
-    this.image.src = "grid.png";
-    this.image.onload = () => {
-      this.ctx.drawImage(this.image, 0, 0);
-    };
-    
-    this.step();
+    this.startGameLoop();
   }
 }

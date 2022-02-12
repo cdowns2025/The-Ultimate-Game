@@ -1,19 +1,35 @@
 class Player {// the player class global attributes
-    constructor(x, y, width, height, src) {
-        this.x = x;
-        this.y = y;
-        //this.cx = Math.floor(this.x / globalRatio);
-        //this.cy = Math.floor(this.y / globalRatio);
-        this.width = width;
-        this.height = height;
-        this.src = src;
-        this.dir = 1;
-        this.vAxis = 0;
-        this.hAxis = 0;
-    }
-    move() {
+    constructor(config) {
+        this.x = config.x || 0;
+        this.y = config.y || 0;
+        this.width = config.width || 5;
+        this.height = config.height || 5;
+        
+        
+        this.movingProgressRemaining = 32;
+        this.direction = config.direction || "right";
+        
+        this.directionUpdate = {
+            "down": ["y", 1],
+            "up": ["y", -1],
+            "left": ["x", -1],
+            "right": ["x", 1],
+        }
         
     }
+    
+    update(state) {
+        this.updatePosition();
+    } 
+    
+    updatePosition(state) {
+        if (this.movingProgressRemaining > 0) {
+            const [property, change] = this.directionUpdate[this.direction];
+            this[property] += change;
+            this.movingProgressRemaining -= 1;
+        }
+    }
+    
     draw(ctx) {
         ctx.fillStyle = 'blue';
         ctx.fillRect(this.x, this.y, this.width, this.height);
