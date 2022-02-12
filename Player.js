@@ -6,8 +6,8 @@ class Player {// the player class global attributes
         this.height = config.height || 5;
         
         
-        this.movingProgressRemaining = 64;
-        this.direction = config.direction || "down";
+        this.movingProgressRemaining = 32;
+        this.direction = config.direction || "left";
         
         this.directionUpdate = {
             "down": ["y", 1],
