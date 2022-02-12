@@ -16,7 +16,7 @@ class Game {
 
 
       requestAnimationFrame(() => {
-        this.step();
+        step();
       });
     };
     step();
