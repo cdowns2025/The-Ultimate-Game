@@ -2,8 +2,8 @@ class Player {// the player class global attributes
     constructor(x, y, width, height, src) {
         this.x = x;
         this.y = y;
-        this.cx = Math.floor(this.x / globalRatio);
-        this.cy = Math.floor(this.y / globalRatio);
+        //this.cx = Math.floor(this.x / globalRatio);
+        //this.cy = Math.floor(this.y / globalRatio);
         this.width = width;
         this.height = height;
         this.src = src;
