@@ -1,5 +1,6 @@
 class Game {
   constructor(config) {
+    alert('heello');
     this.canvas = config.element.querySelector(".game-canvas");
     this.ctx = this.canvas.getContext("2d");
     
