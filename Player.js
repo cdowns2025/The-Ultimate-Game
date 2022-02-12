@@ -1,6 +1,5 @@
 class Player {// the player class global attributes
     constructor(x, y, width, height, src) {
-        alert('playuer');
         this.x = x;
         this.y = y;
         //this.cx = Math.floor(this.x / globalRatio);
@@ -16,7 +15,6 @@ class Player {// the player class global attributes
 
     }
     draw(ctx) {
-        alert('hi');
         ctx.fillStyle = 'blue';
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
