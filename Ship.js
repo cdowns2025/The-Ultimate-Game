@@ -1,18 +1,18 @@
 class Ship {
   constructor(config) {
-    this.level = new Image();
-    this.level.src = "grid.png";
-    this.level.onload = () => {
+    this.image = new Image();
+    this.image.src = "grid.png";
+    this.image.onload = () => {
       this.levelLoaded = true;
     };
     //alert('hias');
   }
   
   draw(ctx) {
-    alert('drawing');
-    if (this.levelLoaded) {
-      ctx.drawImage(this.level, 0, 0);
-    }
+    //alert('drawing');
+    setTimeout(() => {
+      ctx.drawImage(this.image, 0, 0); 
+    },100);
   }
   
   init() {
