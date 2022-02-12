@@ -6,8 +6,7 @@ class Game {
   }
   
   step() {
-    alert('hi');
-    //this.player.draw(this.ctx);    
+    this.player.draw(this.ctx);    
     
     requestAnimationFrame(() => {
       this.step();
