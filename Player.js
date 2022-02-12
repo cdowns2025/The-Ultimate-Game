@@ -1,3 +1,4 @@
+alert('It is working');
 class Player {// the player class global attributes
     constructor(x, y, width, height, src) {
         alert('playuer');
