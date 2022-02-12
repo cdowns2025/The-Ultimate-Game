@@ -3,6 +3,7 @@ class Ship {
     this.image = new Image();
     this.image.src = "grid.png";
     this.image.onload = () => {
+      alert('loaded');
       this.levelLoaded = true;
     };
     //alert('hias');
