@@ -12,6 +12,7 @@ class Ship {
   draw(ctx) {
     //alert('drawing');
     if (this.levelLoaded) {
+      alert('we are drawing')
       ctx.drawImage(this.image, 0, 0); 
     }
   }
