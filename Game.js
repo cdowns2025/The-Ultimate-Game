@@ -5,18 +5,21 @@ class Game {
     
   }
   
-  step() {
-    //Clear the screen
-    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    
-    this.player.update();
-    this.player.draw(this.ctx);  
-    
-    
-    
-    requestAnimationFrame(() => {
-      this.step();
-    });
+  startGameLoop() {
+    const step = () => {
+      //Clear the screen
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+      this.player.update();
+      this.player.draw(this.ctx);  
+
+
+
+      requestAnimationFrame(() => {
+        this.step();
+      });
+    };
+    step();
   }
   
   init() {
@@ -27,6 +30,6 @@ class Game {
       height: 5,
     });
     
-    this.step();
+    this.startGameLoop();
   }
 }
