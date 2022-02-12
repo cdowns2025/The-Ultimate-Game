@@ -1,4 +1,6 @@
 window.addEventListener("load", () => {
-  alert('hi');
-  //const ship = new Ship();
+  
+  const game = new Game({
+    element: document.querySelector(".game-container"),
+  });
 });
