@@ -7,7 +7,7 @@ class Player {// the player class global attributes
         
         
         this.movingProgressRemaining = 32;
-        this.direction = config.direction || "left";
+        this.direction = config.direction || "right";
         
         this.directionUpdate = {
             "down": ["y", 1],
