@@ -5,7 +5,7 @@ class Ship {
     this.level.onload = () => {
       this.levelLoaded = true;
     };
-    alert('hias');
+    //alert('hias');
   }
   
   draw(ctx) {
