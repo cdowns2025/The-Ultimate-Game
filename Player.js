@@ -15,7 +15,6 @@ class Player {// the player class global attributes
         
     }
     draw(ctx) {
-        alert('hi');
         ctx.fillStyle = 'blue';
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
