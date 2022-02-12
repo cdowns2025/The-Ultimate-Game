@@ -10,7 +10,9 @@ class Game {
       //Clear the screen
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-      this.player.update();
+      this.player.update({
+        
+      });
       this.player.draw(this.ctx);  
 
 
