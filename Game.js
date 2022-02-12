@@ -6,7 +6,8 @@ class Game {
   }
   
   step() {
-    this.ship.draw(this.ctx);
+    //this.ship.draw(this.ctx);
+    this.ctx.drawImage(this.image, 0, 0);
     this.player.draw(this.ctx);    
     
     requestAnimation(() => {
@@ -17,7 +18,12 @@ class Game {
   init() {
     this.player = new Player(50, 50, 30, 30, 1);
     
-    this.ship = new Ship();
+    //this.ship = new Ship();
+    this.image = new Image();
+    this.image.src = "grid.png";
+    this.image.onload = () => {
+      this.imageLoaded = true;
+    };
     
     this.step();
   }
