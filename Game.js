@@ -17,7 +17,7 @@ class Game {
   init() {
     this.player = new Player(50, 50, 30, 30, 1);
     
-    //his.ship = new Ship();
+    this.ship = new Ship();
     
     this.step();
   }
