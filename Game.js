@@ -7,7 +7,7 @@ class Game {
   
   step() {
     //this.player.draw();
-    this.grid.draw(this.ctx);
+    this.ship.draw(this.ctx);
     
     requestAnimation(() => {
       step();
@@ -17,7 +17,7 @@ class Game {
   init() {
     //this.player = new Player(50, 50, 30, 30, 1);
     
-    this.grid = new Grid();
+    this.ship = new Ship();
     
     this.step();
   }
