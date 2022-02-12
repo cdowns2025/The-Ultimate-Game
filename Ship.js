@@ -4,18 +4,20 @@ class Ship {
     this.image = new Image();
     this.image.src = "grid.png";
     this.image.onload = () => {
-      this.levelLoaded = true;
+      this.isLoaded = true;
     };
     //alert('hias');
   }
   
   draw(ctx) {
     //alert('drawing');
-    alert(this.levelLoaded);
-    if (this.levelLoaded) {
+    alert(this.isLoaded);
+    if (this.isLoaded) {
       alert('we are drawing')
       ctx.drawImage(this.image, 0, 0); 
     }
+    
+    return;
   }
   
   init() {
