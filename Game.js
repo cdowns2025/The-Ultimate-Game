@@ -7,7 +7,7 @@ class Game {
   
   step() {
     this.player.draw(this.ctx);
-    //this.ship.draw(this.ctx);
+    this.ship.draw(this.ctx);
     
     requestAnimation(() => {
       step();
