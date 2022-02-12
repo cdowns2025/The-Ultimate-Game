@@ -12,7 +12,7 @@ class Player {// the player class global attributes
         this.hAxis = 0;
     }
     move() {
-
+        
     }
     draw(ctx) {
         ctx.fillStyle = 'blue';
