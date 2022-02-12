@@ -3,7 +3,7 @@ class Player {// the player class global attributes
         this.x = config.x || 0;
         this.y = config.y || 0;
         this.width = config.width || 5;
-        this.height = config.width || 5;
+        this.height = config.height || 5;
         //this.dir = 1;
         //this.vAxis = 0;
         //this.hAxis = 0;
