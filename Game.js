@@ -6,7 +6,6 @@ class Game {
   }
   
   init() {
-    this.ctx.fillStyle = "red";
-    this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+    this.player = new Player(50, 50, 30, 30, 1);
   }
 }
