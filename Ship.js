@@ -1,20 +1,23 @@
 class Ship {
   constructor(config) {
+    this.levelLoaded = false;
     this.image = new Image();
     this.image.src = "grid.png";
     this.image.onload = () => {
-      alert('loaded');
-      this.levelLoaded = true;
+      this.isLoaded = true;
     };
     //alert('hias');
   }
   
   draw(ctx) {
     //alert('drawing');
-    if (this.levelLoaded) {
+    alert(this.isLoaded);
+    if (this.isLoaded) {
       alert('we are drawing')
       ctx.drawImage(this.image, 0, 0); 
     }
+    
+    return;
   }
   
   init() {
