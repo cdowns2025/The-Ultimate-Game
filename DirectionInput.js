@@ -1,7 +1,7 @@
 class DirectionInput {
   constructor() {
     //This is an array that will store every key currently pressed
-    this.heldDirections[];
+    this.heldDirections = [];
     
     //This is a map that correlates key presses with directions
     this.map = {

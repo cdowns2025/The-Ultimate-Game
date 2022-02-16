@@ -15,7 +15,8 @@ class Game {
       });
       this.player.draw(this.ctx);  
 
-
+      //input checking
+      
 
       requestAnimationFrame(() => {
         step();
@@ -33,6 +34,7 @@ class Game {
     });
     
     this.input = new Input();
+    this.DI = new DirectionInput();
     
     this.startGameLoop();
   }
