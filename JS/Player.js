@@ -31,7 +31,7 @@ class Player {
             this.updatePosition(); //updates the player's position
         } else {
             //If we are player controlled and there is a new direction to move, update our direction and start our counter over
-            if (this.isPlayerControlled && state.arrow) {
+            if (this.isPlayerControlled && !this.game.isCutscenePlaying && state.arrow) {
                 this.direction = state.arrow;
                 this.movingProgressRemaining = this.movingProgressConstant;
             }
