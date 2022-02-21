@@ -4,6 +4,7 @@ class Grid {
     this.canvas = config.canvas;
     this.gridSize = config.gridSize
     this.gridLineWidth = config.gridLineWidth;
+    this.gridColor = config.gridColor;
     
     //Position
     this.x = 0;
