@@ -46,8 +46,8 @@ class Player {
     }
     
     draw(ctx) {
-        const x = this.x + utils.asGrid(12) - this.x;
-        const y = this.y + utils.asGrid(12) - this.y;
+        const x = this.x + utils.asGrid(6) - this.x;
+        const y = this.y + utils.asGrid(6) - this.y;
         
         ctx.fillStyle = 'blue';
         ctx.fillRect(x, y, this.width, this.height);
