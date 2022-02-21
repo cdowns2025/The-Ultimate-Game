@@ -1,11 +1,14 @@
 class Player {
     constructor(config) {
+        //Referencing the orginal Game object
+        this.game = config.game || null;
+        
         //Assign all of the predefined arguments
         this.x = config.x || 0;
         this.y = config.y || 0;
         this.width = config.width || 5;
         this.height = config.height || 5;
-        this.movingProgressConstant = config.gridSize || 5;
+        this.movingProgressConstant = this.game.gridSize || 5;
         this.isPlayerControlled = config.isPlayerControlled || false;
         this.direction = config.direction || "right";
         
