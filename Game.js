@@ -3,7 +3,7 @@ class Game {
     this.canvas = config.element.querySelector(".game-canvas");
     this.ctx = this.canvas.getContext("2d");
     
-    this.gridSize = 16;
+    this.gridSize = 32;
     this.gridColor = "black";
     this.gridLineWidth = 0.5;
     this.toggleGrid = true; // Draws a grid to the screen for testing purposes
