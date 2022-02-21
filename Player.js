@@ -20,8 +20,9 @@ class Player {// the player class global attributes
     }
     
     update(state) {
+        alert("update");
         //this.playerDI.init();//updates the inputs
-        this.updatePosition(state.arrow);//updates the player's position
+        this.updatePosition(state);//updates the player's position
     } 
     
     updatePosition(state) {
