@@ -18,6 +18,7 @@ class DirectionInput {
   }
   
   get direction() {
+    alert("Getting direction");
     //This returns the first key in the array
     return this.heldDirections[0];
   }
