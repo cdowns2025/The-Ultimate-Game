@@ -63,7 +63,8 @@ class Game {
       y: utils.asGrid(0, 5, this.gridSize),
       width: 5,
       height: 5,
-      gridSize: this.gridSize,
+      isPlayerControlled: true,
+      game: this,
     });
     
     //Setting up direction input for the player character
