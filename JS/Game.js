@@ -62,10 +62,10 @@ class Game {
   init() {
     //Creating a new player
     this.player = new Player({
-      x: utils.asGrid(0, 5, this.gridSize),
-      y: utils.asGrid(0, 5, this.gridSize),
-      width: 5,
-      height: 5,
+      x: utils.asGrid(0, 4, this.gridSize),
+      y: utils.asGrid(0, 4, this.gridSize),
+      width: 4,
+      height: 4,
       isPlayerControlled: true,
       game: this,
     });
