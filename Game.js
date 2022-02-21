@@ -10,7 +10,7 @@ class Game {
   }
   
   drawGrid() {
-    for (let c = 0; c < Math.float(this.canvas.width / 32); c++) {
+    for (let c = 0; c < Math.floor(this.canvas.width / 32); c++) {
       this.ctx.fillStyle = this.gridColor;
       this.ctx.fillRect(c * 32, 0, 2, this.canvas.height);
     }
