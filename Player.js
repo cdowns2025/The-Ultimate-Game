@@ -25,7 +25,7 @@ class Player {// the player class global attributes
         } else {
             if (state.arrow) {
                 this.direction = state.arrow;
-                this.movingProgressRemaining = movingProgressConstant;
+                this.movingProgressRemaining = this.movingProgressConstant;
             }
         }
     } 
