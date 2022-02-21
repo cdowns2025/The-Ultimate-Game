@@ -1,5 +1,6 @@
 class DirectionInput {
   constructor() {
+    console.log("A new instance is being created");
     //This is an array that will store every key currently pressed
     this.heldDirections = [];
     
