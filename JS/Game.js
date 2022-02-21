@@ -7,8 +7,8 @@ class Game {
     //Information to due with grid-based movement
     this.gridSize = 16;
     
-    //Specifications for the toggleable drawable girf
-    this.gridColor = "lightgrey";
+    //Specifications for the toggleable drawable gird
+    this.gridColor = "darkgrey";
     this.gridLineWidth = 2;
     this.toggleGrid = true; 
     
