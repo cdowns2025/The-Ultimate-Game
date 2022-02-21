@@ -32,7 +32,7 @@ class Player {// the player class global attributes
             }
         }
         if (this.movingProgressRemaining > 0) {
-            const [property, change] = this.directionUpdate[this.direction];
+            const { property, change } = this.directionUpdate[this.direction];
             this[property] += change;
             this.movingProgressRemaining -= 1;
         }
