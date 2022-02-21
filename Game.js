@@ -5,7 +5,7 @@ class Game {
     
     this.gridSize = 16;
     this.gridColor = "black";
-    this.gridLineWidth = 0.25;
+    this.gridLineWidth = 0.5;
     this.toggleGrid = true; // Draws a grid to the screen for testing purposes
     
   }
@@ -51,8 +51,8 @@ class Game {
   
   init() {
     this.player = new Player({
-      x: 10,
-      y: 10,
+      x: 0,
+      y: 0,
       width: 5,
       height: 5,
       gridSize: this.gridSize,
