@@ -9,7 +9,7 @@ class Game {
     
     //Specifications for the toggleable drawable girf
     this.gridColor = "black";
-    this.gridLineWidth = 1;
+    this.gridLineWidth = 2;
     this.toggleGrid = true; 
     
     //Whenever we add cutscenes, this will help us know if one is going on
