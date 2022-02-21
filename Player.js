@@ -22,8 +22,10 @@ class Player {// the player class global attributes
         if (this.movingProgressRemaining > 0) {
             this.updatePosition(); //updates the player's position
         } else {
-            this.direction = state.arrow;
-            this.movingProgressRemaining = 32
+            if (state.arrow) {
+                this.direction = state.arrow;
+                this.movingProgressRemaining = 32
+            }
         }
     } 
     
