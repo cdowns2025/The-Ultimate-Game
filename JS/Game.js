@@ -13,7 +13,7 @@ class Game {
     this.toggleGrid = true; 
     
     //Whenever we add cutscenes, this will help us know if one is going on
-    this.isCutscenePlaying = true;
+    this.isCutscenePlaying = false;
     
   }
   
