@@ -14,7 +14,7 @@ class Game {
     //Draw the columns
     for (let c = 0; c < Math.floor(this.canvas.width / 32) + 1; c++) {
       this.ctx.fillStyle = this.gridColor;
-      this.ctx.fillRect(c * 32, 0, this.gridLineWidth, this.canvas.height);
+      this.ctx.fillRect(c * 32, 0, this.canvas.height, this.gridLineWidth);
     } 
     
     //Draw the rows
