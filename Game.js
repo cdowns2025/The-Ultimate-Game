@@ -35,6 +35,7 @@ class Game {
     
     this.directionInput = new DirectionInput();
     this.directionInput.init();
+    console.log(this.directionInput);
     console.log(this.directionInput.direction());
     
     this.startGameLoop();
