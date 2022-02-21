@@ -21,13 +21,13 @@ class Game {
     //Draw the columns
     for (let c = 0; c < Math.floor(this.canvas.width / this.gridSize) + 1; c++) {
       this.ctx.fillStyle = this.gridColor;
-      this.ctx.fillRect(c * this.gridSize, 0, this.gridLineWidth, this.canvas.height);
+      this.ctx.fillRect((c * this.gridSize) - (this.gridLineWidth / 2), 0, this.gridLineWidth, this.canvas.height);
     } 
     
     //Draw the rows
     for (let r = 0; r < Math.floor(this.canvas.height / this.gridSize) + 1; r++) {
       this.ctx.fillStyle = this.gridColor;
-      this.ctx.fillRect(0, r * this.gridSize, this.canvas.width, this.gridLineWidth);
+      this.ctx.fillRect(0, (r * this.gridSize) - (this.gridLineWidth / 2), this.canvas.width, this.gridLineWidth);
     } 
   }
   
