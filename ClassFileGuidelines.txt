@@ -18,7 +18,7 @@
     /*
     Class Name: DirectionInput
 
-    Description: A class that will handle inputs and correlate them to different directions
+    Description: A class that will handle inputs and correlate them with different directions
 
     Arguments: N/A
 
