@@ -11,7 +11,7 @@ class Game {
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
       this.player.update({
-        arrow: this.directionInput.direction(),
+        //arrow: this.directionInput.direction(),
       });
       this.player.draw(this.ctx);  
 
