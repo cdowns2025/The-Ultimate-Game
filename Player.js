@@ -4,6 +4,7 @@ class Player {// the player class global attributes
         this.y = config.y || 0;
         this.width = config.width || 5;
         this.height = config.height || 5;
+        this.movingProgressConstant = config.gridSize || 5;
         
         
         this.movingProgressRemaining = 0;
@@ -24,7 +25,7 @@ class Player {// the player class global attributes
         } else {
             if (state.arrow) {
                 this.direction = state.arrow;
-                this.movingProgressRemaining = 32
+                this.movingProgressRemaining = movingProgressConstant;
             }
         }
     } 
