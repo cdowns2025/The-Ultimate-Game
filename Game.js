@@ -20,7 +20,7 @@ class Game {
     //Draw the rows
     for (let r = 0; r < Math.floor(this.canvas.height / 32) + 1; r++) {
       this.ctx.fillStyle = this.gridColor;
-      this.ctx.fillRect(0, r * 32, this.gridLineWidth, this.canvas.width);
+      this.ctx.fillRect(0, r * 32, this.canvas.width, this.gridLineWidth);
     } 
   }
   
