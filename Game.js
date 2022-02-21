@@ -5,22 +5,22 @@ class Game {
     
     this.gridSize = 16;
     this.gridColor = "black";
-    this.gridLineWidth = 1;
+    this.gridLineWidth = 0.25;
     this.toggleGrid = true; // Draws a grid to the screen for testing purposes
     
   }
   
   drawGrid() {
     //Draw the columns
-    for (let c = 0; c < Math.floor(this.canvas.width / 32) + 1; c++) {
+    for (let c = 0; c < Math.floor(this.canvas.width / this.gridSize) + 1; c++) {
       this.ctx.fillStyle = this.gridColor;
-      this.ctx.fillRect(c * 32, 0, this.gridLineWidth, this.canvas.height);
+      this.ctx.fillRect(c * this.gridSize, 0, this.gridLineWidth, this.canvas.height);
     } 
     
     //Draw the rows
-    for (let r = 0; r < Math.floor(this.canvas.height / 32) + 1; r++) {
+    for (let r = 0; r < Math.floor(this.canvas.height / this.gridSize) + 1; r++) {
       this.ctx.fillStyle = this.gridColor;
-      this.ctx.fillRect(0, r * 32, this.canvas.width, this.gridLineWidth);
+      this.ctx.fillRect(0, r * this.gridSize, this.canvas.width, this.gridLineWidth);
     } 
   }
   
