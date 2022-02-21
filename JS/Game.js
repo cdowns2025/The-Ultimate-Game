@@ -12,6 +12,9 @@ class Game {
     this.gridLineWidth = 0.5;
     this.toggleGrid = true; 
     
+    //Whenever we add cutscenes, this will help us know if one is going on
+    this.isCutscenePlaying = true;
+    
   }
   
   drawGrid() {
