@@ -1,4 +1,4 @@
-class DirectionInput {
+class DirectionInput { //memory leak is not here
   constructor() {
     //This is an array that will store every key currently pressed
     this.heldDirections = [];
@@ -22,7 +22,7 @@ class DirectionInput {
     return this.heldDirections[0];
   }
   
-  init() {
+  init() { // function that checks and sets all the inputs
     //Add an event listener for key down
     document.addEventListener("keydown", e => {
       //This checks to see if the key pressed is in the map and then if it is, assigns it the direction

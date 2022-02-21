@@ -19,7 +19,7 @@ class Player {// the player class global attributes
         
     }
     
-    update(state) {
+    update(state) { //the argument for this function will be declared in game.js as the omniobject so that the function can access any global attribute it might need
         this.playerDI.init();//updates the inputs
         this.updatePosition();//updates the player's position
     } 
