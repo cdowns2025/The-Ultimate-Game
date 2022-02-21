@@ -51,8 +51,8 @@ class Game {
   
   init() {
     this.player = new Player({
-      x: 0,
-      y: 0,
+      x: utils.asGrid(5),
+      y: utils.asGrid(5),
       width: 5,
       height: 5,
       gridSize: this.gridSize,
