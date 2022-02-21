@@ -26,7 +26,7 @@ class Player {// the player class global attributes
     
     updatePosition(state) {
         alert(state);
-        if (this.movingProgressRemaining == 0) {
+        /*if (this.movingProgressRemaining == 0) {
             if (this.playerDI.heldDirections.length > 0) { //checks if there's any direction currently being held
                 this.direction = this.playerDI.direction;//sets the player's direction to the current direction in the input
                 this.movingProgressRemaining = 5;
@@ -36,7 +36,7 @@ class Player {// the player class global attributes
             const [ property, change ] = this.directionUpdate[this.direction];
             this[property] += change;
             this.movingProgressRemaining -= 1;
-        }
+        }*/
     }
     
     draw(ctx) {
