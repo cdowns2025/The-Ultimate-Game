@@ -1,3 +1,25 @@
+/*
+  Class Name: Grid
+  
+  Description: A class that will help with displaying a test grid to the screen
+  
+  Arguments:
+    Config:
+      canvas,
+      gridSize,
+      gridLineWidth,
+      gridColor
+      
+  Functions:
+    Draw():
+      Description: A funcion that will draw the grid to the screen
+      Arguments:
+        ctx
+    Update():
+      Description: N/A
+      Arguments: N/A
+*/
+
 class Grid {
   constructor(config) {
     //Bringing in predefined variables
