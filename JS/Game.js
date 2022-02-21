@@ -8,7 +8,7 @@ class Game {
     this.gridSize = 16;
     
     //Specifications for the toggleable drawable gird
-    this.gridColor = "darkgrey";
+    this.gridColor = "white";
     this.gridLineWidth = 2;
     this.toggleGrid = true; 
     
