@@ -7,28 +7,18 @@ class Game {
     //Information to due with grid-based movement
     this.gridSize = 16;
     
-    //Specifications for the toggleable drawable gird
-    this.gridColor = "white";
-    this.gridLineWidth = 2;
+    //Specifications for the toggleable drawable grid
+    this.grid = new Grid({
+      gridColor: "white",
+      gridLineWidth: 2,
+      gridSize: 16,
+      canvas: this.canvas,
+    });
     this.toggleGrid = true; 
     
     //Whenever we add cutscenes, this will help us know if one is going on
     this.isCutscenePlaying = false;
     
-  }
-  
-  drawGrid() {
-    //Draw the columns
-    for (let c = 0; c < Math.floor(this.canvas.width / this.gridSize) + 1; c++) {
-      this.ctx.fillStyle = this.gridColor;
-      this.ctx.fillRect((c * this.gridSize) - (this.gridLineWidth / 2), 0, this.gridLineWidth, this.canvas.height);
-    } 
-    
-    //Draw the rows
-    for (let r = 0; r < Math.floor(this.canvas.height / this.gridSize) + 1; r++) {
-      this.ctx.fillStyle = this.gridColor;
-      this.ctx.fillRect(0, (r * this.gridSize) - (this.gridLineWidth / 2), this.canvas.width, this.gridLineWidth);
-    } 
   }
   
   startGameLoop() {
@@ -39,7 +29,7 @@ class Game {
       
       //If we want a grid
       if (this.toggleGrid) {
-        this.drawGrid();
+        this.grid.draw(this.ctx);
       }
 
       //Update and draw the player
