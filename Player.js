@@ -38,6 +38,6 @@ class Player {// the player class global attributes
     
     draw(ctx) {
         ctx.fillStyle = 'blue';
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.fillRect(this.x + this.width, this.y + this.height, this.width, this.height);
     }
 }
