@@ -7,8 +7,8 @@ class Grid {
     this.gridColor = config.gridColor;
     
     //Position
-    this.x = 32;
-    this.y = 32;
+    this.x = 0;
+    this.y = 0;
   }
   
   draw(ctx) {
