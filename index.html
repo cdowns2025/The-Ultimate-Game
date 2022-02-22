@@ -6,20 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ship Defenders</title>
 
-    <link href = 'https://fonts.googleapis.com/css?family=VT323'' rel = 'stylesheet' type = 'text/css'>
-    <link rel = 'stylesheet' type = 'text/css' href = 'styles.css'>
+    <!-- Fonts -->
+    <link href = "https://fonts.googleapis.com/css?family=VT323" rel = "stylesheet" type = "text/css">
+    
+    <!-- Styles -->
+    <link rel = "stylesheet" type = "text/css" href = "./Styles/global.css">
 </head>
 <body>
     <div class="game-container">
-        <canvas class="game-canvas" width="200" height="200"></canvas>                                                              
+        <canvas class="game-canvas" width="192" height="192"></canvas>                                                              
     </div>
+    
+    <!--
+
+        WHENEVER YOU ADD A NEW FILE, ADD IT BEFORE THE init.js FILE, OR ELSE IT WILL NOT WORK
+
+    -->
+                                                                  
+    <!-- Utilities -->
+    <script src="./JS/utils.js"></script>
+    <script src="./JS/Grid.js"></script>
                                                                   
     <!-- Scripts -->                                                      
-    <script src="Ship.js"></script>
-    <script src="Player.js"></script>  
-    <script src="Game.js"></script>
-    <script src="init.js"></script>
-    <script src="input.js"></script>
-    <script src="DirectionInput.js"></script>
+    <script src="./JS/DirectionInput.js"></script>
+    <script src="./JS/Player.js"></script>  
+    <script src="./JS/Game.js"></script>
+    <script src="./JS/init.js"></script>
 </body>
 </html>

@@ -1,0 +1,32 @@
+1. Every file needs to have the same name as the class with a CAPITAL first letter
+  EXAMPLE:
+    Class Name: DirectionInput
+    File Name: DirectionInput.js
+
+2. At the top of every class file, include this:
+  /*
+  Class Name: (name of class)
+  
+  Description: A class that will (what the class will do)
+  
+  Arguments: (Any arguments that need to be passed in or N/A)
+      
+  Functions: (Describe every function and what arguments it takes in
+  */
+  
+  EXAMPLE:
+    /*
+    Class Name: DirectionInput
+
+    Description: A class that will handle inputs and correlate them with different directions
+
+    Arguments: N/A
+
+    Functions:
+      get Direction():
+        Description: A geter that returns a direction
+        Arguments: N/A
+      Init():
+        Description: Sets up all of the keydown and keyup listeners
+        Arguments: N/A
+    */

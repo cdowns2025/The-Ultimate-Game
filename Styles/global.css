@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   background: lightblue;
+  image-rendering: pixelated;
 }
 
 .game-container {
@@ -13,7 +14,7 @@
 
 .game-canvas {
   outline: 1px solid white;
-  width: 300px;
-  height: 300px;
-  transform: scale(2);
+  width: 192px;
+  height: 192px;
+  transform: scale(3);
 }

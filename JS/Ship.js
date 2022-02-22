@@ -1,3 +1,15 @@
+/*
+Class name: Ship
+
+Description: An object for the primary environment and its management throughout the game.
+
+Arguments: image, level number
+
+Functions:
+draw() {
+  draws the ship
+}
+*/
 class Ship {
   constructor(config) {
     this.levelLoaded = false;

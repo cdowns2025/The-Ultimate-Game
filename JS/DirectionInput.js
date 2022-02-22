@@ -1,4 +1,20 @@
-class DirectionInput { //memory leak is not here
+/*
+  Class Name: DirectionInput
+  
+  Description: A class that will handle inputs and correlate them with different directions
+  
+  Arguments: N/A
+      
+  Functions:
+    get Direction():
+      Description: A geter that returns a direction
+      Arguments: N/A
+    Init():
+      Description: Sets up all of the keydown and keyup listeners
+      Arguments: N/A
+*/
+
+class DirectionInput {
   constructor() {
     //This is an array that will store every key currently pressed
     this.heldDirections = [];
