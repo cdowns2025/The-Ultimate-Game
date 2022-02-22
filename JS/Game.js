@@ -41,9 +41,11 @@ class Game {
     
   }
   
+//TESTING SITE!!!
+
   startGameLoop() {
     //Start the official "game loop"
-    const step = () => {
+    const step = (timestamp) => {
       //Clear the screen
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       
@@ -60,9 +62,9 @@ class Game {
       this.player.draw(this.ctx);        
 
       //Call this function again at earliest convience / how fast your computer can run it
-      requestAnimationFrame(() => {
-        step();
-      });
+        requestAnimationFrame(() => {
+          step();
+        });
     };
     
     //Actually starting the loop
