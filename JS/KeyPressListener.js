@@ -4,7 +4,7 @@ class KeyPressListener {
     this.keyDown = false;
         
     this.keyDownFunction = event => {
-      if (event.code === " ") {
+      if (event.code === "Space") {
         if (!this.keyDown) {
           alert("space");
           this.keyDown = true;
@@ -14,7 +14,7 @@ class KeyPressListener {
     };
     
     this.keyUpFunction = event => {
-      if (event.code === this.keyCode) {
+      if (event.code === "Space") {
         alert("by");
         this.keyDown = false;
       }
