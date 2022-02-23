@@ -43,7 +43,9 @@ class Player {
         }
         
         this.dashKey = new KeyPressListener("Space", () => {
-            this.dash();
+            if (this.movingProgressRemaining > 0) {
+                this.dash();
+            }
         });
         this.dashKey.init();
         
