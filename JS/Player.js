@@ -40,6 +40,14 @@ class Player {
             "right": ["x", 1],
         }
         
+        this.dashKey = new KeyPressListener("Space", () => {
+            this.dash();
+        });
+        
+    }
+    
+    dash() {
+        console.log("DASHING");
     }
     
     //Dashing here is not final. doesn't work while player is moving otherwise, must be fixed later
