@@ -6,7 +6,7 @@ class KeyPressListener {
     this.keyDownFunction = event => {
       if (event.code === this.keyCode) {
         if (!this.keyDown) {
-          this.keydown = true;
+          this.keyDown = true;
           callback();
         }
       }
