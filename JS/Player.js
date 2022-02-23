@@ -81,8 +81,8 @@ class Player {
             this.dashDistance -= 3;
         } else {
             this.speed = 1;
-            this.isDashing = true;
-            this.movingProgressRemaing -= Math.abs(change * this.speed);
+            this.isDashing = false;
+            this.movingProgressRemaining -= Math.abs(change * this.speed);
         }
     }
     
