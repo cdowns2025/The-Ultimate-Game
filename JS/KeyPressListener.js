@@ -7,7 +7,7 @@ class KeyPressListener {
       if (!this.keydown) {
         if (event.code === this.keyCode) {
           this.keydown = true;
-          this.onKeyDown();
+          callback();
         }
       }
     };
@@ -16,7 +16,7 @@ class KeyPressListener {
       if (!this.keydown) {
         if (event.code === this.keyCode) {
           this.keyDown = true;
-          this.onKeyDown();
+          callback();
         }
       }
     };
