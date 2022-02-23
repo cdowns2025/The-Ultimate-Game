@@ -3,6 +3,8 @@ class KeyPressListener {
     this.keyCode = keyCode;
     this.keyDown = false;
     
+    alert('hi');
+    
     this.keyDownFunction = event => {
       if (event.code === this.keyCode) {
         if (!this.keyDown) {
