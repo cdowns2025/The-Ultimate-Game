@@ -40,12 +40,10 @@ class Game {
     this.isCutscenePlaying = false;
     
   }
-  
-//TESTING SITE!!!
 
   startGameLoop() {
     //Start the official "game loop"
-    const step = (timestamp) => {
+    const step = () => {
       //Clear the screen
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       
@@ -58,8 +56,12 @@ class Game {
       this.player.update({
         //Pass in the direction from the direction input
         arrow: this.directionInput.direction,
+        isDashing: this.directionInput.keysPressed.includes("Space") // Haven personal note: be sure to use the includes method for checking arrays
       });
-      this.player.draw(this.ctx);        
+      this.player.draw(this.ctx);      
+      
+      //clears one-time pressed keys - STAYS ON BOTTOM!
+      this.directionInput.keysPressed = [];
 
       //Call this function again at earliest convience / how fast your computer can run it
         requestAnimationFrame(() => {

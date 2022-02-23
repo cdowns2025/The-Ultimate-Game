@@ -18,6 +18,8 @@ class DirectionInput {
   constructor() {
     //This is an array that will store every key currently pressed
     this.heldDirections = [];
+
+    this.keysPressed = [];
     
     //This is a map that correlates key presses with directions
     this.map = {
@@ -60,6 +62,11 @@ class DirectionInput {
       if (index > -1) {
         this.heldDirections.splice(index, 1);
       }
+    });
+
+    //Add an event listener for key press
+    document.addEventListener("keypress", e => {
+      this.keysPressed.push(e.code);
     });
   }
 }
