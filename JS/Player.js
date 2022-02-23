@@ -48,7 +48,8 @@ class Player {
     }
     
     dash() {
-        console.log("DASHING");
+        this.speed = 3; //times faster the player moves while dashing
+        this.movingProgressRemaining = this.movingProgressConstant * 3;
     }
     
     //Dashing here is not final. doesn't work while player is moving otherwise, must be fixed later
@@ -59,10 +60,10 @@ class Player {
             this.updatePosition(); //updates the player's position
         } else {
             //If we are player controlled and there is a new direction to move, update our direction and start our counter over
-            if (this.isPlayerControlled && !this.game.isCutscenePlaying && state.isDashing) { //function that makes the player dash
+            /*if (this.isPlayerControlled && !this.game.isCutscenePlaying && state.isDashing) { //function that makes the player dash
                 this.speed = 3; //times faster the player moves while dashing
                 this.movingProgressRemaining = this.movingProgressConstant * 3;
-            }
+            }*/
             if (this.isPlayerControlled && !this.game.isCutscenePlaying && state.arrow && !state.isDashing) { //function that makes the player move normally, only happens if space isn't pressed
                 this.direction = state.arrow;
                 this.speed = 1;
