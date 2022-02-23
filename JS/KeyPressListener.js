@@ -2,12 +2,11 @@ class KeyPressListener {
   constructor(keyCode, callback) {
     this.keyCode = keyCode;
     this.keyDown = false;
-    
-    alert('hi');
-    
+        
     this.keyDownFunction = event => {
-      if (event.code === this.keyCode) {
+      if (event.code === " " {
         if (!this.keyDown) {
+          alert("space");
           this.keyDown = true;
           callback();
         }
@@ -16,6 +15,7 @@ class KeyPressListener {
     
     this.keyUpFunction = event => {
       if (event.code === this.keyCode) {
+        alert("by");
         this.keyDown = false;
       }
     };
