@@ -13,10 +13,9 @@ class KeyPressListener {
     };
     
     this.keyUpFunction = event => {
-      if (!this.keydown) {
+      if (this.keydown) {
         if (event.code === this.keyCode) {
-          this.keyDown = true;
-          callback();
+          this.keyDown = false;
         }
       }
     };
