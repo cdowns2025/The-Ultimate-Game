@@ -51,9 +51,8 @@ class Player {
     
     dash() {
         this.isDashing = true;
-        this.speed = 3; //times faster the player moves while dashing
-        this.movingProgressRemaining += this.movingProgressConstant * 3;
-        this.dashDistance = this.movingProgressConstant * 3;
+        
+        this.x += this.movingProgressConstant * 3;
     }
     
     //Dashing here is not final. doesn't work while player is moving otherwise, must be fixed later
@@ -76,14 +75,7 @@ class Player {
         const [ property, change ] = this.directionUpdate[this.direction]; // maps the movement direction and magnitude to the table and the current direction set in the movement functions
         this[property] += change * this.speed;
         
-        if (this.isDashing && this.dashDistance > 0) {
-            this.movingProgressRemaining -= Math.abs(change * this.speed); // subtracts the movement change from the moving progress remaining
-            this.dashDistance -= Math.abs(change * this.speed);
-        } else {
-            this.speed = 1;
-            this.isDashing = false;
-            this.movingProgressRemaining -= Math.abs(change * this.speed);
-        }
+        this.movingProgressRemaining -= Math.abs(change * this.speed); // subtracts the movement change from the moving progress remaining
     }
     
     draw(ctx) {
