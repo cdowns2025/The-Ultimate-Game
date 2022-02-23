@@ -75,6 +75,7 @@ class Player {
         
         if (this.isDashing) {
             this[property] += this.movingProgressConstant * 3;
+            this.isDashing = false;
         }
         
         this.movingProgressRemaining -= Math.abs(change * this.speed); // subtracts the movement change from the moving progress remaining
