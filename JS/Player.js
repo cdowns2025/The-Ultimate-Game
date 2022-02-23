@@ -41,7 +41,7 @@ class Player {
         }
         
         this.dashKey = new KeyPressListener("Space", () => {
-            console.log("SAP");
+            this.dash();
         });
         this.dashKey.init();
         
