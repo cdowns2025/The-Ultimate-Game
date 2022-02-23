@@ -78,7 +78,7 @@ class Player {
         
         if (this.isDashing && this.dashDistance > 0) {
             this.movingProgressRemaining -= Math.abs(change * this.speed); // subtracts the movement change from the moving progress remaining
-            this.dashDistance -= 3;
+            this.dashDistance -= Math.abs(change * this.speed);
         } else {
             this.speed = 1;
             this.isDashing = false;
