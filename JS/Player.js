@@ -49,7 +49,7 @@ class Player {
     
     dash() {
         this.speed = 3; //times faster the player moves while dashing
-        this.movingProgressRemaining = this.movingProgressConstant * 3;
+        this.movingProgressRemaining += this.movingProgressConstant * 3;
     }
     
     //Dashing here is not final. doesn't work while player is moving otherwise, must be fixed later
