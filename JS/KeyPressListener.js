@@ -4,8 +4,8 @@ class KeyPressListener {
     this.keyDown = false;
     
     this.keyDownFunction = event => {
-      if (!this.keydown) {
-        if (event.code === this.keyCode) {
+      if (event.code === this.keyCode) {
+        if (!this.keyDown) {
           this.keydown = true;
           callback();
         }
@@ -13,14 +13,10 @@ class KeyPressListener {
     };
     
     this.keyUpFunction = event => {
-      if (this.keydown) {
-        if (event.code === this.keyCode) {
-          this.keyDown = false;
-        }
+      if (event.code === this.keyCode) {
+        this.keyDown = false;
       }
     };
-    
-    this.keydown = false;
   }
   
   unbind() {
