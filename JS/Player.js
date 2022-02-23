@@ -74,7 +74,7 @@ class Player {
         this[property] += change * this.speed;
         
         if (this.isDashing) {
-            this[property] += this.movingProgressConstant * 3;
+            this[property] += change * this.movingProgressConstant * 3;
             this.isDashing = false;
         }
         
