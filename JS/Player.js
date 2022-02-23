@@ -26,7 +26,9 @@ class Player {
         this.movingProgressConstant = this.game.gridSize || 5;
         this.isPlayerControlled = config.isPlayerControlled || false;
         this.direction = config.direction || "right";
+        
         this.isDashing = false;
+        this.dashDistance = 0;
         this.speed = 1;
         
         //Setting up a counter to aid in cell-based movement
@@ -48,8 +50,10 @@ class Player {
     }
     
     dash() {
+        this.isDashing = true;
         this.speed = 3; //times faster the player moves while dashing
         this.movingProgressRemaining += this.movingProgressConstant * 3;
+        this.dashDistance = this.movingProgressConstant * 3;
     }
     
     //Dashing here is not final. doesn't work while player is moving otherwise, must be fixed later
@@ -76,7 +80,13 @@ class Player {
         //Take the direction and amount to move from our direction map
         const [ property, change ] = this.directionUpdate[this.direction]; // maps the movement direction and magnitude to the table and the current direction set in the movement functions
         this[property] += change * this.speed;
-        this.movingProgressRemaining -= Math.abs(change * this.speed); // subtracts the movement change from the moving progress remaining
+        if (this.isDashing) {
+            this.movingProgressRemaining -= Math.abs(change * this.speed); // subtracts the movement change from the moving progress remaining
+            this.dashDistance -= 3;
+            if (this.dashDistance) {
+                this.isDashing = false;
+            }
+        }
     }
     
     draw(ctx) {
