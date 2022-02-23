@@ -43,6 +43,7 @@ class Player {
         this.dashKey = new KeyPressListener(" ", () => {
             console.log("SAP");
         });
+        this.dashKey.init();
         
     }
     
