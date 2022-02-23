@@ -74,11 +74,6 @@ class Game {
   }
   
   init() {
-    let i = new KeyPressListener("KeyP", () => {
-        console.log("P");
-    });
-    i.init();
-   
     //Creating a new player
     this.player = new Player({
       x: utils.asGrid(0, 4, this.gridSize),
