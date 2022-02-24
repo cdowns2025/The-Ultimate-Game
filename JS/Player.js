@@ -105,13 +105,13 @@ class Player {
     //differentiates player direction
         ctx.fillStyle = "black";
         if (this.direction == "up") {
-            ctx.fillRect(this.x, this.y, this.width, 2);
+            ctx.fillRect(x, y, this.width, 2);
         } else if (this.direction == "down") {
-            ctx.fillRect(this.x, this.y + this.height - 2, this.width, 2);
+            ctx.fillRect(x, y + this.height - 2, this.width, 2);
         } else if (this.direction == "right") {
-            ctx.fillRect(this.x + this.width - 2, this.y, 2, this.height);
+            ctx.fillRect(x + this.width - 2, y, 2, this.height);
         } else if (this.direction == "left") {
-            ctx.fillRect(this.x, this.y, 2, this.height);
+            ctx.fillRect(x, y, 2, this.height);
         }
     }
 }
