@@ -72,8 +72,8 @@ class Game {
     this.player = new Player({
       x: utils.asGrid(0, 7, this.gridSize),
       y: utils.asGrid(0, 7, this.gridSize),
-      width: 7,
-      height: 7,
+      width: 6,
+      height: 6,
       isPlayerControlled: true,
       game: this,
     });
