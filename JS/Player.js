@@ -96,8 +96,8 @@ class Player {
     
     draw(ctx) {
         //Will use this later to work on positioning the character in the middle of the screen and other characters relative to it?
-        const x = this.x + utils.asGrid(12.5, this.width, this.game.gridSize) - this.x; 
-        const y = this.y + utils.asGrid(7.5, this.height, this.game.gridSize) - this.y;
+        const x = utils.asGrid(12.5, this.width, this.game.gridSize); 
+        const y = utils.asGrid(7.5, this.height, this.game.gridSize);
         
         ctx.fillStyle = 'blue';
         ctx.fillRect(x, y, this.width, this.height);
