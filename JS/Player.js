@@ -52,9 +52,11 @@ class Player {
     }
     
     dash() {
-        this.isDashing = true;
-        this.dashingDistance = this.movingProgressConstant * 2;
-        this.speed = 4;
+        if (!this.dashing) {
+            this.isDashing = true;
+            this.dashingDistance = this.movingProgressConstant * 2;
+            this.speed = 4;
+        }
     }
     
     //Dashing here is not final. doesn't work while player is moving otherwise, must be fixed later
