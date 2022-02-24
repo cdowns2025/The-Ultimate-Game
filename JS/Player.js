@@ -80,6 +80,7 @@ class Player {
         if (this.isDashing) {
             this[property] += change * this.speed;
             this.dashingDistance -= Math.abs(change * this.speed);
+            console.log(this.dashingDistance);
             
             if (this.dashingDistance === 0) {
                 this.isDashing = false;   
