@@ -28,7 +28,7 @@ class Game {
     this.gridSize = 8;
     
     //Specifications for the toggleable drawable grid
-    this.toggleGrid = true; 
+    this.toggleGrid = false; 
    
     //Whenever we add cutscenes, this will help us know if one is going on
     this.isCutscenePlaying = false;
