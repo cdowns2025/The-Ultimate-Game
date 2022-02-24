@@ -85,13 +85,11 @@ class Player {
             if (this.dashingDistance === 0) {
                 this.isDashing = false;
                 this.speed = 1;
-                console.log("Done Dashing");
             }
             
             return;
         }
 
-        console.log("moving normallu");
         this[property] += change * this.speed;
         this.movingProgressRemaining -= Math.abs(change * this.speed); // subtracts the movement change from the moving progress remaining
     }
