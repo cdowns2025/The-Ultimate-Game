@@ -53,7 +53,7 @@ class Player {
     
     dash() {
         this.isDashing = true;
-        this.dashingDistance = this.movingProgressConstant * 3;
+        this.dashingDistance = 32;
         this.speed = 3;
     }
     
@@ -83,7 +83,7 @@ class Player {
             
             return;
         }
-        
+        console.log('not dashing');
         this.isDashing = false;
         this.movingProgressRemaining -= Math.abs(change * this.speed); // subtracts the movement change from the moving progress remaining
     }
