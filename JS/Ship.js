@@ -22,7 +22,7 @@ class Ship {
   
   draw(ctx) {
     if (this.levelLoaded) {
-      ctx.drawImage(this.image, 0, 0); 
+      ctx.drawImage(this.image, 48, 40); 
     }
   }
   
