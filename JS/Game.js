@@ -25,7 +25,7 @@ class Game {
     this.ctx = this.canvas.getContext("2d");
     
     //Information to due with grid-based movement
-    this.gridSize = 9;
+    this.gridSize = 8;
     
     //Specifications for the toggleable drawable grid
     this.toggleGrid = false; 
@@ -73,10 +73,10 @@ class Game {
   init() {
     //Creating a new player
     this.player = new Player({
-      x: utils.asGrid(0, 3, this.gridSize),
-      y: utils.asGrid(0, 3, this.gridSize),
-      width: 3,
-      height: 3,
+      x: utils.asGrid(0, 4, this.gridSize),
+      y: utils.asGrid(0, 4, this.gridSize),
+      width: 4,
+      height: 4,
       isPlayerControlled: true,
       game: this,
     });
@@ -85,7 +85,7 @@ class Game {
    this.grid = new Grid({
       gridColor: "white",
       gridLineWidth: 2,
-      gridSize: 9,
+      gridSize: this.gridSize,
       canvas: this.canvas,
     });
    
