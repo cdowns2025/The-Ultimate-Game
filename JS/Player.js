@@ -91,6 +91,7 @@ class Player {
             return;
         }
 
+        console.log("moving normallu");
         this[property] += change * this.speed;
         this.movingProgressRemaining -= Math.abs(change * this.speed); // subtracts the movement change from the moving progress remaining
     }
