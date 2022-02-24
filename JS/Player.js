@@ -66,7 +66,7 @@ class Player {
         if (this.movingProgressRemaining > 0) {
             this.updatePosition(); //updates the player's position
         } else {
-            if (this.isPlayerControlled && !this.game.isCutscenePlaying && state.arrow && !state.isDashing) { //function that makes the player move normally, only happens if space isn't pressed
+            if (this.isPlayerControlled && !this.game.isCutscenePlaying && state.arrow && !this.isDashing) { //function that makes the player move normally, only happens if space isn't pressed
                 this.direction = state.arrow;
                 this.speed = 1;
                 this.movingProgressRemaining = this.movingProgressConstant;
