@@ -99,7 +99,7 @@ class Player {
         const x = this.x;
         const y = this.y;
         
-        ctx.fillStyle = 'blue';
+        ctx.fillStyle = "red";
         ctx.fillRect(x, y, this.width, this.height);
 
     //differentiates player direction
