@@ -53,7 +53,7 @@ class Player {
     
     dash() {
         this.isDashing = true;
-        this.dashingDistance = this.movingProgressConstant * 2;
+        this.dashingDistance = this.movingProgressConstant * 1.5;
         this.speed = 4;
     }
     
