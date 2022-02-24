@@ -28,7 +28,7 @@ class Game {
     this.gridSize = 9;
     
     //Specifications for the toggleable drawable grid
-    this.toggleGrid = true; 
+    this.toggleGrid = false; 
    
     //Whenever we add cutscenes, this will help us know if one is going on
     this.isCutscenePlaying = false;
@@ -40,6 +40,8 @@ class Game {
     const step = () => {
       //Clear the screen
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+     
+      this.ship.draw(this.ctx);
 
       //Update and draw the player
       this.player.update({
@@ -54,8 +56,6 @@ class Game {
       }
      
       this.player.draw(this.ctx);  
-     
-      //this.ship.draw(this.ctx);
       
       //clears one-time pressed keys - STAYS ON BOTTOM!
       this.directionInput.keysPressed = [];
