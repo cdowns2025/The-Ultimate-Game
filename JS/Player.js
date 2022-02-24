@@ -77,13 +77,17 @@ class Player {
         const [ property, change ] = this.directionUpdate[this.direction]; // maps the movement direction and magnitude to the table and the current direction set in the movement functions
         this[property] += change * this.speed;
         
-        if (this.isDashing || this.dashingDistance > 0) {
+        if (this.isDashing) {
             this[property] += change * this.speed;
             this.dashingDistance -= 3;
             
+            if (this.dashingDistance < 1) {
+                this.isDashing = false;   
+            }
+            
             return;
         }
-        console.log('not dashing');
+
         this.isDashing = false;
         this.movingProgressRemaining -= Math.abs(change * this.speed); // subtracts the movement change from the moving progress remaining
     }
