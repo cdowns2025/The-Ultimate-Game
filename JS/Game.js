@@ -28,14 +28,8 @@ class Game {
     this.gridSize = 16;
     
     //Specifications for the toggleable drawable grid
-    this.grid = new Grid({
-      gridColor: "white",
-      gridLineWidth: 2,
-      gridSize: 16,
-      canvas: this.canvas,
-    });
-    this.toggleGrid = true; 
-    
+    this.toggleGrid = false; 
+   
     //Whenever we add cutscenes, this will help us know if one is going on
     this.isCutscenePlaying = false;
     
@@ -58,7 +52,7 @@ class Game {
         arrow: this.directionInput.direction,
         isDashing: this.directionInput.keysPressed.includes("Space") // Haven personal note: be sure to use the includes method for checking arrays
       });
-      this.player.draw(this.ctx);      
+      //this.player.draw(this.ctx);      
       
       //clears one-time pressed keys - STAYS ON BOTTOM!
       this.directionInput.keysPressed = [];
@@ -83,6 +77,16 @@ class Game {
       isPlayerControlled: true,
       game: this,
     });
+   
+   //Create the grid
+   this.grid = new Grid({
+      gridColor: "white",
+      gridLineWidth: 2,
+      gridSize: 16,
+      canvas: this.canvas,
+    });
+   
+   this.ship = new Ship();
     
     //Setting up direction input for the player character
     this.directionInput = new DirectionInput();
