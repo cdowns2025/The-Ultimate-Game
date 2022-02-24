@@ -70,8 +70,8 @@ class Game {
   init() {
     //Creating a new player
     this.player = new Player({
-      x: utils.asGrid(0, 7, this.gridSize),
-      y: utils.asGrid(0, 7, this.gridSize),
+      x: utils.asGrid(0, 6, this.gridSize),
+      y: utils.asGrid(0, 6, this.gridSize),
       width: 7,
       height: 7,
       isPlayerControlled: true,
