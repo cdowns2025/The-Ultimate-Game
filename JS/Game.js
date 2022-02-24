@@ -40,11 +40,6 @@ class Game {
     const step = () => {
       //Clear the screen
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-      
-      //If we want a grid
-      if (this.toggleGrid) {
-        this.grid.draw(this.ctx);
-      }
 
       //Update and draw the player
       this.player.update({
@@ -52,6 +47,12 @@ class Game {
         arrow: this.directionInput.direction,
         isDashing: this.directionInput.keysPressed.includes("Space") // Haven personal note: be sure to use the includes method for checking arrays
       });
+     
+      //If we want a grid
+      if (this.toggleGrid) {
+        this.grid.draw(this.ctx, this.player);
+      }
+     
       this.player.draw(this.ctx);  
      
       //this.ship.draw(this.ctx);
