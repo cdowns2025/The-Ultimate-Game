@@ -25,7 +25,7 @@ class Game {
     this.ctx = this.canvas.getContext("2d");
     
     //Information to due with grid-based movement
-    this.gridSize = 7;
+    this.gridSize = 8;
     
     //Specifications for the toggleable drawable grid
     this.toggleGrid = false; 
