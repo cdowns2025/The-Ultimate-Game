@@ -52,7 +52,9 @@ class Game {
         arrow: this.directionInput.direction,
         isDashing: this.directionInput.keysPressed.includes("Space") // Haven personal note: be sure to use the includes method for checking arrays
       });
-      //this.player.draw(this.ctx);      
+      //this.player.draw(this.ctx);  
+     
+      this.ship.draw(this.ctx);
       
       //clears one-time pressed keys - STAYS ON BOTTOM!
       this.directionInput.keysPressed = [];
