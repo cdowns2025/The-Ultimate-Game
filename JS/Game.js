@@ -56,9 +56,6 @@ class Game {
       }
      
       this.player.draw(this.ctx);  
-      
-      //clears one-time pressed keys - STAYS ON BOTTOM!
-      this.directionInput.keysPressed = [];
 
       //Call this function again at earliest convience / how fast your computer can run it
         requestAnimationFrame(() => {
@@ -73,10 +70,10 @@ class Game {
   init() {
     //Creating a new player
     this.player = new Player({
-      x: utils.asGrid(0, 4, this.gridSize),
-      y: utils.asGrid(0, 4, this.gridSize),
-      width: 4,
-      height: 4,
+      x: utils.asGrid(0, 5, this.gridSize),
+      y: utils.asGrid(0, 5, this.gridSize),
+      width: 5,
+      height: 5,
       isPlayerControlled: true,
       game: this,
     });
