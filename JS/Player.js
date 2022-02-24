@@ -83,6 +83,7 @@ class Player {
             
             if (this.dashingDistance < 1) {
                 this.isDashing = false;   
+                this.speed = 1;
             }
             
             return;
