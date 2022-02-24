@@ -53,8 +53,7 @@ class Player {
     
     dash() {
         this.isDashing = true;
-        this.dashingDistance = this.movingProgressConstant;
-        console.log(this.dashingDistance);
+        this.dashingDistance = this.movingProgressConstant * 2;
         this.speed = 4;
     }
     
@@ -76,7 +75,6 @@ class Player {
     updatePosition(state) {        
         //Take the direction and amount to move from our direction map
         const [ property, change ] = this.directionUpdate[this.direction]; // maps the movement direction and magnitude to the table and the current direction set in the movement functions
-        this[property] += change * this.speed;
         
         if (this.isDashing) {
             this[property] += change * this.speed;
@@ -90,6 +88,7 @@ class Player {
             return;
         }
 
+        this[property] += change * this.speed;
         this.movingProgressRemaining -= Math.abs(change * this.speed); // subtracts the movement change from the moving progress remaining
     }
     
