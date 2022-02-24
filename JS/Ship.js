@@ -14,19 +14,18 @@ class Ship {
   constructor(config) {
     this.levelLoaded = false;
     this.image = new Image();
-    this.image.src = "grid.png";
+    this.image.src = "Ship1_RoughDraft.png";
     this.image.onload = () => {
-      this.isLoaded = true;
+      this.levelLoaded = true;
     };
   }
   
   draw(ctx) {
-    alert(this.isLoaded);
-    if (this.isLoaded) {
+    if (this.levelLoaded) {
       ctx.drawImage(this.image, 0, 0); 
     }
-    return;
   }
+  
   init() {
     
   }
