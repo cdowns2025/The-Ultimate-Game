@@ -103,7 +103,7 @@ class Player {
         ctx.fillRect(x, y, this.width, this.height);
 
     //differentiates player direction
-        ctx.fillStyle = "black";
+        /*ctx.fillStyle = "black";
         if (this.direction == "up") {
             ctx.fillRect(x, y, this.width, 2);
         } else if (this.direction == "down") {
@@ -112,6 +112,6 @@ class Player {
             ctx.fillRect(x + this.width - 2, y, 2, this.height);
         } else if (this.direction == "left") {
             ctx.fillRect(x, y, 2, this.height);
-        }
+        }*/
     }
 }
