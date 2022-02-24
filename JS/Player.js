@@ -26,7 +26,9 @@ class Player {
         this.movingProgressConstant = this.game.gridSize || 5;
         this.isPlayerControlled = config.isPlayerControlled || false;
         this.direction = config.direction || "right";
+        
         this.isDashing = false;
+        this.dashingDistance = 0;
         this.speed = 1;
         
         //Setting up a counter to aid in cell-based movement
@@ -40,6 +42,19 @@ class Player {
             "right": ["x", 1],
         }
         
+        this.dashKey = new KeyPressListener("Space", () => {
+            if (this.movingProgressRemaining > 0) {
+                this.dash();
+            }
+        });
+        this.dashKey.init();
+        
+    }
+    
+    dash() {
+        this.isDashing = true;
+        this.dashingDistance = this.movingProgressConstant * 2;
+        this.speed = 4;
     }
     
     //Dashing here is not final. doesn't work while player is moving otherwise, must be fixed later
@@ -49,11 +64,6 @@ class Player {
         if (this.movingProgressRemaining > 0) {
             this.updatePosition(); //updates the player's position
         } else {
-            //If we are player controlled and there is a new direction to move, update our direction and start our counter over
-            if (this.isPlayerControlled && !this.game.isCutscenePlaying && state.isDashing) { //function that makes the player dash
-                this.speed = 3; //times faster the player moves while dashing
-                this.movingProgressRemaining = this.movingProgressConstant * 3;
-            }
             if (this.isPlayerControlled && !this.game.isCutscenePlaying && state.arrow && !state.isDashing) { //function that makes the player move normally, only happens if space isn't pressed
                 this.direction = state.arrow;
                 this.speed = 1;
@@ -65,6 +75,19 @@ class Player {
     updatePosition(state) {        
         //Take the direction and amount to move from our direction map
         const [ property, change ] = this.directionUpdate[this.direction]; // maps the movement direction and magnitude to the table and the current direction set in the movement functions
+        
+        if (this.isDashing) {
+            this[property] += change * this.speed;
+            this.dashingDistance -= Math.abs(change * this.speed);
+            
+            if (this.dashingDistance === 0) {
+                this.isDashing = false;   
+                this.speed = 1;
+            }
+            
+            return;
+        }
+
         this[property] += change * this.speed;
         this.movingProgressRemaining -= Math.abs(change * this.speed); // subtracts the movement change from the moving progress remaining
     }
