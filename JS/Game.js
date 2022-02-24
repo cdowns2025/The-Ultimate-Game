@@ -25,7 +25,7 @@ class Game {
     this.ctx = this.canvas.getContext("2d");
     
     //Information to due with grid-based movement
-    this.gridSize = 8;
+    this.gridSize = 7;
     
     //Specifications for the toggleable drawable grid
     this.toggleGrid = false; 
@@ -70,10 +70,10 @@ class Game {
   init() {
     //Creating a new player
     this.player = new Player({
-      x: utils.asGrid(0, 8, this.gridSize),
-      y: utils.asGrid(0, 8, this.gridSize),
-      width: 8,
-      height: 8,
+      x: utils.asGrid(0, 7, this.gridSize),
+      y: utils.asGrid(0, 7, this.gridSize),
+      width: 7,
+      height: 7,
       isPlayerControlled: true,
       game: this,
     });
