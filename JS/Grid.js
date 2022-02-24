@@ -34,8 +34,8 @@ class Grid {
   }
   
   draw(ctx, player) {
-    this.x = this.x + utils.asGrid(12.5) - player.x;
-    this.y = this.y + utils.asGrid(7.5) - player.y;
+    this.x = this.x + utils.asGrid(12.5, this.canvas.width, this.gridSize) - player.x;
+    this.y = this.y + utils.asGrid(7.5, this.canvas.height, this.gridSize) - player.y;
     
     //Draw the columns
     for (let c = 0; c < Math.floor(this.canvas.width / this.gridSize) + 1; c++) {
