@@ -19,8 +19,8 @@ class Ship {
       this.levelLoaded = true;
     };
     
-    this.x = -1.5;
-    this.y = -1.5
+    this.x = 0;
+    this.y = 0;
   }
   
   draw(ctx) {
