@@ -21,12 +21,16 @@ class Ship {
       this.levelLoaded = true;
     };
     //draws the ship in a centered and relative position to the players position and size.
-    this.x = (this.game.canvas.width / 2) - this.game.player.x - 48 - this.game.player.width / 2 - 1;
-    this.y = (this.game.canvas.height / 2) - this.game.player.y - 40 - this.game.player.height / 2 - 1;
+    this.x = 0;
+    this.y = 0;
   }
   
   draw(ctx) {
     if (this.levelLoaded) {
+      //updates ship drawing position based on player coordinates
+      this.x = (this.game.canvas.width / 2) - this.game.player.x - 48 - this.game.player.width / 2 - 1;
+      this.y = (this.game.canvas.height / 2) - this.game.player.y - 40 - this.game.player.height / 2 - 1;
+
       ctx.drawImage(this.image, this.x, this.y); 
     }
   }
