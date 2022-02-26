@@ -12,6 +12,8 @@ draw() {
 */
 class Ship {
   constructor(config) {
+    this.game = config.game;
+
     this.levelLoaded = false;
     this.image = new Image();
     this.image.src = "Ship1_RoughDraft.png";
@@ -22,7 +24,7 @@ class Ship {
   
   draw(ctx) {
     if (this.levelLoaded) {
-      ctx.drawImage(this.image, -48, -40); 
+      ctx.drawImage(this.image, (this.game.canvas.width / 2) - this.game.player.x - 48 - this.game.player.width / 2 - 1, (this.game.canvas.height / 2) - this.game.player.y - 40 - this.game.player.height / 2 - 1); 
     }
   }
   

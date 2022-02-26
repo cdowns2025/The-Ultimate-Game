@@ -100,18 +100,18 @@ class Player {
         const y = this.y;
         
         ctx.fillStyle = "red";
-        ctx.fillRect(x, y, this.width, this.height);
+        ctx.fillRect(this.game.canvas.width / 2 - this.width / 2, this.game.canvas.height / 2 - this.width / 2, this.width, this.height);
 
-    //differentiates player direction
-        /*ctx.fillStyle = "black";
+    //differentiates player direction - temporary placeholder for image switching
+        ctx.fillStyle = "rgba(0, 0, 0, 0.5";
         if (this.direction == "up") {
-            ctx.fillRect(x, y, this.width, 2);
+            ctx.fillRect(this.game.canvas.width / 2 - this.width / 2, this.game.canvas.height / 2 - this.width / 2, this.width, 1);
         } else if (this.direction == "down") {
-            ctx.fillRect(x, y + this.height - 2, this.width, 2);
+            ctx.fillRect(this.game.canvas.width / 2 - this.width / 2, this.game.canvas.height / 2 - this.width / 2 + this.height - 1, this.width, 1);
         } else if (this.direction == "right") {
-            ctx.fillRect(x + this.width - 2, y, 2, this.height);
+            ctx.fillRect(this.game.canvas.width / 2 - this.width / 2 + this.width - 1, this.game.canvas.height / 2 - this.width / 2, 1, this.height);
         } else if (this.direction == "left") {
-            ctx.fillRect(x, y, 2, this.height);
-        }*/
+            ctx.fillRect(this.game.canvas.width / 2 - this.width / 2, this.game.canvas.height / 2 - this.width / 2, 1, this.height);
+        }
     }
 }

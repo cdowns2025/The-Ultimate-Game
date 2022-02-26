@@ -14,7 +14,7 @@
 
 .game-canvas {
   outline: 1px solid white;
-  width: 225px;
-  height: 135px;
+  width: 400px;
+  height: 240px;
   transform: scale(3);
 }

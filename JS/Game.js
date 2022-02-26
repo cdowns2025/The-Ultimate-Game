@@ -72,8 +72,8 @@ class Game {
     this.player = new Player({
       x: utils.asGrid(0, this.gridSize),
       y: utils.asGrid(0, this.gridSize),
-      width: 6,
-      height: 6,
+      width: 7,
+      height: 7,
       isPlayerControlled: true,
       game: this,
     });
@@ -86,7 +86,9 @@ class Game {
       canvas: this.canvas,
     });
    
-   this.ship = new Ship();
+   this.ship = new Ship({
+     game: this,
+   });
     
     //Setting up direction input for the player character
     this.directionInput = new DirectionInput();
