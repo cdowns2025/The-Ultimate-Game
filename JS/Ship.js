@@ -18,11 +18,14 @@ class Ship {
     this.image.onload = () => {
       this.levelLoaded = true;
     };
+    
+    this.x = -1.5;
+    this.y = -1.5
   }
   
   draw(ctx) {
     if (this.levelLoaded) {
-      ctx.drawImage(this.image, 0, 0); 
+      ctx.drawImage(this.image, this.x, this.y); 
     }
   }
   
