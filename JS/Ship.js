@@ -12,6 +12,9 @@ draw() {
 */
 class Ship {
   constructor(config) {
+    
+    this.canvas = config.canvas;
+    
     this.levelLoaded = false;
     this.image = new Image();
     this.image.src = "Ship1_RoughDraft.png";
@@ -61,8 +64,8 @@ class Ship {
   }
   
   update(player) {
-    this.x = (this.game.canvas.width / 2) - player.x;// - 56 - this.game.player.width / 2 - 1;
-    this.y = (this.game.canvas.height / 2) - player.y;// - 32 - this.game.player.height / 2 - 1;
+    this.x = (this.canvas.width / 2) - player.x;// - 56 - this.game.player.width / 2 - 1;
+    this.y = (this.canvas.height / 2) - player.y;// - 32 - this.game.player.height / 2 - 1;
   }
   
   init() {
