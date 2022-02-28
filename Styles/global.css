@@ -13,10 +13,10 @@ body {
   position: relative;
   outline: 1px solid white;
   width: 224px;
-  height: 136px;
+  height: 128px;
   margin: 0 auto;
   
-  transform: scale(1) translateY(50%);
+  transform: scale(3) translateY(50%);
 }
 
 .game-canvas {
