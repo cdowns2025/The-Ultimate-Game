@@ -64,8 +64,8 @@ class Ship {
   }
   
   update(player) {
-    this.x = (this.canvas.width / 2) - player.x - player.width / 2 + 1;// - 56 - this.game.player.width / 2 - 1;
-    this.y = (this.canvas.height / 2) - player.y - player.height / 2 + 1;// - 32 - this.game.player.height / 2 - 1;
+    this.x = 0;(this.canvas.width / 2) - player.x - player.width / 2 + 1;// - 56 - this.game.player.width / 2 - 1;
+    this.y = 0;(this.canvas.height / 2) - player.y - player.height / 2 + 1;// - 32 - this.game.player.height / 2 - 1;
   }
   
   init() {
