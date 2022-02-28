@@ -11,11 +11,11 @@ class Sprite {
     }
     
     draw(ctx, player) {
-        const x = this.gameObject.x + 4;
-        const y = this.gameObject.y + 4;
+        const x = this.gameObject.x + 2.5;
+        const y = this.gameObject.y + 2.5;
         
         ctx.fillStyle = this.color;
-        ctx.fillRect(x, y, 8, 8);
+        ctx.fillRect(x, y, 5, 5);
         //this.isLoaded && ctx.drawImage(this.image, x, y);
     }
 }
