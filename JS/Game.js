@@ -44,19 +44,18 @@ class Game {
       /*this.ship.update(this.player);
       this.ship.draw(this.ctx);*/
 
-      //Update and draw the player
-      /*this.player.update({
-        //Pass in the direction from the direction input
+      //Update
+      this.player.update({
         arrow: this.directionInput.direction,
-      });*/
+      });
+      this.player.sprite.draw(this.ctx, this.player);  
+     
      
       //If we want a grid
       if (this.toggleGrid) {
         this.grid.draw(this.ctx, this.player);
       }
      
-      this.player.sprite.draw(this.ctx, this.player);  
-
       //Call this function again at earliest convience / how fast your computer can run it
         requestAnimationFrame(() => {
           step();
@@ -78,7 +77,8 @@ class Game {
       game: this,
     });*/
       
-    this.player = new GameObject({
+    this.player = new Person({
+        isPlayerControlled: true,
         x: utils.asGrid(0, this.gridSize),
         y: utils.asGrid(0, this.gridSize),
     });
