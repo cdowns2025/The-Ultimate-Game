@@ -43,7 +43,7 @@ class Game {
         //Clear the screen
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-        this.map.drawLowerLayer(this.ctx);
+        //this.map.drawLowerLayer(this.ctx);
 
         Object.values(this.map.gameObjects).forEach(object => {
             object.update({
@@ -55,7 +55,7 @@ class Game {
             object.sprite.draw(this.ctx);
         });
 
-        this.map.drawUpperLayer(this.ctx);
+        //this.map.drawUpperLayer(this.ctx);
 
         //Call this function again at earliest convience / how fast your computer can run it
         requestAnimationFrame(() => {
