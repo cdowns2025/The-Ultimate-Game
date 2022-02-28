@@ -41,21 +41,21 @@ class Game {
       //Clear the screen
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
      
-      this.ship.update(this.player);
-      this.ship.draw(this.ctx);
+      /*this.ship.update(this.player);
+      this.ship.draw(this.ctx);*/
 
       //Update and draw the player
-      this.player.update({
+      /*this.player.update({
         //Pass in the direction from the direction input
         arrow: this.directionInput.direction,
-      });
+      });*/
      
       //If we want a grid
       if (this.toggleGrid) {
         this.grid.draw(this.ctx, this.player);
       }
      
-      this.player.draw(this.ctx);  
+      this.player.sprite.draw(this.ctx, this.player);  
 
       //Call this function again at earliest convience / how fast your computer can run it
         requestAnimationFrame(() => {
@@ -69,13 +69,18 @@ class Game {
   
   init() {
     //Creating a new player
-    this.player = new Player({
+    /*this.player = new Player({
       x: utils.asGrid(0, this.gridSize),
       y: utils.asGrid(0, this.gridSize),
       width: 7,
       height: 7,
       isPlayerControlled: true,
       game: this,
+    });*/
+      
+    this.player = new GameObject({
+        x: utils.asGrid(0, this.gridSize),
+        y: utils.asGrid(0, this.gridSize),
     });
    
    //Create the grid
