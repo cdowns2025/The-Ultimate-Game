@@ -45,13 +45,13 @@ class Game {
 
         this.map.drawLowerLayer(this.ctx);
 
-        this.map.gameObjects.forEach(object => {
+        Object.values(this.map.gameObjects).forEach(object => {
             object.update({
                 arrow: this.directionInput.direction,
             })
         });
 
-        this.map.gameObjects.forEach(object => {
+        Object.values(this.map.gameObjects).forEach(object => {
             object.sprite.draw(this.ctx);
         });
 
