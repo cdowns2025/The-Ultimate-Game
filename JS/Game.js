@@ -37,8 +37,8 @@ class Game {
         //Clear the screen
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-        //this.map.drawLowerLayer(this.ctx);
-        this.grid.draw(this.ctx);
+        this.map.drawLowerLayer(this.ctx);
+        //this.grid.draw(this.ctx);
 
         Object.values(this.map.gameObjects).forEach(object => {
             object.update({
