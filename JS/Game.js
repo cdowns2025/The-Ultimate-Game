@@ -87,7 +87,7 @@ class Game {
     });
    
    this.ship = new Ship({
-     game: this,
+     canvas: this.canvas,
    });
     
     //Setting up direction input for the player character
