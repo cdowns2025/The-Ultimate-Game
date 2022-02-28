@@ -9,12 +9,12 @@ class Map {
         this.upperImage.src = config.upperSrc;
     }
 
-    drawLowerImage(ctx, player) { 
+    drawLowerLayer(ctx, player) { 
         ctx.drawImage(this.lowerImage, 0, 0);
     }
     
     
-    drawUpperImage(ctx, player) { 
+    drawUpperLayer(ctx, player) { 
         ctx.drawImage(this.upperImage, 0, 0);
     }
 }
