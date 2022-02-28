@@ -1,6 +1,6 @@
 window.Maps = {
     "Level1": {
-        lowerSrc: "grid1.png",
+        lowerSrc: "grid2.png",
         upperSrc: null,
         gameObjects: {
             player: new Person({
