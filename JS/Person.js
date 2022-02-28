@@ -28,7 +28,7 @@ class Person extends GameObject {
     dash() {
         if (!this.isDashing) {
             this.isDashing = true;
-            this.dashingDistance = this.movingProgressConstant * 3;
+            this.dashingDistance = this.16 * 3;
             this.speed = 3;
         }
     }
@@ -40,7 +40,7 @@ class Person extends GameObject {
             if (this.isPlayerControlled && state.arrow && !this.isDashing) { //function that makes the player move normally, only happens if space isn't pressed
                 this.direction = state.arrow;
                 this.speed = 1;
-                this.movingProgressRemaining = this.movingProgressConstant;
+                this.movingProgressRemaining = 16;
             }
         }
     }
