@@ -19,6 +19,7 @@ class Person extends GameObject {
             this.updatePosition();
         } else {
             if (this.isPlayerControlled && state.arrow) {
+                console.log(state);
                 this.direction = state.arrow;
             }
         }
