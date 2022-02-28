@@ -29,7 +29,7 @@ window.Maps = {
                 x: utils.asGrid(0),
                 y: utils.asGrid(0),
             }),
-            enemy1: new Enemey({
+            enemy1: new Enemy({
                 x: utils.asGrid(5),
                 y: utils.asGrid(5),
             })
