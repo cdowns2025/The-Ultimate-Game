@@ -50,7 +50,7 @@ class Ship {
       //updates ship drawing position based on player coordinates
       
 
-      ctx.drawImage(this.image, this.x, this.y); 
+      ctx.drawImage(this.image, this.x, this.y, this.image.width * 2, this.image.height * 2); 
 
       /*ctx.fillStyle = "black";
       for (let c = 0; c < this.level1.length; c++) {
