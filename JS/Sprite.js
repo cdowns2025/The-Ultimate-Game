@@ -10,8 +10,8 @@ class Sprite {
     }
     
     draw(ctx, player) {
-        const x = this.gameObject.x;
-        const y = this.gameObject.y;
+        const x = this.gameObject.x + 4;
+        const y = this.gameObject.y + 4;
         
         ctx.fillStyle = "red";
         ctx.fillRect(x, y, 8, 8);
