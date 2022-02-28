@@ -15,12 +15,11 @@ class Person extends GameObject {
     }
     
     update(state) {
-        console.log("update");
         if (this.movingProgressRemaining > 0) {
             this.updatePosition();
         } else {
             if (this.isPlayerControlled && state.arrow) {
-                this.direction = state.direction;
+                this.direction = state.arrow;
             }
         }
     }
