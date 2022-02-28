@@ -41,13 +41,13 @@ class Game {
       //Clear the screen
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
      
+      this.ship.update(this.player);
       this.ship.draw(this.ctx);
 
       //Update and draw the player
       this.player.update({
         //Pass in the direction from the direction input
         arrow: this.directionInput.direction,
-        isDashing: this.directionInput.keysPressed.includes("Space") // Haven personal note: be sure to use the includes method for checking arrays
       });
      
       //If we want a grid
