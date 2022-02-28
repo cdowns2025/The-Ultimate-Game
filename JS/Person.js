@@ -28,7 +28,7 @@ class Person extends GameObject {
     dash() {
         if (!this.isDashing) {
             this.isDashing = true;
-            this.dashingDistance = this.16 * 3;
+            this.dashingDistance = 16 * 3;
             this.speed = 3;
         }
     }
