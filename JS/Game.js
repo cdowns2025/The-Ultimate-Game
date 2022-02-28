@@ -69,7 +69,7 @@ class Game {
         this.grid = new Grid({
             canvas: this.canvas,
             gridSize: 16,
-            gridLineWidth: 2,
+            gridLineWidth: 1,
             gridColor: "white",
         }); 
 
