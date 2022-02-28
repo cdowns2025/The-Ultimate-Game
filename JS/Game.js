@@ -24,12 +24,6 @@ class Game {
         this.canvas = config.element.querySelector(".game-canvas");
         this.ctx = this.canvas.getContext("2d");
 
-        //Information to due with grid-based movement
-        this.gridSize = 8;
-
-        //Specifications for the toggleable drawable grid
-        this.toggleGrid = false; 
-
         //Whenever we add cutscenes, this will help us know if one is going on
         this.isCutscenePlaying = false;
 
@@ -44,6 +38,7 @@ class Game {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         //this.map.drawLowerLayer(this.ctx);
+        this.grid.draw(this.ctx);
 
         Object.values(this.map.gameObjects).forEach(object => {
             object.update({
@@ -70,6 +65,13 @@ class Game {
     init() {
 
         this.map = new Map(window.Maps["Level1"]);
+            
+        this.grid = new Grid({
+            canvas: this.canvas,
+            gridSize: 16,
+            gridLineWidth: 2,
+            gridColor: "white",
+        }); 
 
         //Setting up direction input for the player character
         this.directionInput = new DirectionInput();
