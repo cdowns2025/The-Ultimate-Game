@@ -14,7 +14,7 @@ class Sprite {
         const y = this.gameObject.y;
         
         ctx.fillStyle = "red";
-        ctx.filLRect(x, y, 8, 8);
+        ctx.fillRect(x, y, 8, 8);
         //this.isLoaded && ctx.drawImage(this.image, x, y);
     }
 }
