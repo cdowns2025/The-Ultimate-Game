@@ -9,6 +9,9 @@ Functions:
 draw() {
   draws the ship
 }
+update(player) {
+  updates local position based on player position - player object is argument for the function
+}
 */
 class Ship {
   constructor(config) {
