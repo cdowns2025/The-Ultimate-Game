@@ -15,7 +15,8 @@ class Person extends GameObject {
     }
     
     update(state) {
-        if (this.movingProgressRemaing > 0) {
+        console.log("update");
+        if (this.movingProgressRemaining > 0) {
             this.updatePosition();
         } else {
             if (this.isPlayerControlled && state.arrow) {
