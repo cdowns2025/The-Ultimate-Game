@@ -34,6 +34,8 @@ class Game {
     startGameLoop() {
     //Start the official "game loop"
     const step = () => {
+        const player = this.map.gameObjects["player"];
+      
         //Clear the screen
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
@@ -47,7 +49,7 @@ class Game {
         });
 
         Object.values(this.map.gameObjects).forEach(object => {
-            object.sprite.draw(this.ctx);
+            object.sprite.draw(this.ctx, player);
         });
 
         //this.map.drawUpperLayer(this.ctx);
