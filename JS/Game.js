@@ -40,16 +40,16 @@ class Game {
         const player = this.map.gameObjects.player; 
      
         Object.values(this.map.gameObjects).forEach(object => {
+            object.sprite.draw(this.ctx, player);
+        });
+     
+        Object.values(this.map.gameObjects).forEach(object => {
             object.update({
                 arrow: this.directionInput.direction,
             })
         });
 
         this.map.drawLowerLayer(this.ctx, player);
-
-        Object.values(this.map.gameObjects).forEach(object => {
-            object.sprite.draw(this.ctx, player);
-        });
 
         //this.map.drawUpperLayer(this.ctx);
 
