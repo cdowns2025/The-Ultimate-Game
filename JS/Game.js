@@ -35,11 +35,12 @@ class Game {
     //Start the official "game loop"
     const step = () => {
         const player = this.map.gameObjects["player"];
+        console.log(player);
       
         //Clear the screen
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-        this.map.drawLowerLayer(this.ctx);
+        this.map.drawLowerLayer(this.ctx, player);
         //this.grid.draw(this.ctx, player);
 
         Object.values(this.map.gameObjects).forEach(object => {
