@@ -51,6 +51,7 @@ class Ship {
 
       ctx.drawImage(this.image, this.x, this.y); 
 
+      //temporarily draws level for reference.
       ctx.fillStyle = "black";
       for (let c = 0; c < this.level1.length; c++) {
         for (let r = 0; r < this.level1[c].length; r++) {
