@@ -11,8 +11,8 @@ class Sprite {
     }
     
     draw(ctx, player) {
-        const x = this.gameObject.x + 6;
-        const y = this.gameObject.y + 6;
+        const x = this.gameObject.x + utils.asGrid(7.5) - player.x;
+        const y = this.gameObject.y + utils.asGrid(4.5) - player.y;
         
         ctx.fillStyle = this.color;
         ctx.fillRect(x, y, 5, 5);
