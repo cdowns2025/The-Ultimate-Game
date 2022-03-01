@@ -36,18 +36,32 @@ class Game {
         const step = () => {
             //Clear the screen
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            
+            const player = this.map.gameObjects.player; 
 
-            Object.values(this.map.gameObjects).forEach(object => {
+            //Update the allies
+            Object.values(this.map.gameObjects.allies).forEach(object => {
                 object.update({
                     arrow: this.directionInput.direction,
                 })
             });
+           
+            //Update the enemies
+            Object.values(this.map.gameObjects.enemies).forEach(object => {
+                object.update({
+                    direction: null,
+                })
+            });
          
-            const player = this.map.gameObjects.player; 
-
             this.map.drawLowerLayer(this.ctx, player);
 
-            Object.values(this.map.gameObjects).forEach(object => {
+            //Draw the allies
+            Object.values(this.map.gameObjects.allies).forEach(object => {
+                object.sprite.draw(this.ctx, player);
+            });
+            
+            //Draw the enemies
+            Object.values(this.map.gameObjects.enemies).forEach(object => {
                 object.sprite.draw(this.ctx, player);
             });
 
