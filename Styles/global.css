@@ -13,7 +13,7 @@ body {
   position: relative;
   outline: 1px solid white;
   width: 225px;
-  height: 130px;
+  height: 129px;
   margin: 0 auto;
   
   transform: scale(3) translateY(50%);
