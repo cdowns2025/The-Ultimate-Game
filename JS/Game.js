@@ -37,7 +37,7 @@ class Game {
             //Clear the screen
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
             
-            const player = this.map.gameObjects.player; 
+            const player = this.map.gameObjects.allies.player; 
 
             //Update the allies
             Object.values(this.map.gameObjects.allies).forEach(object => {
