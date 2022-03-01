@@ -32,35 +32,35 @@ class Game {
     }
 
     startGameLoop() {
-    //Start the official "game loop"
-    const step = () => {
-        //Clear the screen
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-     
-        const player = this.map.gameObjects.player; 
-     
-        Object.values(this.map.gameObjects).forEach(object => {
-            object.sprite.draw(this.ctx, player);
-        });
-     
-        Object.values(this.map.gameObjects).forEach(object => {
-            object.update({
-                arrow: this.directionInput.direction,
-            })
-        });
+        //Start the official "game loop"
+        const step = () => {
+            //Clear the screen
+            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-        this.map.drawLowerLayer(this.ctx, player);
+            const player = this.map.gameObjects.player; 
 
-        //this.map.drawUpperLayer(this.ctx);
+            Object.values(this.map.gameObjects).forEach(object => {
+                object.update({
+                    arrow: this.directionInput.direction,
+                })
+            });
 
-        //Call this function again at earliest convience / how fast your computer can run it
-        requestAnimationFrame(() => {
-          step();
-        });
-    };
+            this.map.drawLowerLayer(this.ctx, player);
 
-    //Actually starting the loop
-    step();
+            Object.values(this.map.gameObjects).forEach(object => {
+                object.sprite.draw(this.ctx, player);
+            });
+
+            //this.map.drawUpperLayer(this.ctx);
+
+            //Call this function again at earliest convience / how fast your computer can run it
+            requestAnimationFrame(() => {
+              step();
+            });
+        };
+
+        //Actually starting the loop
+        step();
     }
 
     init() {
