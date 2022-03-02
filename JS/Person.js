@@ -34,6 +34,7 @@ class Person extends GameObject {
     }
     
     update(state, map) {
+        console.log(map);
         if (this.movingProgressRemaining > 0) {
             this.updatePosition(map); //updates the player's position
         } else {
