@@ -1,12 +1,27 @@
 class Map {
     constructor(config) {
         this.gameObjects = config.gameObjects;
+        this.walls = null;
 
         this.lowerImage = new Image();
         this.lowerImage.src = config.lowerSrc;
 
         this.upperImage = new Image();
         this.upperImage.src = config.upperSrc;
+    }
+    
+    addWall(x, y) {
+        this.walls[`{x},{y}`] = true;
+    }
+    
+    
+    removeWall(x, y) {
+        this.walls[`{x},{y}`] = false;
+    }
+    
+    moveWall(currentX, currentY, newX, newY) {
+        this.removeWall(currentX, currentY);
+        this.addWall(newX, newY);
     }
 
     drawLowerLayer(ctx, player) { 
