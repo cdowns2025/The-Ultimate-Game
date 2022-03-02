@@ -3,8 +3,19 @@ const utils = {
   asGrid(n) {
     return n * 16;
   }, 
-   //A function that takes a pixel coordinate, like 85.5 and transfers it into a grid value, like 5
-  asPixel(coord) {
-    return Math.floor(coord / 16);
+  getNextCoord(x, y, direction) {
+    let newX = x;
+    let newY = y;
+    if (direction === "right") {
+      newX += 16;
+    } else if (direction === "left") {
+      newX -= 16;
+    } else if (direction === "down") {
+      newY += 16;
+    } else if (direction === "up") {
+      newX -= 16;
+    }
+    
+    return `${newX},${newY}`;
   }
 }
