@@ -20,8 +20,8 @@ window.Maps = {
             }
         },
         walls: {
-            "0,3": true,
-            "1,3": true,
+            [utils.asGridCoord(0,3)]: true,
+            [utils.asGridCoord(1,3)]: true,
         }
     }
 }
