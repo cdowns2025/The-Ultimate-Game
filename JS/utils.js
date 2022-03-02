@@ -16,6 +16,6 @@ const utils = {
       newX -= 16;
     }
     
-    return `${newX},${newY}`;
+    return {newX, newY};
   }
 }
