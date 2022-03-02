@@ -1,7 +1,7 @@
 class Map {
     constructor(config) {
         this.gameObjects = config.gameObjects;
-        this.walls = null;
+        this.walls = config.walls || null;
 
         this.lowerImage = new Image();
         this.lowerImage.src = config.lowerSrc;
