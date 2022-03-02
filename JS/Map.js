@@ -10,6 +10,10 @@ class Map {
         this.upperImage.src = config.upperSrc;
     }
     
+    isSpaceTaken(x,y) {
+        return this.walls[x,y] || false;
+    }
+    
     addWall(x, y) {
         this.walls[`${x},${y}`] = true;
     }
