@@ -49,6 +49,13 @@ class Person extends GameObject {
         //Take the direction and amount to move from our direction map
         const [ property, change ] = this.directionUpdate[this.direction]; // maps the movement direction and magnitude to the table and the current direction set in the movement functions
         
+        if (this.map.walls[utils.getNextCoord(this.x, this.y, this.direction])) {
+            this.movingProgressRemaing = 0;
+            this.dashingDistance = 0;
+            
+            return;
+        }
+        
         if (this.isDashing) {
             this[property] += change * this.speed;
             this.dashingDistance -= Math.abs(change * this.speed);
