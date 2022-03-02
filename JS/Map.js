@@ -15,12 +15,12 @@ class Map {
     }
     
     addWall(x, y) {
-        this.walls[`${x},${y}`] = true;
+        this.walls[`${x * 16},${y * 16}`] = true;
     }
     
     
     removeWall(x, y) {
-        this.walls[`${x},${y}`] = false;
+        this.walls[`${x * 16},${y * 16}`] = false;
     }
     
     moveWall(currentX, currentY, newX, newY) {
