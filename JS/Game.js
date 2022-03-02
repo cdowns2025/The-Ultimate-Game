@@ -80,6 +80,7 @@ class Game {
     init() {
 
         this.map = new Map(window.Maps["Level1"]);
+        console.log(this.map.walls);
             
         this.grid = new Grid({
             canvas: this.canvas,
