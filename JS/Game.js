@@ -42,16 +42,16 @@ class Game {
             //Update the allies
             Object.values(this.map.gameObjects.allies).forEach(object => {
                 object.update({
-                    game: this,
                     arrow: this.directionInput.direction,
+                    map: this.map,
                 })
             });
            
             //Update the enemies
             Object.values(this.map.gameObjects.enemies).forEach(object => {
                 object.update({
-                    game: this,
                     direction: null,
+                    map: this.map
                 })
             });
          
@@ -83,7 +83,6 @@ class Game {
 
         this.map = new Map(window.Maps["Level1"]);
         this.map.addWall(5, 5);
-        console.log(this.map.walls);
             
         this.grid = new Grid({
             canvas: this.canvas,
