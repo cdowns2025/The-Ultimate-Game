@@ -33,8 +33,8 @@ class Person extends GameObject {
         }
     }
     
-    update(state, map) {
-        console.log(map);
+    update(state, game) {
+        console.log(game);
         if (this.movingProgressRemaining > 0) {
             this.updatePosition(map); //updates the player's position
         } else {
@@ -46,11 +46,11 @@ class Person extends GameObject {
         }
     }
     
-    updatePosition(map) {
+    updatePosition(game) {
         //Take the direction and amount to move from our direction map
         const [ property, change ] = this.directionUpdate[this.direction]; // maps the movement direction and magnitude to the table and the current direction set in the movement functions
         
-        if (map.walls["1,1"]) {
+        if (game.map.walls["1,1"]) {
             this.movingProgressRemaing = 0;
             this.dashingDistance = 0;
             
