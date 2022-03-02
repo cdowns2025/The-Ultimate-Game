@@ -33,10 +33,9 @@ class Person extends GameObject {
         }
     }
     
-    update(state, game) {
-        console.log(game);
+    update(state) {
         if (this.movingProgressRemaining > 0) {
-            this.updatePosition(map); //updates the player's position
+            this.updatePosition(state.map); //updates the player's position
         } else {
             if (this.isPlayerControlled && state.arrow && !this.isDashing) { //function that makes the player move normally, only happens if space isn't pressed
                 this.direction = state.arrow;
@@ -46,11 +45,11 @@ class Person extends GameObject {
         }
     }
     
-    updatePosition(game) {
+    updatePosition(map) {
         //Take the direction and amount to move from our direction map
         const [ property, change ] = this.directionUpdate[this.direction]; // maps the movement direction and magnitude to the table and the current direction set in the movement functions
         
-        if (game.map.walls["1,1"]) {
+        if (map.walls[utils.getNextCoord(this.x, this.y, this.direction)]) {
             this.movingProgressRemaing = 0;
             this.dashingDistance = 0;
             
