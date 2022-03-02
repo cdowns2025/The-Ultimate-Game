@@ -18,6 +18,10 @@ window.Maps = {
                     color: "purple",
                 })
             }
+        },
+        walls: {
+            "0,3": true,
+            "1,3": true,
         }
     }
 }
