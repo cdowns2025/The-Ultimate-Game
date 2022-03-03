@@ -10,7 +10,18 @@ class Map {
         this.upperImage.src = config.upperSrc;
     }
     
-    isSpaceTaken(x,y) {
+    isNextSpaceTaken(initalX, initialY, direction) {
+        let x = initialX;
+        let y = initialY;
+        if (direction === "right") {
+            x += 16;
+        } else if (direction === "left") {
+            x -= 16;
+        } else if (direction === "down") {
+            y += 16;
+        } else if (direction === "up") {
+            y -= 16;
+        }
         return this.walls[`${x},${y}`] || false;
     }
     
