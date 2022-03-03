@@ -58,7 +58,7 @@ class Map {
     
     moveWall(currentX, currentY, direction) {
         this.removeWall(currentX, currentY, pixel);
-        const {x, y} = utils.nextPosition(currentX, currentY, direction)
+        const {x, y} = utils.getNextCoord(currentX, currentY, direction)
         this.addWall(x, y);
     }
 
