@@ -56,13 +56,17 @@ class Map {
     }
     
     
-    removeWall(x, y) {
-        this.walls[`${x * 16},${y * 16}`] = false;
+    removeWall(x, y, pixel=false) {
+        if (!pixel) {
+            this.walls[`${x * 16},${y * 16}`] = false;
+        } else {
+            this.walls[`${x},${y}`] = false;
+        }
     }
     
-    moveWall(currentX, currentY, newX, newY) {
-        this.removeWall(currentX, currentY);
-        this.addWall(newX, newY);
+    moveWall(currentX, currentY, newX, newY, pixel=false) {
+        this.removeWall(currentX, currentY, pixel);
+        this.addWall(newX, newY, pixel);
     }
 
     drawLowerLayer(ctx, player) { 
