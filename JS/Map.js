@@ -13,11 +13,12 @@ class Map {
     }
     
     mountObjects() {
-        console.log(this.gameObjects)
-        Object.values(this.gameObjects).forEach(object => {
-            //console.log(object.x);
-            //this.addWall(object.x, object.y, true);
-            //console.log(this.walls);
+        Object.values(this.gameObjects.allies).forEach(object => {
+            this.addWall(object.x, object.y, true);
+        });
+        
+        Object.values(this.gameObjects.enemies).forEach(object => {
+            this.addWall(object.x, object.y, true);
         });
     }
       
