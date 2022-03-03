@@ -11,7 +11,7 @@ class Map {
     }
     
     isSpaceTaken(x,y) {
-        return this.walls[x,y] || false;
+        return this.walls[`${x},${y}`] || false;
     }
     
     addWall(x, y) {
