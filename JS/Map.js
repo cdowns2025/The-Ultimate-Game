@@ -13,7 +13,7 @@ class Map {
     }
     
     mountObjects() {
-        console.log(this.gameObjects.player.x)
+        console.log(this.gameObjects)
         Object.values(this.gameObjects).forEach(object => {
             //console.log(object.x);
             //this.addWall(object.x, object.y, true);
