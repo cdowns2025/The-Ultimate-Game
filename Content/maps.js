@@ -1,5 +1,5 @@
 window.Maps = {
-    "Level1": {
+    "TestingRoom": {
         lowerSrc: "grid2.png",
         upperSrc: null,
         gameObjects: {
@@ -20,8 +20,9 @@ window.Maps = {
             }
         },
         walls: {
-            [utils.asGridCoord(0,3)]: true,
-            [utils.asGridCoord(1,3)]: true,
+            [utils.asGridCoord(1,-1)]: true,
+            [utils.asGridCoord(2,-1)]: true,
+            [utils.asGridCoord(3,-1)]: true,
         }
     }
 }
