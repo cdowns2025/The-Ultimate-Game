@@ -52,7 +52,7 @@ class Map {
     }
 
     drawLowerLayer(ctx, player) { 
-        ctx.drawImage(this.lowerImage, utils.asGrid(7.5) - player.x, utils.asGrid(4.5) - player.y);
+        ctx.drawImage(this.lowerImage, utils.asGrid(7.5) - player.x, utils.asGrid(4.5) - player.y, this.lowerImage.width * 2, this.lowerImage.height * 2);
     }
     
     
