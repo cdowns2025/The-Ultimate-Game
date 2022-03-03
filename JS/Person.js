@@ -43,6 +43,7 @@ class Person extends GameObject {
                 this.movingProgressRemaining = 16;
                 
                 const { x=0,y=0 } = this.directionUpdate[this.direction];
+                console.log(x,y);
                 state.map.moveWall(this.x, this.y, this.x + (x * 16), this.y + (y * 16), true)
             }
         }
