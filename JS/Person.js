@@ -53,6 +53,11 @@ class Person extends GameObject {
             this[property] += change * this.speed;
             this.dashingDistance -= Math.abs(change * this.speed);
             
+            if (map.isNextSpaceTaken(this.x, this.y, this.direction)) {
+                this.dashingDistance = 0;    
+                return;
+            }
+            
             if (this.dashingDistance === 0) {
                 this.isDashing = false;
                 this.speed = 1;
