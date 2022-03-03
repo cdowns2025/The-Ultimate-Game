@@ -1,13 +1,25 @@
 class Map {
     constructor(config) {
         this.gameObjects = config.gameObjects;
-        this.walls = config.walls || null;
+        
+        this.walls = null;
+        this.parseMapData(config.gridWalls);
 
         this.lowerImage = new Image();
         this.lowerImage.src = config.lowerSrc;
 
         this.upperImage = new Image();
         this.upperImage.src = config.upperSrc;
+    }
+    
+    parseMapData(mapArray) {
+        for (let r = 0; r < mapArray.length; r++) {
+            for (let c = 0; c < mapArray[r].length; c++) {
+                if (mapArray[r][c] === 1) {
+                    this.addWall(c,r);
+                }
+            }
+        }
     }
     
     isNextSpaceTaken(initialX, initialY, direction) {
