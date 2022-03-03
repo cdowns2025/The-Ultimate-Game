@@ -13,8 +13,8 @@ class Map {
     }
     
     parseMapData(mapArray) {
-        for (let r = 0; r < mapArray.length; r++) {
-            for (let c = 0; c < mapArray[r].length; c++) {
+        for (let r = -1; r < mapArray.length - 1; r++) {
+            for (let c = -1; c < mapArray[r].length - 1; c++) {
                 if (mapArray[r][c] === 1) {
                     this.addWall(c,r);
                 }
