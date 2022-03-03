@@ -40,12 +40,9 @@ class Person extends GameObject {
             if (this.isPlayerControlled && state.arrow && !this.isDashing && !state.map.isNextSpaceTaken(this.x, this.y, state.arrow)) { //function that makes the player move normally, only happens if space isn't pressed
                 this.direction = state.arrow;
                 this.speed = 1;
-                this.movingProgressRemaining = 16;
+                this.movingProgressRemaining = 16;                
                 
-                const { x=0,y=0 } = this.directionUpdate[this.direction];
-                console.log("This is x:" + x);
-                console.log("This is y: " + y);
-                state.map.moveWall(this.x, this.y, this.x + (x * 16), this.y + (y * 16), true)
+                state.map.moveWall(this.x, this.y, this.direction)
             }
         }
     }
