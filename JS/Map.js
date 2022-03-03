@@ -2,7 +2,7 @@ class Map {
     constructor(config) {
         this.gameObjects = config.gameObjects;
         
-        this.walls = null;
+        this.walls = {};
         this.parseMapData(config.gridWalls);
 
         this.lowerImage = new Image();
