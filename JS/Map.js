@@ -14,11 +14,11 @@ class Map {
     
     mountObjects() {
         Object.values(this.gameObjects.allies).forEach(object => {
-            this.addWall(object.x, object.y, true);
+            this.addWall(object.x, object.y);
         });
         
         Object.values(this.gameObjects.enemies).forEach(object => {
-            this.addWall(object.x, object.y, true);
+            this.addWall(object.x, object.y);
         });
     }
       
@@ -47,17 +47,17 @@ class Map {
         return this.walls[`${x},${y}`] || false;
     }
     
-    addWall(x, y, pixel=false) {
+    addWall(x, y) {
         this.walls[`${x},${y}`] = true;
     }
     
     
-    removeWall(x, y, pixel=false) {
+    removeWall(x, y) {
         this.walls[`${x},${y}`] = false;
     }
     
     moveWall(currentX, currentY, direction) {
-        this.removeWall(currentX, currentY, pixel);
+        this.removeWall(currentX, currentY);
         const {x, y} = utils.getNextCoord(currentX, currentY, direction)
         this.addWall(x, y);
     }
