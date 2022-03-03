@@ -15,7 +15,8 @@ class Map {
     mountObjects() {
         Object.values(this.gameObjects).forEach(object => {
             console.log("Mounting", object);
-            this.addWall(object.x / 16, object.y / 16);
+            this.addWall(object.x, object.y, true);
+            console.log(this.walls);
         });
     }
       
@@ -44,8 +45,12 @@ class Map {
         return this.walls[`${x},${y}`] || false;
     }
     
-    addWall(x, y) {
-        this.walls[`${x * 16},${y * 16}`] = true;
+    addWall(x, y, pixel=false) {
+        if (!pixel) {
+            this.walls[`${x * 16},${y * 16}`] = true;
+        } else {
+            this.walls[`${x},${y}`] = true;
+        }
     }
     
     
