@@ -14,6 +14,7 @@ class Map {
     
     mountObjects() {
         Object.values(this.gameObjects).forEach(object => {
+            console.log("Mounting", object);
             this.addWall(object.x / 16, object.y / 16);
         });
     }
