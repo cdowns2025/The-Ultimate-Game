@@ -37,8 +37,7 @@ class Person extends GameObject {
         if (this.movingProgressRemaining > 0) {
             this.updatePosition(state.map); //updates the player's position
         } else {
-            if (this.isPlayerControlled && state.arrow && !this.isDashing && !state.map.isSpaceTaken(this.x, this.y)) { //function that makes the player move normally, only happens if space isn't pressed
-                console.log(`${this.x},${this.y}`);
+            if (this.isPlayerControlled && state.arrow && !this.isDashing && !state.map.isNextSpaceTaken(this.x, this.y, state.arrow)) { //function that makes the player move normally, only happens if space isn't pressed
                 this.direction = state.arrow;
                 this.speed = 1;
                 this.movingProgressRemaining = 16;
