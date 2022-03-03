@@ -81,11 +81,9 @@ class Game {
 
     init() {
 
-        this.map = new Map(window.Maps["Level1"]);
+        this.map = new Map(window.Maps["TestingRoom"]);
         this.map.addWall(5, 5);
-     
-        console.log(this.map.walls);
-            
+                 
         this.grid = new Grid({
             canvas: this.canvas,
             gridSize: 16,
