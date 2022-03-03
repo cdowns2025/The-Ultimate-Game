@@ -10,7 +10,7 @@ class Map {
         this.upperImage.src = config.upperSrc;
     }
     
-    isNextSpaceTaken(initalX, initialY, direction) {
+    isNextSpaceTaken(initialX, initialY, direction) {
         let x = initialX;
         let y = initialY;
         if (direction === "right") {
