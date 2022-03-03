@@ -12,6 +12,12 @@ class Map {
         this.upperImage.src = config.upperSrc;
     }
     
+    mountObjects() {
+        Object.values(this.gameObjects).forEach(object => {
+            this.addWall(object.x, object.y);
+        });
+    }
+      
     parseMapData(mapArray) {
         for (let r = 0; r < mapArray.length; r++) {
             for (let c = 0; c < mapArray[r].length; c++) {
