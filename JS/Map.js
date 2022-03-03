@@ -26,7 +26,7 @@ class Map {
         for (let r = 0; r < mapArray.length; r++) {
             for (let c = 0; c < mapArray[r].length; c++) {
                 if (mapArray[r][c] === 1) {
-                    this.addWall(c - 1,r - 1);
+                    this.addWall((c - 1) * 16, (r - 1) * 16);
                 }
             }
         }
@@ -48,25 +48,18 @@ class Map {
     }
     
     addWall(x, y, pixel=false) {
-        if (!pixel) {
-            this.walls[`${x * 16},${y * 16}`] = true;
-        } else {
-            this.walls[`${x},${y}`] = true;
-        }
+        this.walls[`${x},${y}`] = true;
     }
     
     
     removeWall(x, y, pixel=false) {
-        if (!pixel) {
-            this.walls[`${x * 16},${y * 16}`] = false;
-        } else {
-            this.walls[`${x},${y}`] = false;
-        }
+        this.walls[`${x},${y}`] = false;
     }
     
-    moveWall(currentX, currentY, newX, newY, pixel=false) {
+    moveWall(currentX, currentY, direction) {
         this.removeWall(currentX, currentY, pixel);
-        this.addWall(newX, newY, pixel);
+        const {x, y} = utils.nextPosition(currentX, currentY, direction)
+        this.addWall(x, y);
     }
 
     drawLowerLayer(ctx, player) { 
