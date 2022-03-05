@@ -36,18 +36,34 @@ class Game {
         const step = () => {
             //Clear the screen
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            
+            const player = this.map.gameObjects.allies.player; 
 
-            const player = this.map.gameObjects.player; 
-
-            Object.values(this.map.gameObjects).forEach(object => {
+            //Update the allies
+            Object.values(this.map.gameObjects.allies).forEach(object => {
                 object.update({
                     arrow: this.directionInput.direction,
+                    map: this.map,
                 })
             });
-
+           
+            //Update the enemies
+            Object.values(this.map.gameObjects.enemies).forEach(object => {
+                object.update({
+                    direction: null,
+                    map: this.map
+                })
+            });
+         
             this.map.drawLowerLayer(this.ctx, player);
 
-            Object.values(this.map.gameObjects).forEach(object => {
+            //Draw the allies
+            Object.values(this.map.gameObjects.allies).forEach(object => {
+                object.sprite.draw(this.ctx, player);
+            });
+            
+            //Draw the enemies
+            Object.values(this.map.gameObjects.enemies).forEach(object => {
                 object.sprite.draw(this.ctx, player);
             });
 
@@ -65,8 +81,9 @@ class Game {
 
     init() {
 
-        this.map = new Map(window.Maps["Level1"]);
-            
+        this.map = new Map(window.Maps["TestingRoom"]);
+        this.map.mountObjects();
+                 
         this.grid = new Grid({
             canvas: this.canvas,
             gridSize: 16,
