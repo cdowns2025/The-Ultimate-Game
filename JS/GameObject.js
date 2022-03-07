@@ -10,6 +10,7 @@ class GameObject {
             gameObject: this,
             src: config.src,
         });
+        this.isRendered = true;
     }
     
     update() {

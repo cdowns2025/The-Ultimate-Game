@@ -1,6 +1,11 @@
 class Enemy extends GameObject {
   constructor(config) {
     super(config);
+
+    this.health = 3;
+
+    this.hit = false;
+    this.hitInterval = 0;
     
     this.movingProgressRemaining = 0;
     this.directionUpdate = {
@@ -13,6 +18,20 @@ class Enemy extends GameObject {
   }
   
   update(state) {
+    if (this.hit) { // decreases health when the enemy is hit
+      this.color = "red";
+      if (this.hitInterval == 0) {
+        this.hit = false;
+      }
+      this.hitInterval--;
+    } else {
+      this.color = "purple";
+    }
+
+    if (this.health <= 0) {
+      this.isRendered = false;
+    }
+
     if (this.movingProgressRemaining > 0) {
       this.updatePosition();
     } else {
@@ -28,5 +47,15 @@ class Enemy extends GameObject {
     this[property] += change;
     
     this.movingProgressRemaining--;
+  }
+
+  searchAlgorithm() {
+
+  }
+
+  onInteracted() {
+    this.hit = true;
+    this.health--;
+    this.hitInterval = 10;
   }
 }

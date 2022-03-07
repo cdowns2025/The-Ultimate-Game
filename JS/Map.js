@@ -32,19 +32,23 @@ class Map {
         }
     }
     
-    isNextSpaceTaken(initialX, initialY, direction) {
+    isNextSpaceTaken(initialX, initialY, direction, distance) {
         let x = initialX;
         let y = initialY;
         if (direction === "right") {
-            x += 16;
+            x += distance;
         } else if (direction === "left") {
-            x -= 16;
+            x -= distance;
         } else if (direction === "down") {
-            y += 16;
+            y += distance;
         } else if (direction === "up") {
-            y -= 16;
+            y -= distance;
         }
-        return this.walls[`${x},${y}`] || false;
+        if (this.walls[`${x},${y}`] !== undefined) {
+            return this.walls[`${x},${y}`] || false;
+        } else {
+            return false;
+        }
     }
     
     addWall(x, y) {

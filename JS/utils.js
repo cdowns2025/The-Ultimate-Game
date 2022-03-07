@@ -13,7 +13,7 @@ const utils = {
     } else if (direction === "down") {
       newY += 16;
     } else if (direction === "up") {
-      newX -= 16;
+      newY -= 16; //HOLD UP HERE!!!!!!!!!!!!!!!!!!!!!!!!!!
     }
     
     return {newX, newY};
