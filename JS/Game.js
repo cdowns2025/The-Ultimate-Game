@@ -43,7 +43,6 @@ class Game {
             Object.values(this.map.gameObjects.allies).forEach(object => {
                 object.update({
                     arrow: this.directionInput.direction,
-                    map: this.map,
                 })
             });
            
@@ -51,7 +50,6 @@ class Game {
             Object.values(this.map.gameObjects.enemies).forEach(object => {
                 object.update({
                     direction: null,
-                    map: this.map
                 })
             });
          
@@ -90,6 +88,14 @@ class Game {
             gridLineWidth: 2,
             gridColor: "white",
         }); 
+
+        //sets up map object for all gameObjects
+        Object.values(this.map.gameObjects.allies).forEach(object => {
+            object.mapInit(this.map);
+        });
+        Object.values(this.map.gameObjects.enemies).forEach(object => {
+            object.mapInit(this.map);
+        });
 
         //Setting up direction input for the player character
         this.directionInput = new DirectionInput();
