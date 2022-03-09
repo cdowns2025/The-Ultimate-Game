@@ -3,6 +3,7 @@ class Enemy extends GameObject {
     super(config);
 
     this.health = 3;
+    this.alive = true;
 
     this.hit = false;
     this.hitInterval = 0;
@@ -31,6 +32,11 @@ class Enemy extends GameObject {
 
     if (this.health <= 0) {
       this.isRendered = false;
+      this.alive = false;
+    }
+
+    if (!this.alive) {
+      this.map.removeWall(this.x, this.y);
     }
 
     if (this.movingProgressRemaining > 0) {
