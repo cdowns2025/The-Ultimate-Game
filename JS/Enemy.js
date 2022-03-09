@@ -22,6 +22,7 @@ class Enemy extends GameObject {
       this.color = "red";
       if (this.hitInterval == 0) {
         this.hit = false;
+        this.health--;
       }
       this.hitInterval--;
     } else {
@@ -55,7 +56,6 @@ class Enemy extends GameObject {
 
   onInteracted() {
     this.hit = true;
-    this.health--;
     this.hitInterval = 10;
   }
 }
