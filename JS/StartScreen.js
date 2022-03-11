@@ -7,12 +7,13 @@ class StartScreen {
         this.element = document.createElement("div");
         this.element.classList.add("StartScreen");
         this.element.innerHTML = (`
-            <button>Start Game<button>
+            <button>Start</button>
         `);
+        
         this.element.querySelectorAll("button").forEach(button => {
-            button.addEventListener("click") {
+            button.addEventListener("click", () => {
                 resolve();
-            }
+            });
         });
     }
     
