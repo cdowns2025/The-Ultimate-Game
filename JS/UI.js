@@ -2,12 +2,12 @@ class UI {
   constructor(config) {
     this.game = config.game;
     this.actualScore = config.game.score;
-    this.playerHealth = config.game.map.gameObjects.allies["player"];
+    this.playerHealth = config.game.map.gameObjects.allies["player"].health;
   }
   
   update(game) {
     this.actualScore = game.score;
-    this.playerHealth = game.map.gameObjects.allies["player"];
+    this.playerHealth = game.map.gameObjects.allies["player"].health;
     
     this.score.innerHTML = (`
       <p>${this.actualScore}</p>
@@ -60,7 +60,7 @@ class UI {
     this.health.innerHTML = (`
       <img src="Heart.png" />
       <img src="Heart.png" />
-      <img src="Half-Health.png" />
+      <img src="Heart.png" />
     `);
   }
   

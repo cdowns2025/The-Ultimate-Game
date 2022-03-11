@@ -62,7 +62,8 @@ class Map {
     
     moveWall(currentX, currentY, direction) {
         this.removeWall(currentX, currentY);
-        const {x, y} = utils.getNextCoord(currentX, currentY, direction)
+        const {x, y} = utils.getNextCoord(currentX, currentY, direction);
+        console.log("X:" + x + " Y:" + y);
         this.addWall(x, y);
     }
 

@@ -16,7 +16,12 @@ const utils = {
       newY -= 16; 
     }
     
-    return {newX, newY};
+    console.log("Newx:" + newX + " NewY:" + newY);
+    
+    let b =5;
+    let c =5;
+    
+    return {b, c};
   },
   asGridCoord(x, y) {
     return `${x*16},${y*16}`;
