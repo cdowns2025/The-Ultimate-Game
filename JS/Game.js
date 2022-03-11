@@ -41,7 +41,11 @@ class Game {
             const deltaTime = timeStamp - this.lastTime;
             this.lastTime = timeStamp;
          
-            this.scoreCounter += deltaTime
+            if (deltaTime < 22) {
+               this.scoreCounter += deltaTime
+            } else {
+               this.scoreCounter += 22;
+            }
          
             //Update score
             if (this.scoreCounter > 1000) {
