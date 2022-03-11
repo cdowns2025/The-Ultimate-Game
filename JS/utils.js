@@ -16,6 +16,8 @@ const utils = {
       newY -= 16; //HOLD UP HERE!!!!!!!!!!!!!!!!!!!!!!!!!!
     }
     
+    console.log("Newx:" + newX + " NewY:" + newY);
+    
     return {newX, newY};
   },
   asGridCoord(x, y) {
