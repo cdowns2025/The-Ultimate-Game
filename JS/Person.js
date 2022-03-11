@@ -62,6 +62,9 @@ class Person extends GameObject {
         if (this.movingProgressRemaining > 0) {
             this.updatePosition(); //updates the player's position
         } else {
+            //Add collision to this space
+            state.map.addWall(this.x, this.y);
+            
             if (state.arrow) {
                 this.direction = state.arrow;
             }
