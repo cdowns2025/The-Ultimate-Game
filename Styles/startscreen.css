@@ -6,3 +6,9 @@
   bottom: 0;
   top: 0;
 }
+
+.StartScreen button {
+  display: flex;
+  align-items: center;
+  width: 75%;
+}
