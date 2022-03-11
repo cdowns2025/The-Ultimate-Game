@@ -5,7 +5,7 @@ class UI {
   }
   
   update(game) {
-    this.score = game.score;
+    this.actualScore = game.score;
     
     this.score.innerHTML = (`
       <p>${this.actualScore}</p>
