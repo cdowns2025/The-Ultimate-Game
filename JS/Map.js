@@ -60,7 +60,9 @@ class Map {
         this.walls[`${x},${y}`] = false;
     }
     
-    moveWall(currentX, currentY, direction) {        
+    moveWall(currentX, currentY, direction) {
+        this.removeWall(currentX, currentY);
+            
         let x = currentX;
         let y = currentY;
         if (direction === "right") {
@@ -74,22 +76,6 @@ class Map {
         }
         
         this.addWall(x, y);
-    }
-    
-    removeOldWall(currentX, currentY, direction) {
-        let x = currentX;
-        let y = currentY;
-        if (direction === "left") {
-            x += 16;
-        } else if (direction === "right") {
-            x -= 16;
-        } else if (direction === "up") {
-            y += 16;
-        } else if (direction === "down") {
-            y -= 15;
-        }
-        
-        this.removeWall(x, y);
     }
 
     drawLowerLayer(ctx, player) { 
