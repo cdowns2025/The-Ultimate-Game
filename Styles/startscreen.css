@@ -1,3 +1,4 @@
 .StartScreen {
-  background: orange;
+  position: absolute;
+  background: darkblue;
 }
