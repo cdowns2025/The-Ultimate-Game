@@ -57,7 +57,6 @@ class Enemy extends GameObject {
 
   searchAlgorithm(state) { //testing for now, soon to be the A* algorithm (maybe)
     if (this.idleTime >= 30) { //checks if enough idle time has passed
-
       if (utils.distanceFormula(this.x, state.player.x, this.y, state.player.y) > 16) { //checks if the player is more than one cell away, then runs the rest of the function if they are
         let r = Math.random();
         if (r < 0.5) { //used to have some randomness for enemy direction, so that it wouldn't be constantly biased to match the player on a certain axis first
