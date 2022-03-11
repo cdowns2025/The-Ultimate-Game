@@ -37,6 +37,8 @@ class Game {
         const step = () => {
             //Clear the screen
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+         
+            this.UI.update(this);
             
             const player = this.map.gameObjects.allies.player; 
 
