@@ -67,7 +67,7 @@ class Person extends GameObject {
                 this.speed = 1;
                 this.movingProgressRemaining = 16;                
                 
-                this.map.moveWall(this.x, this.y, this.direction)
+                this.map.moveWall(this.x, this.y, this.direction);
             }
         }
         if (this.isInteracting && !this.isDashing) { //Checks the cell in the players direction and activates the object's on-interact script function
