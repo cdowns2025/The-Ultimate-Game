@@ -24,7 +24,7 @@ class UI {
     this.health.innerHTML = (`
       <img src="Heart.png" />
       <img src="Heart.png" />
-      <img src="Heart.png" />
+      <img src="Half-Heart.png" />
     `);
   }
   
