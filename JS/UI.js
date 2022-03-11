@@ -2,7 +2,7 @@ class UI {
   constructor(config) {
     this.game = config.game;
     this.actualScore = config.game.score;
-    this.playerHealth = config.game.map.gameObjects.allies["player"];
+    this.playerHealth = config.game.map.gameObjects.allies["player"].health;
   }
   
   update(game) {
