@@ -1,13 +1,22 @@
 class UI {
   constructor(config) {
     this.game = config.game;
+    this.actualScore = this.game.score;
+  }
+  
+  update(game) {
+    this.score = game.score;
+    
+    this.score.innerHTML = (`
+      <p>${this.actualScore}</p>
+    `);
   }
   
   createElements() {
     this.score = document.createElement("div");
     this.score.classList.add("Score");
     this.score.innerHTML = (`
-      <p>${this.game.score}</p>
+      <p>${this.actualScore}</p>
     `);
     
     this.health = document.createElement("div");
