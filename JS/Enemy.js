@@ -40,7 +40,7 @@ class Enemy extends GameObject {
     if (this.movingProgressRemaining > 0) {
       this.updatePosition();
     } else {
-      this.searchAlgorithm();
+      this.searchAlgorithm(state);
       if (this.direction !== null && !this.map.isNextSpaceTaken(this.x, this.y, this.direction, 16)) {
         this.movingProgressRemaining = 16;
         this.map.moveWall(this.x, this.y, this.direction);
@@ -55,42 +55,33 @@ class Enemy extends GameObject {
     this.movingProgressRemaining--;
   }
 
-  searchAlgorithm() { //testing for now, soon to be the A* algorithm (maybe)
-    if (this.idleTime >= 60) {
+  searchAlgorithm(state) { //testing for now, soon to be the A* algorithm (maybe)
+    if (this.idleTime >= 30) { //checks if enough idle time has passed
       let r = Math.random();
-      if (r < 0.25) {
-        this.direction = "left"
-      } else if (r < 0.5) {
-        this.direction = "up";
-      } else if (r < 0.75) {
-        this.direction = "right";
-      } else {
-        this.direction = "down";
+    
+
+      if (r < 0.5) { //used to have some randomness for enemy direction, so that it wouldn't be constantly biased to match the player on a certain axis first
+        if (state.player.x < this.x) {
+          this.direction = "left";
+        } else if (state.player.x > this.x) {
+          this.direction = "right";
+        } else {
+          this.direction = null;
+        }
+      } else if (r >= 0.5) {
+        if (state.player.y < this.y) {
+          this.direction = "up";
+        } else if (state.player.y > this.y) {
+          this.direction = "down";
+        } else {
+          this.direction = null;
+        }
       }
       this.idleTime = 0;
     } else {
       this.direction = null;
     }
     this.idleTime++;
-
-//this one doesn't work right now, very primitive
-    /*if (r < 0.5) { //used to have some randomness for enemy direction, so that it wouldn't be constantly biased to match the player on a certain axis first
-      if (this.map.player.x < this.x) {
-        this.direction = "left";
-      }
-      if (this.map.player.x > this.x) {
-        this.direction = "right";
-      }
-    } else if (r >= 0.5) {
-      if (this.map.player.y < this.y) {
-        this.direction = "up";
-      }
-      if (this.map.player.y > this.y) {
-        this.direction = "down";
-      }
-    } else {
-      this.direction = null;
-    }*/
   }
 
   onInteracted() {

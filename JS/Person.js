@@ -20,7 +20,7 @@ class Person extends GameObject {
         
         this.dashKey = new KeyPressListener("Space", () => {
             if (this.movingProgressRemaining > 0) {
-                this.dash(config.game);
+                this.dash();
             }
         });
         this.dashKey.init();
