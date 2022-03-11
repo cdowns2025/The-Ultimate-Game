@@ -79,7 +79,10 @@ class Game {
         step();
     }
 
-    init() {
+    async init() {
+     
+        this.startScreen = new StartScreen();
+        await this.startScreen.init(document.querySelector(".game-container"));
 
         this.map = new Map(window.Maps["TestingRoom"]);
         this.map.mountObjects();
