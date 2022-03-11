@@ -3,7 +3,7 @@ class StartScreen {
         this.game = game;
     }
     
-    createElement() {
+    createElement(resolve) {
         this.element = document.createElement("div");
         this.element.classList.add("StartScreen");
         this.element.innerHTML = (`
