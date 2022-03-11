@@ -3,13 +3,9 @@
   position: absolute;
   right: 20px;
   color: white;
-  font-size: 20px;
+  font-size: 5px;
   top: 0;
   margin-top: 0;
   padding-top: 0;
-  height: 20px;
-}
-
-.Score p {
-  height: 20px;
+  height: 5px;
 }
