@@ -6,10 +6,10 @@ class StartScreen {
     createElement() {
         this.element = document.createElement("div");
         this.element.classList.add("StartScreen");
+        console.log("hi");
     }
     
     init(container) {
-        console.log("continaer");
         return new Promise(resolve => {
             this.createElement();
             container.appendChild(this.element);
