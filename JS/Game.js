@@ -111,6 +111,7 @@ class Game {
         this.UI = new UI({
            game: this,
         });
+        this.UI.init(document.querySelector(".game-container"));
 
         //Start the game loop
         this.startGameLoop();
