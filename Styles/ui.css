@@ -1,7 +1,7 @@
 .Score {
   font-familt: inherit;
   position: absolute;
-  right: 20px;
+  right: 10px;
   color: white;
   font-size: 15px;
   top: 0;
@@ -12,7 +12,7 @@
 
 .Health {
   position: absolute;
-  left: 20px;
+  left: 10px;
   top: 0;
 }
 
