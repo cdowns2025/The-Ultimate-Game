@@ -20,9 +20,6 @@ class Enemy extends GameObject {
   }
   
   update(state) {
-    //Add collision
-    state.map.addWall(this.x, this.y);
-    
     if (this.hit) { // decreases health when the enemy is hit
       this.color = "red";
       if (this.hitInterval == 0) {
