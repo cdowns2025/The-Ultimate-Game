@@ -28,6 +28,7 @@ class Game {
         this.isCutscenePlaying = false;
 
         this.map = null;
+        this.score = 0;
 
     }
 
