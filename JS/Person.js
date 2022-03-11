@@ -61,7 +61,6 @@ class Person extends GameObject {
     update(state) {
         if (this.movingProgressRemaining > 0) {
             this.updatePosition(); //updates the player's position
-            state.map.removeOldWall(this.x, this.y, this.direction);
         } else {
             if (state.arrow) {
                 this.direction = state.arrow;
