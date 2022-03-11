@@ -43,6 +43,7 @@ class Game {
             Object.values(this.map.gameObjects.allies).forEach(object => {
                 object.update({
                     arrow: this.directionInput.direction,
+                    map: this.map,
                 })
             });
            
@@ -50,6 +51,7 @@ class Game {
             Object.values(this.map.gameObjects.enemies).forEach(object => {
                 object.update({
                     direction: null,
+                    map: this.map,
                 })
             });
          
