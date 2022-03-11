@@ -39,7 +39,7 @@ class Enemy extends GameObject {
 
     if (this.movingProgressRemaining > 0) {
       this.updatePosition();
-      this.removeOldWall(this.x, this.y, this.direction);
+      state.map.removeOldWall(this.x, this.y, this.direction);
     } else {
       this.searchAlgorithm(state);
       if (this.direction !== null && !this.map.isNextSpaceTaken(this.x, this.y, this.direction, 16)) {
