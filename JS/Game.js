@@ -30,6 +30,8 @@ class Game {
         this.map = null;
         this.score = 0;
         this.lastTime = 0;
+     
+        this.scoreCounter = 0;
 
     }
 
@@ -39,8 +41,11 @@ class Game {
             const deltaTime = timeStamp - this.lastTime;
             this.lastTime = timeStamp;
          
+            this.scoreCounter += deltaTime
+         
             //Update score
-            if (deltaTime > 1000) {
+            if (scoreCounter > 1000) {
+               this.scoreCounter -= 1000;
                this.score++;
             }
          
