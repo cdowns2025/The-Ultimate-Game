@@ -7,7 +7,7 @@ class UI {
     this.score = document.createElement("div");
     this.score.classList.add("Score");
     this.score.innerHTML = (`
-      <p>100</p>
+      <p>${this.game.score}</p>
     `);
     
     this.health = document.createElement("div");
