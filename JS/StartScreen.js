@@ -12,6 +12,7 @@ class StartScreen {
         
         this.element.querySelectorAll("button").forEach(button => {
             button.addEventListener("click", () => {
+                this.element.remove();
                 resolve();
             });
         });
