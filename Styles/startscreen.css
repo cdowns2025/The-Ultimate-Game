@@ -10,5 +10,7 @@
 .StartScreen button {
   display: flex;
   align-items: center;
-  width: 75%;
+  justify-content: center;
+  height: 10%;
+  width: 100%;
 }
