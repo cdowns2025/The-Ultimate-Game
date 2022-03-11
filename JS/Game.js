@@ -44,7 +44,7 @@ class Game {
             this.scoreCounter += deltaTime
          
             //Update score
-            if (scoreCounter > 1000) {
+            if (this.scoreCounter > 1000) {
                this.scoreCounter -= 1000;
                this.score++;
             }
