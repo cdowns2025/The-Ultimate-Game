@@ -29,12 +29,21 @@ class Game {
 
         this.map = null;
         this.score = 0;
+        this.lastTime = 0;
 
     }
 
     startGameLoop() {
         //Start the official "game loop"
-        const step = () => {
+        const step = (timeStamp) => {
+            const deltaTime = timeStamp - this.lastTime;
+            this.lastTime = timeStamp;
+         
+            //Update score
+            if (deltaTime > 1000) {
+               this.score++;
+            }
+         
             //Clear the screen
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
          
