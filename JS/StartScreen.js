@@ -9,7 +9,9 @@ class StartScreen {
     }
     
     init(container) {
-        this.createElement();
-        container.appendChild(this.element);
+        return new Promise(resolve => {
+            this.createElement();
+            container.appendChild(this.element);
+        });
     }
 }
