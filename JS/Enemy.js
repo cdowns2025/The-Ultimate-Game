@@ -57,27 +57,28 @@ class Enemy extends GameObject {
 
   searchAlgorithm(state) { //testing for now, soon to be the A* algorithm (maybe)
     if (this.idleTime >= 30) { //checks if enough idle time has passed
-      let r = Math.random();
-    
 
-      if (r < 0.5) { //used to have some randomness for enemy direction, so that it wouldn't be constantly biased to match the player on a certain axis first
-        if (state.player.x < this.x) {
-          this.direction = "left";
-        } else if (state.player.x > this.x) {
-          this.direction = "right";
-        } else {
-          this.direction = null;
+      if (utils.distanceFormula(this.x, state.player.x, this.y, state.player.y) > 16) { //checks if the player is more than one cell away, then runs the rest of the function if they are
+        let r = Math.random();
+        if (r < 0.5) { //used to have some randomness for enemy direction, so that it wouldn't be constantly biased to match the player on a certain axis first
+          if (state.player.x < this.x) {
+            this.direction = "left";
+          } else if (state.player.x > this.x) {
+            this.direction = "right";
+          } else {
+            this.direction = null;
+          }
+        } else if (r >= 0.5) {
+          if (state.player.y < this.y) {
+            this.direction = "up";
+          } else if (state.player.y > this.y) {
+            this.direction = "down";
+          } else {
+            this.direction = null;
+          }
         }
-      } else if (r >= 0.5) {
-        if (state.player.y < this.y) {
-          this.direction = "up";
-        } else if (state.player.y > this.y) {
-          this.direction = "down";
-        } else {
-          this.direction = null;
-        }
+        this.idleTime = 0;
       }
-      this.idleTime = 0;
     } else {
       this.direction = null;
     }
