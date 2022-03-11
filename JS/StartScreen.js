@@ -9,6 +9,7 @@ class StartScreen {
     }
     
     init(container) {
+        console.log("continaer");
         return new Promise(resolve => {
             this.createElement();
             container.appendChild(this.element);
