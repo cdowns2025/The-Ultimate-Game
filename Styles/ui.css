@@ -9,3 +9,9 @@
   padding-top: 0;
   height: 5px;
 }
+
+.Health {
+  position: absolute;
+  left: 20px;
+  top: 0;
+}
