@@ -88,13 +88,13 @@ class Game {
             //this.map.drawUpperLayer(this.ctx);
 
             //Call this function again at earliest convience / how fast your computer can run it
-            requestAnimationFrame(() => {
-              step();
+            requestAnimationFrame((timeStamp) => {
+              step(timeStamp);
             });
         };
 
         //Actually starting the loop
-        step();
+        step(0);
     }
 
     async init() {
