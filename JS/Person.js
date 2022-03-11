@@ -63,15 +63,15 @@ class Person extends GameObject {
             if (state.arrow) {
                 this.direction = state.arrow;
             }
-            if (this.isPlayerControlled && state.arrow && !this.isDashing && !map.isNextSpaceTaken(this.x, this.y, state.arrow, 16)) { //function that makes the player move normally, only happens if space isn't pressed
+            if (this.isPlayerControlled && state.arrow && !this.isDashing && !state.map.isNextSpaceTaken(this.x, this.y, state.arrow, 16)) { //function that makes the player move normally, only happens if space isn't pressed
                 this.speed = 1;
                 this.movingProgressRemaining = 16;                
                 
-                map.moveWall(this.x, this.y, this.direction);
+                state.map.moveWall(this.x, this.y, this.direction);
             }
         }
         if (this.isInteracting && !this.isDashing) { //Checks the cell in the players direction and activates the object's on-interact script function
-            Object.values(map.gameObjects.enemies).forEach(object => {
+            Object.values(state.map.gameObjects.enemies).forEach(object => {
                 if (object.x === Object.values(utils.getNextCoord(this.x, this.y, this.direction))[0] && object.y === Object.values(utils.getNextCoord(this.x, this.y, this.direction))[1]) {
                     object.onInteracted();
                 }
