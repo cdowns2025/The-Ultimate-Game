@@ -41,10 +41,18 @@ class Game {
             const deltaTime = timeStamp - this.lastTime;
             this.lastTime = timeStamp;
          
-            this.scoreCounter += deltaTime
+            if (deltaTime < 22) {
+               this.scoreCounter += deltaTime
+               if (this.map.gameObjects.allies["player"].health === 0) this.map.gameObjects.allies["player"].health = 6;
+               else this.map.gameObjects.allies["player"].health--;
+            } else {
+               this.scoreCounter += 22;
+               if (this.map.gameObjects.allies["player"].health === 0) this.map.gameObjects.allies["player"].health = 6;
+               else this.map.gameObjects.allies["player"].health--;
+            }
          
             //Update score
-            if (scoreCounter > 1000) {
+            if (this.scoreCounter > 1000) {
                this.scoreCounter -= 1000;
                this.score++;
             }
@@ -53,7 +61,6 @@ class Game {
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
          
             this.UI.update(this);
-            this.score++;
             
             const player = this.map.gameObjects.allies.player; 
 
@@ -89,13 +96,13 @@ class Game {
             //this.map.drawUpperLayer(this.ctx);
 
             //Call this function again at earliest convience / how fast your computer can run it
-            requestAnimationFrame(() => {
-              step();
+            requestAnimationFrame((timeStamp) => {
+              step(timeStamp);
             });
         };
 
         //Actually starting the loop
-        step();
+        step(0);
     }
 
     async init() {

@@ -1,15 +1,51 @@
 class UI {
   constructor(config) {
     this.game = config.game;
-    this.actualScore = this.game.score;
+    this.actualScore = config.game.score;
+    this.playerHealth = config.game.map.gameObjects.allies["player"];
   }
   
   update(game) {
     this.actualScore = game.score;
+    this.playerHealth = game.map.gameObjects.allies["player"];
     
     this.score.innerHTML = (`
       <p>${this.actualScore}</p>
     `);
+    
+    if (this.playerHealth === 6) {
+      this.health.innerHTML = (`
+        <img src="Heart.png" />
+        <img src="Heart.png" />
+        <img src="Heart.png" />
+      `);
+    } else if (this.playerHealth === 5) {
+      this.health.innerHTML = (`
+        <img src="Heart.png" />
+        <img src="Heart.png" />
+        <img src="Half-Health.png" />
+      `); 
+    } else if (this.playerHealth === 4) {
+      this.health.innerHTML = (`
+        <img src="Heart.png" />
+        <img src="Heart.png" />
+      `); 
+    } else if (this.playerHealth === 3) {
+      this.health.innerHTML = (`
+        <img src="Heart.png" />
+        <img src="Half-Health.png" />
+      `); 
+    } else if (this.playerHealth === 2) {
+      this.health.innerHTML = (`
+        <img src="Heart.png" />
+      `); 
+    } else if (this.playerHealth === 1) {
+      this.health.innerHTML = (`
+        <img src="Half-Health.png" />
+      `); 
+    } else if (this.playerHealth === 0) {
+      this.health.innerHTML = (``); 
+    }
   }
   
   createElements() {
@@ -24,7 +60,7 @@ class UI {
     this.health.innerHTML = (`
       <img src="Heart.png" />
       <img src="Heart.png" />
-      <img src="Heart.png" />
+      <img src="Half-Health.png" />
     `);
   }
   
