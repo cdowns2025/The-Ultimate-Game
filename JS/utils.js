@@ -20,5 +20,9 @@ const utils = {
   },
   asGridCoord(x, y) {
     return `${x*16},${y*16}`;
+  },
+  distanceFormula(x1, x2, y1, y2) {
+    let distance = Math.abs(Math.sqrt(Math.pow(x2 - x1) + Math.pow(y2 - y1)));
+    return distance;
   }
 }
