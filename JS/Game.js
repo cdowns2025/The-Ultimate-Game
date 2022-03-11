@@ -39,6 +39,7 @@ class Game {
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
          
             this.UI.update(this);
+            this.score++;
             
             const player = this.map.gameObjects.allies.player; 
 
