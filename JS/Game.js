@@ -106,6 +106,11 @@ class Game {
         //Setting up direction input for the player character
         this.directionInput = new DirectionInput();
         this.directionInput.init();
+     
+        //Setting up the UI
+        this.UI = new UI({
+           game: this,
+        });
 
         //Start the game loop
         this.startGameLoop();
