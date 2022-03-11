@@ -12,7 +12,11 @@ class UI {
     
     this.health = document.createElement("div");
     this.health.classList.add("Health");
-    console.log("done");
+    this.health.innerHTML = (`
+      <img src="Heart.png" />
+      <img src="Heart.png" />
+      <img src="Heart.png" />
+    `);
   }
   
   init(container) {
