@@ -7,6 +7,8 @@ class Person extends GameObject {
         this.dashingDistance = 0;
         this.speed = 1;
         
+        this.health = 6;
+        
         this.movingProgressRemaining = 0;
         
         this.isPlayerControlled = config.isPlayerControlled || false;
