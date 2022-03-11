@@ -9,8 +9,8 @@
 
 .StartScreen button {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 0 auto;
+  transform: translate(-50%,-50%);
   height: 10%;
   width: 50%;
 }
