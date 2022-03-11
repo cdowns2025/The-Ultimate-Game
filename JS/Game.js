@@ -43,12 +43,12 @@ class Game {
          
             if (deltaTime < 22) {
                this.scoreCounter += deltaTime
-               if (this.map.gameObjects["player"].health === 0) this.map.gameObjects["player"].health = 6;
-               else this.map.gameObjects["player"].health--;
+               if (this.map.gameObjects.allies["player"].health === 0) this.map.gameObjects.allies["player"].health = 6;
+               else this.map.gameObjects.allies["player"].health--;
             } else {
                this.scoreCounter += 22;
-               if (this.map.gameObjects["player"].health === 0) this.map.gameObjects["player"].health = 6;
-               else this.map.gameObjects["player"].health--;
+               if (this.map.gameObjects.allies["player"].health === 0) this.map.gameObjects.allies["player"].health = 6;
+               else this.map.gameObjects.allies["player"].health--;
             }
          
             //Update score
