@@ -28,14 +28,32 @@ class Game {
         this.isCutscenePlaying = false;
 
         this.map = null;
+        this.score = 0;
+        this.lastTime = 0;
+     
+        this.scoreCounter = 0;
 
     }
 
     startGameLoop() {
         //Start the official "game loop"
-        const step = () => {
+        const step = (timeStamp) => {
+            const deltaTime = timeStamp - this.lastTime;
+            this.lastTime = timeStamp;
+         
+            this.scoreCounter += deltaTime
+         
+            //Update score
+            if (scoreCounter > 1000) {
+               this.scoreCounter -= 1000;
+               this.score++;
+            }
+         
             //Clear the screen
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+         
+            this.UI.update(this);
+            this.score++;
             
             const player = this.map.gameObjects.allies.player; 
 
@@ -83,7 +101,7 @@ class Game {
     async init() {
      
         this.startScreen = new StartScreen();
-        await this.startScreen.init(document.querySelector(".game-container"));
+        //await this.startScreen.init(document.querySelector(".game-container"));
 
         this.map = new Map(window.Maps["TestingRoom"]);
         this.map.mountObjects();
@@ -106,6 +124,12 @@ class Game {
         //Setting up direction input for the player character
         this.directionInput = new DirectionInput();
         this.directionInput.init();
+     
+        //Setting up the UI
+        this.UI = new UI({
+           game: this,
+        });
+        this.UI.init(document.querySelector(".game-container"));
 
         //Start the game loop
         this.startGameLoop();
