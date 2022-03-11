@@ -6,7 +6,9 @@ class StartScreen {
     createElement() {
         this.element = document.createElement("div");
         this.element.classList.add("StartScreen");
-        console.log("hi");
+        this.element.innerHTML = (`
+            <h1>HELLO</h1>
+        `);
     }
     
     init(container) {
