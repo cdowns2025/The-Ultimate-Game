@@ -4,5 +4,11 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background: green;
+}
+
+.Wave h1 {
+  position: relative;
+  padding: 0;
+  color: white;
+  margin: 0 auto;
 }
