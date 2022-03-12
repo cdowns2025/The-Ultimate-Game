@@ -3,6 +3,29 @@ class UI {
     this.game = config.game;
     this.actualScore = config.game.score;
     this.playerHealth = config.game.map.gameObjects.allies["player"].health;
+    
+    this.waveNumber = 0;
+  }
+  
+  endGame(container) {
+    this.score.remove();
+    this.playerHealth.remove();
+    
+    this.endScreen = document.createElement("div");
+    this.endScreen.classList.add("EndScreen");
+    if (this.waveNumber === 1) {
+      this.endScreen.innerHTML = (`
+        <p>You survived ${this.waveNumber} round!</p>
+        <p>Your final score was ${this.actualScore}!</p>
+        <p>Insert another coin to player again!</p>
+      `);
+    } else {
+      this.endScreen.innerHTML = (`
+        <p>You survived ${this.waveNumber} rounds!</p>
+        <p>Your final score was ${this.actualScore}!</p>
+        <p>Insert another coin to player again!</p>
+      `);
+    }
   }
   
   newWave(waveNumber, container) {
@@ -12,6 +35,7 @@ class UI {
     this.waveElement.innerHTML = (`
       <h1>Wave ${waveNumber}</h1>
     `);
+    this.waveNumber = waveNumber;
     
     container.appendChild(this.waveElement);
     
