@@ -30,6 +30,7 @@
 .StartScreen h1 {
   position: absolute;
   color: white;
-  margin: 0 auto;
-  transform: translateX(-50%);
+  margin-left: 50%;
+  transform: translateX(-35%);
+  width: 100%;
 }
