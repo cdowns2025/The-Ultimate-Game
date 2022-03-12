@@ -7,7 +7,7 @@
 }
 
 .Wave h1 {
-  position: relative;
+  position: absolute;
   padding: 0;
   color: white;
   left: 50%;
