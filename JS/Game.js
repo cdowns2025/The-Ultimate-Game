@@ -59,6 +59,16 @@ class Game {
             this.UI.update(this);
             
             const player = this.map.gameObjects.allies.player; 
+            
+            //Checks to see if player is dead
+            if (player.health === 0) {
+                cancelAnimationFrame((timeStamp) => {
+                    step(timeStamp);
+                });
+                
+                this.UI.endGame();
+                return;
+            }
 
             //Update the allies
             Object.values(this.map.gameObjects.allies).forEach(object => {
