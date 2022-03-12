@@ -14,6 +14,10 @@ class UI {
     `);
     
     container.appendChild(this.waveElement);
+    
+    setTimeout(() => {
+      this.waveElement.remove();
+    }, 1000)
   }
   
   update(game) {
