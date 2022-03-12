@@ -26,3 +26,9 @@
   width: 104px;
   height: 80px;
 }
+
+.StartScreen h1 {
+  position: absolute;
+  color: white;
+  
+}
