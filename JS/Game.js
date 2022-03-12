@@ -66,7 +66,7 @@ class Game {
                     step(timeStamp);
                 });
                 
-                this.UI.endGame();
+                this.UI.endGame(document.querySelector(".game-container"));
                 return;
             }
 
