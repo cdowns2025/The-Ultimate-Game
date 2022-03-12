@@ -10,5 +10,6 @@
   position: relative;
   padding: 0;
   color: white;
-  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
 }
