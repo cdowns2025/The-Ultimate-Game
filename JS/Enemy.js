@@ -31,7 +31,7 @@ class Enemy extends GameObject {
         }
         this.hitInterval--;
       } else if (this.phase == "attackPose") { //checks if enemy is attacking, turns pink if it is
-        this.color = `rgb(${128 + this.idleTime * 5}, ${this.idleTime * 5}, ${128 + this.idleTime * 5})`;
+        this.color = `rgb(${128 + this.idleTime * 20}, ${this.idleTime * 20}, ${128 + this.idleTime * 20})`;
       } else { //sets generic purple color during search phase
         this.color = "purple";
       }
@@ -64,7 +64,7 @@ class Enemy extends GameObject {
   //GOVERNS ALL ACTIONS, BRAIN
   searchAlgorithm(state) { 
     let r = Math.random(); //randomized variable for multiple purposes, whether it's randomized direction or what axis to choose to match the player in.
-    if (this.idleTime >= 30) { //checks if enough idle time has passed
+    if (this.idleTime >= 10) { //checks if enough idle time has passed
 
       //SEARCHING
       if (utils.distanceFormula(this.x, state.player.x, this.y, state.player.y) > 16) { //checks if the player is more than one cell away, then runs the rest of the function if they are
@@ -93,11 +93,9 @@ class Enemy extends GameObject {
       }
       //ATTACKING
       if (utils.distanceFormula(this.x, state.player.x, this.y, state.player.y) == 16) { //checks if enemy is one space away from player, goes into attack phase when he is.
-        if (this.phase == "attackPose") {
-          if (state.player.x == utils.getNextCoord(this.x, this.y, this.direction).newX && state.player.y == utils.getNextCoord(this.x, this.y, this.direction).newY) {
+        if (this.phase == "attackPose") {//doesn't need to check player coords because they are already positioned
             state.player.gotHurt(1);
             this.phase = "search";
-          }
         } else if (this.phase == "search") {
           this.phase = "attackPose";
         }
@@ -126,8 +124,10 @@ class Enemy extends GameObject {
   }
 
   onInteracted() { //function called when enemy gets hit, tells that he is hit, sets his hit interval and resets his idle time, as if stunned.
-    this.hit = true;
-    this.hitInterval = 10;
-    this.idleTime = 0;
+    if (!this.hit) {
+      this.hit = true;
+      this.hitInterval = 10;
+      this.idleTime = 0;
+    }
   }
 }

@@ -62,9 +62,11 @@ class Person extends GameObject {
     }
     
     gotHurt(damageLevel) {
-        this.hit = true;
-        this.hitInterval = 30;
-        this.health -= damageLevel;
+        if (!this.hit) {
+            this.hit = true;
+            this.hitInterval = 30;
+            this.health -= damageLevel;
+        }
     }
 
     update(state) {
