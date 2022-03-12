@@ -37,6 +37,7 @@ class Person extends GameObject {
         if (!this.isDashing) {
             //here is where we need to check the next couple of spaces with a loop and figure out how far the player can dash before he bumps into something. For this, we need to figure out a way to reference the overall game object to the player so he can access the isNextSpaceTaken function.
             //Note to self: create a separate function called map init for each gameobject, then have the game.js assign its this.map object from Map.js as an argument to that function. then we can access the isNextSpaceTaken function.
+            this.map.removeWall(((utils.getNextCoord(this.x, this.y, this.direction).newX - this.x) * this.movingProgressRemaining / 16) + this.x, ((utils.getNextCoord(this.x, this.y, this.direction).newY - this.y) * this.movingProgressRemaining / 16) + this.y); //uses a ton of math to basically delete the wall it made when it started moving normally but then went into a dash phase
             for (let i = 0; i < 3; i++) {
                 if (this.map.isNextSpaceTaken(this.x, this.y, this.direction, ((i + 1) * 16) + this.movingProgressRemaining)) {
                     if (i > 0) {
