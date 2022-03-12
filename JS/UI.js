@@ -89,5 +89,7 @@ class UI {
     this.createElements();
     container.appendChild(this.score);
     container.appendChild(this.health);
+    
+    this.newWave(1, container);
   }
 }
