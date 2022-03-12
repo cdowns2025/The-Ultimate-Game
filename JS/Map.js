@@ -62,7 +62,7 @@ class Map {
     
     moveWall(currentX, currentY, direction) {
         this.removeWall(currentX, currentY);
-        
+            
         let x = currentX;
         let y = currentY;
         if (direction === "right") {

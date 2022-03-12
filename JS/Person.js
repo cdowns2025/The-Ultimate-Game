@@ -62,7 +62,7 @@ class Person extends GameObject {
     update(state) {
         if (this.movingProgressRemaining > 0) {
             this.updatePosition(); //updates the player's position
-        } else {
+        } else {            
             if (state.arrow) {
                 this.direction = state.arrow;
             }

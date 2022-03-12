@@ -10,9 +10,19 @@
 }
 
 .StartScreen button {
+  position: absolute;
   margin-left: 50%;
   margin-top: 25%;
   transform: translate(-50%,-50%);
   height: 25%;
   width: 50%;
+}
+
+.StartScreen img {
+  position: absolute;
+  margin-left: 50%;
+  margin-top: 15%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 40px;
 }
