@@ -51,8 +51,6 @@ class Game {
             if (this.scoreCounter > 1000) {
                this.scoreCounter -= 1000;
                this.score++;
-               if (this.map.gameObjects.allies["player"].health === 0) this.map.gameObjects.allies["player"].health = 6;
-               else this.map.gameObjects.allies["player"].health--; 
             }
          
             //Clear the screen
