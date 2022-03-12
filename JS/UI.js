@@ -15,36 +15,46 @@ class UI {
     
     if (this.playerHealth === 6) {
       this.health.innerHTML = (`
-        <img src="Heart.png" />
-        <img src="Heart.png" />
-        <img src="Heart.png" />
+        <img src="full-heart.png" />
+        <img src="full-heart.png" />
+        <img src="full-heart.png" />
       `);
     } else if (this.playerHealth === 5) {
       this.health.innerHTML = (`
-        <img src="Heart.png" />
-        <img src="Heart.png" />
-        <img src="Half-Health.png" />
+        <img src="full-heart.png" />
+        <img src="full-heart.png" />
+        <img src="half-heart.png" />
       `); 
     } else if (this.playerHealth === 4) {
       this.health.innerHTML = (`
-        <img src="Heart.png" />
-        <img src="Heart.png" />
+        <img src="full-heart.png" />
+        <img src="full-heart.png" />
+        <img src="no-heart.png" />
       `); 
     } else if (this.playerHealth === 3) {
       this.health.innerHTML = (`
-        <img src="Heart.png" />
-        <img src="Half-Health.png" />
+        <img src="full-heart.png" />
+        <img src="half-heart.png" />
+        <img src="no-heart.png" />
       `); 
     } else if (this.playerHealth === 2) {
       this.health.innerHTML = (`
-        <img src="Heart.png" />
+        <img src="full-heart.png" />
+        <img src="no-heart.png" />
+        <img src="no-heart.png" />
       `); 
     } else if (this.playerHealth === 1) {
       this.health.innerHTML = (`
-        <img src="Half-Health.png" />
+        <img src="half-heart.png" />
+        <img src="no-heart.png" />
+        <img src="no-heart.png" />
       `); 
     } else if (this.playerHealth === 0) {
-      this.health.innerHTML = (``); 
+      this.health.innerHTML = (`
+        <img src="no-heart.png" />
+        <img src="no-heart.png" />
+        <img src="no-heart.png" />
+      `); 
     }
   }
   
