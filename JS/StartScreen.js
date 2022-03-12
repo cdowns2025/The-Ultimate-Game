@@ -9,6 +9,7 @@ class StartScreen {
         this.element.innerHTML = (`
             <img src="logo.png" />
             <button>Start</button>
+            <h1>Ship Defenders</h1>
         `);
         
         this.element.querySelectorAll("button").forEach(button => {
