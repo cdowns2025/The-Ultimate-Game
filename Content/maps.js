@@ -16,7 +16,22 @@ window.Maps = {
                     x: utils.asGrid(5),
                     y: utils.asGrid(5),
                     color: "purple",
-                })
+                }),
+                enemy2: new Enemy({
+                    x: utils.asGrid(10),
+                    y: utils.asGrid(5),
+                    color: "purple",
+                }),
+                enemy3: new Enemy({
+                    x: utils.asGrid(5),
+                    y: utils.asGrid(10),
+                    color: "purple",
+                }),
+                enemy4: new Enemy({
+                    x: utils.asGrid(10),
+                    y: utils.asGrid(10),
+                    color: "purple",
+                }),
             }
         },
         walls: {

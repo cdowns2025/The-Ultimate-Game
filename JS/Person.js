@@ -8,6 +8,8 @@ class Person extends GameObject {
         this.speed = 1;
         
         this.health = 6;
+        this.hit = false;
+        this.hitInterval = 0;
         
         this.movingProgressRemaining = 0;
         
@@ -59,7 +61,23 @@ class Person extends GameObject {
         this.isInteracting = true;
     }
     
+    gotHurt(damageLevel) {
+        this.hit = true;
+        this.hitInterval = 30;
+        this.health -= damageLevel;
+    }
+
     update(state) {
+        if (this.hit) { // decreases health when the enemy is hit
+            this.color = "red";
+            if (this.hitInterval == 0) {
+              this.hit = false;
+            }
+            this.hitInterval--;
+          } else {
+            this.color = "blue";
+          }
+
         if (this.movingProgressRemaining > 0) {
             this.updatePosition(); //updates the player's position
         } else {            
