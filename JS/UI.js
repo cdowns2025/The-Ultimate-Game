@@ -5,6 +5,17 @@ class UI {
     this.playerHealth = config.game.map.gameObjects.allies["player"].health;
   }
   
+  newWave(waveNumber, container) {
+    this.waveElement = document.createElement("div");
+    this.waveElement.classList.add("Wave");
+    
+    this.waveElement.innerHTML = (`
+      <h1>Wave ${waveNumber}</h1>
+    `);
+    
+    container.appendChild(this.waveElement);
+  }
+  
   update(game) {
     this.actualScore = game.score;
     this.playerHealth = game.map.gameObjects.allies["player"].health;
