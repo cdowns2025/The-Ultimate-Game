@@ -1,0 +1,14 @@
+.Wave {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.Wave h1 {
+  position: relative;
+  padding: 0;
+  color: white;
+  margin-left: 100px;
+}
