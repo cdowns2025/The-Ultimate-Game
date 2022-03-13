@@ -16,8 +16,8 @@ class Map {
     initiateWave(waveNumber) {
         for (let i = 0; i < this.waves[waveNumber].basic; i++) {
             this.gameObjects.enemies["enemy" + i] = new Enemy({
-                x: utils.asGrid(5),
-                y: utils.asGrid(5),
+                x: utils.asGrid(Math.floor(Math.random() * 20)),
+                y: utils.asGrid(Math.floor(Math.random() * 15)),
                 color: "red",
             });
         }
