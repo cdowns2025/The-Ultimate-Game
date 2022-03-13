@@ -55,7 +55,7 @@ window.Maps = {
         ],
         waves: {
             "1": {
-                basic: 1,
+                basic: 5,
             }
         }
     }
