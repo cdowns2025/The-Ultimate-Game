@@ -38,7 +38,7 @@ class Enemy extends GameObject {
 
       if (this.health <= 0) {
         this.isRendered = false;
-        this.map.removeWall(this.x, this.y);
+        state.map.removeWall(this.x, this.y);
         this.alive = false;
       }
 
