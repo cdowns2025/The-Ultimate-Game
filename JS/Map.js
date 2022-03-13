@@ -38,6 +38,9 @@ class Map {
             for (let c = 0; c < mapArray[r].length; c++) {
                 if (mapArray[r][c] === 1) {
                     this.addWall((c - 1) * 16, (r - 1) * 16);
+                } else if (mapArray[r][c] === 9) {
+                    this.gameObjects.allies["player"].x = utils.asGrid(c - 1);
+                    this.gameObjects.allies["player"].y = utils.asGrid(r - 1);
                 }
             }
         }
