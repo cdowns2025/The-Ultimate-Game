@@ -143,6 +143,8 @@ class Game {
            game: this,
         });
         this.UI.init(document.querySelector(".game-container"));
+     
+        this.map.initiateWave(1);
 
         //Start the game loop
         this.startGameLoop();
