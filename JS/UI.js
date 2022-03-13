@@ -17,13 +17,13 @@ class UI {
       this.endScreen.innerHTML = (`
         <p>You survived ${this.waveNumber} round!</p>
         <p>Your final score was ${this.actualScore}!</p>
-        <p>Insert another coin to player again!</p>
+        <p>Insert another coin to play again!</p>
       `);
     } else {
       this.endScreen.innerHTML = (`
         <p>You survived ${this.waveNumber} rounds!</p>
         <p>Your final score was ${this.actualScore}!</p>
-        <p>Insert another coin to player again!</p>
+        <p>Insert another coin to play again!</p>
       `);
     }
     
