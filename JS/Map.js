@@ -1,6 +1,7 @@
 class Map {
     constructor(config) {
         this.gameObjects = config.gameObjects;
+        this.waves = config.waves;
         
         this.walls = {};
         this.parseMapData(config.gridWalls);
@@ -10,6 +11,16 @@ class Map {
 
         this.upperImage = new Image();
         this.upperImage.src = config.upperSrc;
+    }
+    
+    initiateWave(waveNumber) {
+        for (let i = 0; i < this.waves[waveNumber].basic; i++) {
+            this.gameObjects.enemies.push(new Enemy(
+                x: utils.asGrid(5),
+                y: utils.asGrid(5),
+                color: "red",
+            ))
+        }
     }
     
     mountObjects() {
