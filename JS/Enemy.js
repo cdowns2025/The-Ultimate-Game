@@ -48,7 +48,7 @@ class Enemy extends GameObject {
         this.searchAlgorithm(state);
         if (this.direction !== null && this.isMoving == true && !state.map.isNextSpaceTaken(this.x, this.y, this.direction, 16)) {
           this.movingProgressRemaining = 16;
-          this.map.moveWall(this.x, this.y, this.direction);
+          state.map.moveWall(this.x, this.y, this.direction);
         }
       }
     }
