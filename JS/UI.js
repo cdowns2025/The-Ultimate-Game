@@ -9,7 +9,7 @@ class UI {
   
   endGame(container) {
     this.score.remove();
-    this.playerHealth.remove();
+    this.health.remove();
     
     this.endScreen = document.createElement("div");
     this.endScreen.classList.add("EndScreen");
@@ -26,6 +26,8 @@ class UI {
         <p>Insert another coin to player again!</p>
       `);
     }
+    
+    container.appendChild(this.endScreen);
   }
   
   newWave(waveNumber, container) {
