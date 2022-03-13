@@ -23,4 +23,18 @@
 
 .EndScreen {
   position: absolute;
+  top: 0;
+  padding: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: darkblue;
+  padding-top: 20px;
+  padding-left: 20px
+}
+
+.EndScreen p {
+  margin: 0;
+  padding: 5px;
+  color: white;
 }
