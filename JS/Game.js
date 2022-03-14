@@ -163,7 +163,7 @@ class Game {
         });
         this.UI.init(document.querySelector(".game-container"));
      
-        this.map.initiateWave(this.wave);
+        this.map.initiateWave(this.wave, this.UI);
      
         this.mainTheme = document.createElement("audio");
         this.mainTheme.setAttribute("src", "main-song.wav");
