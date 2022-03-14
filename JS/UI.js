@@ -5,6 +5,8 @@ class UI {
     this.playerHealth = config.game.map.gameObjects.allies["player"].health;
     
     this.waveNumber = 0;
+    
+    this.muted = false;
   }
   
   endGame(container) {
@@ -112,6 +114,12 @@ class UI {
       <img src="Heart.png" />
       <img src="Heart.png" />
       <img src="Heart.png" />
+    `);
+    
+    this.volume = document.createElement("div");
+    this.volume.classList.add("Volume");
+    this.volume.innerHTML = (`
+      <img src="Unmute.png" />
     `);
   }
   
