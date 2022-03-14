@@ -33,6 +33,7 @@ class Instructions {
     
     setTimeout(() => {
       this.element.remove();
+      this.musicElement.volume = 0;
       resolve();
     }, 6000)
   }
