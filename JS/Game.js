@@ -149,7 +149,7 @@ class Game {
         this.mainTheme = document.createElement("audio");
         this.mainTheme.setAttribute("src", "main-song.wav");
         this.mainTheme.loop = true;
-        this.mainTheme.Play();
+        this.mainTheme.play();
 
         //Start the game loop
         this.startGameLoop();
