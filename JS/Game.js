@@ -145,6 +145,11 @@ class Game {
         this.UI.init(document.querySelector(".game-container"));
      
         this.map.initiateWave(1);
+     
+        this.mainTheme = document.createElement("audio");
+        this.mainTheme.setAttribute("src", "main-song.wav");
+        this.mainTheme.loop = true;
+        this.mainTheme.Play();
 
         //Start the game loop
         this.startGameLoop();
