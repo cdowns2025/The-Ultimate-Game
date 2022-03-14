@@ -15,12 +15,10 @@ class Instructions {
       <img id="A-Key" src="A-Key.png" />
       <img id="S-Key" src="S-Key.png" />
       <img id="D-Key" src="D-Key.png" />
-      <img id="Up-Arrow" src="Up-Arrow.png" />
-      <img id="Right-Arrow" src="Right-Arrow.png" />
-      <img id="Down-Arrow" src="Down-Arrow.png" />
-      <img id="Left-Arrow" src="Left-Arrow.png" />
       <img id="Space" src="Space.png" />
+      <p id="space-description">Space</p>
       <img id="Enter" src="Enter.png" />
+      <p id="enter-description">Enter</p>
     `);
   }
   
