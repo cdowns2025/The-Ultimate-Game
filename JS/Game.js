@@ -30,6 +30,7 @@ class Game {
         this.map = null;
         this.score = 0;
         this.lastTime = 0;
+        this.muted = false;
      
         this.scoreCounter = 0;
 
@@ -57,6 +58,9 @@ class Game {
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
          
             this.UI.update(this);
+         
+            if (this.muted) this.mainTheme.volume = 0;
+            else this.mainTheme.volume = 0.5;
             
             const player = this.map.gameObjects.allies.player; 
             
