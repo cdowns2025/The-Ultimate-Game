@@ -28,8 +28,8 @@ class Instructions {
     container.appendChild(this.element);
     
     setTimeout(() => {
-      this.element.remove();
-      resolve();
-    }, 5000)
+      //this.element.remove();
+      //resolve();
+    }, 6000)
   }
 }
