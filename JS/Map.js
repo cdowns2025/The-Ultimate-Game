@@ -21,8 +21,28 @@ class Map {
                 color: "purple",
             });
         }
+        
+        /*
+            spawners: {
+                "1": {
+                    basic: 5
+                }
+            }
+        */
+        
+        for (let i = 0; i < Object.keys(this.waves[waveNumber].spawners).length; i++) {
+            for (let j = 0; j < Object.keys(this.waves[waveNumber].spawners[i + 1]; j++) {
+                this.gameObjects.enemies["spawner" + i] = new Spawner({
+                    x: utils.asGrid(Math.floor(Math.random() * 20)),
+                    y: utils.asGrid(Math.floor(Math.random() * 15)),
+                    enemyCapacity: this.waves[waveNumber].spawners[i + 1].basic,
+                    intervalTime: 1000,
+                    color: "brown",
+                })
+            }
+        }
 
-        for (let i = 0; i < this.waves[waveNumber].spawners; i++) {
+        /*for (let i = 0; i < this.waves[waveNumber].spawners; i++) {
             this.gameObjects.enemies["spawner" + i] = new Spawner({
                 x: utils.asGrid(Math.floor(Math.random() * 20)),
                 y: utils.asGrid(Math.floor(Math.random() * 15)),
@@ -30,7 +50,7 @@ class Map {
                 intervalTime: 200,
                 color: "brown",
             });
-        }
+        }*/
         
         ui.newWave(waveNumber, document.querySelector(".game-container"));
     }
