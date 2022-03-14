@@ -126,11 +126,13 @@ class UI {
       console.log("click");
       if (this.muted) {
         this.game.muted = false;
+        this.muted = false;
         this.volume.innerHTML = (`
           <img src="Unmute.png" />
         `);
-      } else {
+      } else if (!this.muted) {
         this.game.muted = true;
+        this.muted = true;
         this.volume.innerHTML = (`
           <img src="Mute.png" />
         `);
