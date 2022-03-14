@@ -30,6 +30,8 @@ class Game {
         this.map = null;
         this.score = 0;
         this.lastTime = 0;
+        this.muted = false;
+        this.wave = 1;
      
         this.scoreCounter = 0;
 
@@ -53,10 +55,31 @@ class Game {
                this.score++;
             }
          
+            //Check to see if next wave should start
+            let nextWave = true;
+            Object.keys(this.map.gameObjects.enemies).forEach(key => {
+                if (this.map.gameObjects.enemies[key].alive) {
+                    nextWave = false;
+                } 
+            });
+            
+            if (nextWave) {
+                if (this.map.gameObjects.allies["player"].health <=4) this.map.gameObjects.allies["player"].health += 2;
+                else if (this.map.gameObjects.allies["player"].health === 5) this.map.gameObjects.allies["player"].health++;
+             
+                this.givePointsBasedOnWave();
+                this.wave++;
+                this.map.gameObjects.enemies = {};
+                this.map.initiateWave(this.wave, this.UI);
+            }
+         
             //Clear the screen
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
          
             this.UI.update(this);
+         
+            if (this.muted) this.mainTheme.volume = 0;
+            else this.mainTheme.volume = 0.5;
             
             const player = this.map.gameObjects.allies.player; 
             
@@ -110,6 +133,12 @@ class Game {
         //Actually starting the loop
         step(0);
     }
+ 
+    givePointsBasedOnWave() {
+       let enemies = Object.keys(this.map.gameObjects.enemies).length;
+     
+       this.score += 10 + enemies;
+    }
 
     async init() {
      
@@ -144,7 +173,7 @@ class Game {
         });
         this.UI.init(document.querySelector(".game-container"));
      
-        this.map.initiateWave(1);
+        this.map.initiateWave(this.wave, this.UI);
      
         this.mainTheme = document.createElement("audio");
         this.mainTheme.setAttribute("src", "main-song.wav");

@@ -51,16 +51,7 @@ class UI {
   update(game) {
     this.actualScore = game.score;
     this.playerHealth = game.map.gameObjects.allies["player"].health;
-    
-    if (this.muted) {
-      this.volume.innerHTML = (`
-        <img src="Muted.png" />
-      `);
-    } else {
-      this.volume.innerHTML = (`
-        <img src="Unmute.png" />
-      `);
-    }
+    this.waveNumber = game.wave;
     
     this.score.innerHTML = (`
       <p>${this.actualScore}</p>
@@ -133,12 +124,19 @@ class UI {
     `);
     
     this.volume.addEventListener("click", () => {
+      console.log("click");
       if (this.muted) {
+        this.game.muted = false;
         this.muted = false;
-        this.update();
-      } else {
+        this.volume.innerHTML = (`
+          <img src="Unmute.png" />
+        `);
+      } else if (!this.muted) {
+        this.game.muted = true;
         this.muted = true;
-        this.update();
+        this.volume.innerHTML = (`
+          <img src="Mute.png" />
+        `);
       }
     })
   }
@@ -147,7 +145,6 @@ class UI {
     this.createElements();
     container.appendChild(this.score);
     container.appendChild(this.health);
-    
-    this.newWave(1, container);
+    container.appendChild(this.volume);
   }
 }

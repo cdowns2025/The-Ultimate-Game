@@ -7,7 +7,7 @@ class Person extends GameObject {
         this.dashingDistance = 0;
         this.speed = 1;
         
-        this.health = 60;
+        this.health = 6;
         this.hit = false;
         this.hitInterval = 0;
         
