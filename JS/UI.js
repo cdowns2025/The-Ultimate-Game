@@ -53,11 +53,11 @@ class UI {
     this.playerHealth = game.map.gameObjects.allies["player"].health;
     
     if (this.muted) {
-      this.volume.innerHTML(`
+      this.volume.innerHTML = (`
         <img src="Muted.png" />
       `);
     } else {
-      this.volume.innerHTML(`
+      this.volume.innerHTML = (`
         <img src="Unmute.png" />
       `);
     }
