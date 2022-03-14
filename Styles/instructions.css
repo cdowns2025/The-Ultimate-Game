@@ -6,22 +6,66 @@
   bottom: 0;
 }
 
-#W-Key {}
+.Instructions h1 {
+  display: none;
+}
 
-#A-Key {}
+#W-Key {
+  position: absolute;
+  top: 5px;
+  left: 35px
+}
 
-#D-Key {}
+#A-Key {
+  position: absolute;
+  top: 30px;
+  left: -7px;
+}
 
-#S-Key {}
+#D-Key {
+  position: absolute;
+  top: 30px;
+  left: 77px;
+}
+
+#S-Key {
+  position: absolute;
+  top: 30px;
+  left: 35px;
+}
  
-#Up-Arrow {}
+#Up-Arrow {
+  position: absolute;
+  top: 70px;
+  left: 35px
+}
 
-#Right-Arrow {}
+#Right-Arrow {
+  position: absolute;
+  top: 98px;
+  left: 77px;
+}
 
-#Left-Arrow {}
+#Left-Arrow {
+  position: absolute;
+  top: 98px;
+  left: -7px;
+}
 
-#Down-Arrow {}
+#Down-Arrow {
+  position: absolute;
+  top: 98px;
+  left: 35px
+}
 
-#Enter {}
+#Enter {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+}
 
-#Space {}
+#Space {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+}
