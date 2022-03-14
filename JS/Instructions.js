@@ -22,7 +22,7 @@ class Instructions {
     `);
   }
   
-  init(container) {
+  init(container, resolve) {
     this.createElement();
     
     container.appendChild(this.element);
