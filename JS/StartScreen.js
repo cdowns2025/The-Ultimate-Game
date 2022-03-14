@@ -4,7 +4,7 @@ class StartScreen {
     }
     
     createElement(resolve) {
-        this.musicElement = document.createElement("audio");
+        this.musicElement = window.createElement("audio");
         this.musicElement.setAttribute("src", "Title-Theme.wav");
         this.musicElement.loop = true;
         this.musicElement.play();
