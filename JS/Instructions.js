@@ -28,5 +28,10 @@ class Instructions {
     this.createElement();
     
     container.appendChild(this.element);
+    
+    setTimeout(() => {
+      this.element.remove();
+      resolve();
+    }, 5000)
   }
 }
