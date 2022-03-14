@@ -54,7 +54,7 @@ class UI {
     
     if (this.muted) {
       this.volume.innerHTML = (`
-        <img src="Muted.png" />
+        <img src="Mute.png" />
       `);
     } else {
       this.volume.innerHTML = (`
@@ -147,6 +147,7 @@ class UI {
     this.createElements();
     container.appendChild(this.score);
     container.appendChild(this.health);
+    container.appendChild(this.volume);
     
     this.newWave(1, container);
   }
