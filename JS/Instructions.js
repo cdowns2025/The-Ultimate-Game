@@ -9,16 +9,16 @@ class Instructions {
     
     this.element.innerHTML = (`
       <h1>Keys</h1>
-      <img id="W-Key" src="W-Key" />
-      <img id="A-Key" src="A-Key" />
-      <img id="S-Key" src="S-Key" />
-      <img id="D-Key" src="D-Key" />
-      <img id="Up-Arrow" src="Up-Arrow" />
-      <img id="Right-Arrow" src="Right-Arrow" />
-      <img id="Down-Arrow" src="Down-Arrow" />
-      <img id="Left-Arrow" src="Left-Arrow" />
-      <img id="Space" src="Space" />
-      <img id="Enter" src="Enter" />
+      <img id="W-Key" src="W-Key.png" />
+      <img id="A-Key" src="A-Key.png" />
+      <img id="S-Key" src="S-Key.png" />
+      <img id="D-Key" src="D-Key.png" />
+      <img id="Up-Arrow" src="Up-Arrow.png" />
+      <img id="Right-Arrow" src="Right-Arrow.png" />
+      <img id="Down-Arrow" src="Down-Arrow.png" />
+      <img id="Left-Arrow" src="Left-Arrow.png" />
+      <img id="Space" src="Space.png" />
+      <img id="Enter" src="Enter.png" />
     `);
   }
   
