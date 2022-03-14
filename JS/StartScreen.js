@@ -16,7 +16,7 @@ class StartScreen {
             button.addEventListener("click", () => {
                 this.element.remove();
                 
-                const intructions = new Instructions();
+                const instructions = new Instructions();
                 instructions.init(document.querySelector(".game-container"), resolve);
             });
         });
