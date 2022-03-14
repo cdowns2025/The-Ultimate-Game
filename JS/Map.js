@@ -27,7 +27,7 @@ class Map {
                 x: utils.asGrid(Math.floor(Math.random() * 20)),
                 y: utils.asGrid(Math.floor(Math.random() * 15)),
                 enemyCapacity: 10,
-                intervalTime: 500,
+                intervalTime: 200,
                 color: "brown",
             });
         }
