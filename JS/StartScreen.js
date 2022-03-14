@@ -9,7 +9,7 @@ class StartScreen {
         this.musicElement.loop = true;
         setTimeout(() => {
             this.musicElement.play();
-        }, 500);
+        }, 1000);
         
         this.element = document.createElement("div");
         this.element.classList.add("StartScreen");
@@ -21,6 +21,7 @@ class StartScreen {
         
         this.element.querySelectorAll("button").forEach(button => {
             button.addEventListener("click", () => {
+                this.musicElement.lopp = true;
                 this.musicElement.remove();
                 this.element.remove();
                 
