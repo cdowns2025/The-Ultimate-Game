@@ -4,6 +4,12 @@ class Instructions {
   }
   
   createElement() {
+    this.musicElement = document.createElement("audio");
+    this.musicElement.setAttribute("src", "Title-Theme.wav");
+    this.musicElement.volume = 0.2;
+    this.musicElement.loop = false;
+    this.musicElement.play()
+    
     this.element = document.createElement("div");
     this.element.classList.add("Instructions");
     
