@@ -64,6 +64,7 @@ class Game {
             });
             
             if (nextWave) {
+                this.givePointsBasedOnWave();
                 this.wave++;
                 this.map.gameObjects.enemies = {};
                 this.map.initiateWave(this.wave, this.UI);
@@ -128,6 +129,12 @@ class Game {
 
         //Actually starting the loop
         step(0);
+    }
+ 
+    givePointsBasedOnWave() {
+       let enemies = Object.keys(this.map.gameObjects.enemies).length;
+     
+       this.score += 10 + enemies;
     }
 
     async init() {
