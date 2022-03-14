@@ -7,8 +7,9 @@ class StartScreen {
         this.musicElement = document.createElement("audio");
         this.musicElement.setAttribute("src", "Title-Theme.wav");
         this.musicElement.loop = true;
-        this.musicElement.muted = true;
-        this.musicElement.play();
+        setTimeout(() => {
+            this.musicElement.play();
+        }, 500);
         
         this.element = document.createElement("div");
         this.element.classList.add("StartScreen");
