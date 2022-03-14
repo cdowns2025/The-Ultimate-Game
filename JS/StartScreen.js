@@ -4,12 +4,6 @@ class StartScreen {
     }
     
     createElement(resolve) {
-        this.musicElement = document.createElement("audio");
-        this.musicElement.setAttribute("src", "Title-Theme.wav");
-        this.musicElement.loop = true;
-        setTimeout(() => {
-            this.musicElement.play();
-        }, 1000);
         
         this.element = document.createElement("div");
         this.element.classList.add("StartScreen");
@@ -21,8 +15,6 @@ class StartScreen {
         
         this.element.querySelectorAll("button").forEach(button => {
             button.addEventListener("click", () => {
-                this.musicElement.lopp = true;
-                this.musicElement.remove();
                 this.element.remove();
                 
                 const instructions = new Instructions();
