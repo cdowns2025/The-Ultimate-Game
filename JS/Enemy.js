@@ -5,7 +5,7 @@ class Enemy extends GameObject {
     this.health = 3;
     this.alive = true;
 
-    this.hit = false;
+    this.hit = false; //initial hit boolean
     this.hitInterval = 0;
     this.idleTime = 0;
     this.phase = "search";
@@ -23,22 +23,36 @@ class Enemy extends GameObject {
   
   update(state) {
     if (this.alive) {
-      if (this.hit) { // decreases health when the enemy is hit
-        this.color = "red";
-        if (this.hitInterval == 0) {
-          this.hit = false;
-          this.health--;
+
+      if (this.hit) {
+        //knockback on initial hit
+        if (!state.map.isNextSpaceTaken(this.x, this.y, this.direction, 16)) {
+          state.map.moveWall(this.x, this.y, this.direction);
+          this.movingProgressRemaining = 16;
+          this.isMoving = true;
         }
+        //falsifies??? the initial hit
+        this.hit = false;
+      }
+      
+      if (this.hitInterval == 0) {
+        this.health--;
+        this.hitInterval--; //extra precaution - puts the interval under 0 so this function isn't called over and over
+      } 
+
+      //All the color (soon to be sprite) management based on phase
+      if (this.hitInterval > 0) { // Keeps the invincibility frames on
+        this.color = "red";
         this.hitInterval--;
       } else if (this.phase == "attackPose") { //checks if enemy is attacking, turns pink if it is
-        this.color = `rgb(${128 + this.idleTime * 20}, ${this.idleTime * 20}, ${128 + this.idleTime * 20})`;
+        this.color = `rgb(${128 + this.idleTime * 20}, ${this.idleTime * 20}, ${128 + this.idleTime * 20})`; //charging up purple color
       } else { //sets generic purple color during search phase
         this.color = "purple";
       }
 
       if (this.health <= 0) {
         this.isRendered = false;
-        state.map.removeWall(this.x, this.y);
+        state.map.removeWall(utils.gridFloor(this.x + 8), utils.gridFloor(this.y + 8)); //ensures that the proper wall is removed when the enemy dies
         this.alive = false;
       }
 
@@ -123,11 +137,14 @@ class Enemy extends GameObject {
     this.idleTime++;
   }
 
-  onInteracted() { //function called when enemy gets hit, tells that he is hit, sets his hit interval and resets his idle time, as if stunned.
-    if (!this.hit) {
-      this.hit = true;
+
+  //BEING ATTACKED
+  onInteracted(hitInfo) { //function called when enemy gets hit, tells that he is hit, sets his hit interval and resets his idle time, as if stunned.
+    if (!this.hit && this.hitInterval < 0) {
+      this.hit = true; //initial hit boolean
       this.hitInterval = 10;
       this.idleTime = 0;
+      this.direction = hitInfo.direction;
     }
   }
 }

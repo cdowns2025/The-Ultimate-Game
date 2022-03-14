@@ -96,7 +96,10 @@ class Person extends GameObject {
         if (this.isInteracting && !this.isDashing) { //Checks the cell in the players direction and activates the object's on-interact script function
             Object.values(state.map.gameObjects.enemies).forEach(object => {
                 if (object.x === Object.values(utils.getNextCoord(this.x, this.y, this.direction))[0] && object.y === Object.values(utils.getNextCoord(this.x, this.y, this.direction))[1]) {
-                    object.onInteracted();
+                    object.onInteracted({
+                        damage: 1,
+                        direction: this.direction,
+                    });
                 }
             });
             this.isInteracting = false;

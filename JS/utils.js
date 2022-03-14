@@ -3,6 +3,9 @@ const utils = {
   asGrid(n) {
     return n * 16;
   }, 
+  gridFloor(n) {
+    return Math.floor(n / 16) * 16;
+  },
   getNextCoord(x, y, direction) {
     let newX = x;
     let newY = y;
