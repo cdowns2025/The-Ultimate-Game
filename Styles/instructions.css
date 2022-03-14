@@ -1,0 +1,27 @@
+.Instructions {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#W-Key {}
+
+#A-Key {}
+
+#D-Key {}
+
+#S-Key {}
+ 
+#Up-Arrow {}
+
+#Right-Arrow {}
+
+#Left-Arrow {}
+
+#Down-Arrow {}
+
+#Enter {}
+
+#Space {}
