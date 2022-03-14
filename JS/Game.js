@@ -66,7 +66,7 @@ class Game {
             if (nextWave) {
                 this.wave++;
                 this.map.gameObjects.enemies = {};
-                this.map.initaitveWave(this.wave);
+                this.map.initiatveWave(this.wave);
             }
          
             //Clear the screen
