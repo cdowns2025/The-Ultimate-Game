@@ -13,7 +13,7 @@ class Map {
         this.upperImage.src = config.upperSrc;
     }
     
-    initiateWave(waveNumber) {
+    initiateWave(waveNumber, ui) {
         for (let i = 0; i < this.waves[waveNumber].basic; i++) {
             this.gameObjects.enemies["enemy" + i] = new Enemy({
                 x: utils.asGrid(Math.floor(Math.random() * 20)),
@@ -21,6 +21,8 @@ class Map {
                 color: "red",
             });
         }
+        
+        ui.newWave(waveNumber, document.querySelector(".game-container"));
     }
     
     mountObjects() {
