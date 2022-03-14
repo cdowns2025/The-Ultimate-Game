@@ -36,7 +36,7 @@ class Map {
                     x: utils.asGrid(Math.floor(Math.random() * 20)),
                     y: utils.asGrid(Math.floor(Math.random() * 15)),
                     enemyCapacity: this.waves[waveNumber].spawners[i + 1].basic,
-                    intervalTime: 2000,
+                    intervalTime: this.waves[waveNumber].spawners[i+1].intervalTime,
                     color: "brown",
                 })
             }
