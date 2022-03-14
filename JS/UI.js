@@ -52,7 +52,7 @@ class UI {
     this.actualScore = game.score;
     this.playerHealth = game.map.gameObjects.allies["player"].health;
     
-    if (this.muted) {
+    if (game.muted) {
       this.volume.innerHTML = (`
         <img src="Mute.png" />
       `);
