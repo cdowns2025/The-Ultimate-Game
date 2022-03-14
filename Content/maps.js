@@ -55,12 +55,16 @@ window.Maps = {
         ],
         waves: {
             "1": {
-                basic: 1,
-                spawners: 0,
+                basic: 0,
+                spawners: {
+                    "1": {
+                        basic: 2,
+                    }
+                },
             },
             "2": {
                 basic: 3,
-                spawners: 1,
+                spawners: {},
             },
             "3": {
                 basic: 6,
