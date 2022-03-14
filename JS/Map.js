@@ -18,18 +18,32 @@ class Map {
             this.gameObjects.enemies["enemy" + i] = new Enemy({
                 x: utils.asGrid(Math.floor(Math.random() * 20)),
                 y: utils.asGrid(Math.floor(Math.random() * 15)),
-                color: "red",
+                color: "purple",
+            });
+        }
+
+        for (let i = 0; i < this.waves[waveNumber].spawners; i++) {
+            this.gameObjects.enemies["spawner" + i] = new Spawner({
+                x: utils.asGrid(Math.floor(Math.random() * 20)),
+                y: utils.asGrid(Math.floor(Math.random() * 15)),
+                enemyCapacity: 10,
+                intervalTime: 500,
+                color: "brown",
             });
         }
     }
     
     mountObjects() {
         Object.values(this.gameObjects.allies).forEach(object => {
-            this.addWall(object.x, object.y);
+            if (object.collision) {
+                this.addWall(object.x, object.y);
+            }
         });
         
         Object.values(this.gameObjects.enemies).forEach(object => {
-            this.addWall(object.x, object.y);
+            if (object.collision) {
+                this.addWall(object.x, object.y);
+            }
         });
     }
       

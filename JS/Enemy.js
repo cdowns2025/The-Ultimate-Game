@@ -52,7 +52,7 @@ class Enemy extends GameObject {
 
       if (this.health <= 0) {
         this.isRendered = false;
-        state.map.removeWall(utils.gridFloor(this.x + 8), utils.gridFloor(this.y + 8)); //ensures that the proper wall is removed when the enemy dies
+        state.map.removeWall(utils.gridFloor(this.x + 8), utils.gridFloor(this.y + 8)); //ensures that the proper wall is removed when the enemy dies   
         this.alive = false;
       }
 
@@ -78,7 +78,7 @@ class Enemy extends GameObject {
   //GOVERNS ALL ACTIONS, BRAIN
   searchAlgorithm(state) { 
     let r = Math.random(); //randomized variable for multiple purposes, whether it's randomized direction or what axis to choose to match the player in.
-    if (this.idleTime >= 10) { //checks if enough idle time has passed
+    if (this.idleTime >= 15) { //checks if enough idle time has passed
 
       //SEARCHING
       if (utils.distanceFormula(this.x, state.player.x, this.y, state.player.y) > 16) { //checks if the player is more than one cell away, then runs the rest of the function if they are
@@ -142,7 +142,7 @@ class Enemy extends GameObject {
   onInteracted(hitInfo) { //function called when enemy gets hit, tells that he is hit, sets his hit interval and resets his idle time, as if stunned.
     if (!this.hit && this.hitInterval < 0) {
       this.hit = true; //initial hit boolean
-      this.hitInterval = 10;
+      this.hitInterval = 15;
       this.idleTime = 0;
       this.direction = hitInfo.direction;
     }
