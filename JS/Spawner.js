@@ -30,7 +30,7 @@ class Spawner extends GameObject {
     update(state) {
         if (this.alive) {
             if (this.currentTime >= this.intervalTime) {
-                this.currentTime = 0;
+                this.currentTime -= this.intervalTime;
                 if (this.enemyCounter < this.enemyCapacity) {
                     state.map.gameObjects.enemies["enemy" + (Object.values(state.map.gameObjects.enemies).length + 1)] = new Enemy({
                         x: this.x,
@@ -38,9 +38,11 @@ class Spawner extends GameObject {
                         color: "purple",
                     });
                     this.enemyCounter++;
+                } else {
+                    this.isRendered = false;
                 }
             }
-            this.currentTime++;
+            this.currentTime += state.deltaTime;
         }
     }
 
