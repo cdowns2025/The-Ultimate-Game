@@ -8,7 +8,9 @@ class Instructions {
     this.element.classList.add("Instructions");
     
     this.element.innerHTML = (`
-      <h1>Keys</h1>
+      <p id="movement">Movement: Up, Down, Left Right</p>
+      <p id="dash">Dash></p>
+      <p id="attack">Attack></p>
       <img id="W-Key" src="W-Key.png" />
       <img id="A-Key" src="A-Key.png" />
       <img id="S-Key" src="S-Key.png" />
