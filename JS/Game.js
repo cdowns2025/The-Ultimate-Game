@@ -31,6 +31,7 @@ class Game {
         this.score = 0;
         this.lastTime = 0;
         this.muted = false;
+        this.wave = 1;
      
         this.scoreCounter = 0;
 
@@ -52,6 +53,20 @@ class Game {
             if (this.scoreCounter > 1000) {
                this.scoreCounter -= 1000;
                this.score++;
+            }
+         
+            //Check to see if next wave should start
+            let nextWave = true;
+            Object.keys(this.map.gameObjects.enemies).forEach(key => {
+                if (this.map.gameObjects.enemies[key].alive) {
+                    nextWave = false;
+                } 
+            });
+            
+            if (nextWave) {
+                this.wave++;
+                this.map.gameObjects.enemies = {};
+                this.map.initaitveWave(this.wave);
             }
          
             //Clear the screen
@@ -148,7 +163,7 @@ class Game {
         });
         this.UI.init(document.querySelector(".game-container"));
      
-        this.map.initiateWave(1);
+        this.map.initiateWave(this.wave);
      
         this.mainTheme = document.createElement("audio");
         this.mainTheme.setAttribute("src", "main-song.wav");
