@@ -58,6 +58,7 @@ window.Maps = {
                 spawners: {
                     "1": {
                         basic: 2,
+                        intervalTime: 2000,
                     },
                 },
             },
