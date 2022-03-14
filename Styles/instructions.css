@@ -12,25 +12,25 @@
 
 #W-Key {
   position: absolute;
-  top: 5px;
+  top: 55px;
   left: 35px
 }
 
 #A-Key {
   position: absolute;
-  top: 30px;
+  top: 80px;
   left: -7px;
 }
 
 #D-Key {
   position: absolute;
-  top: 30px;
+  top: 80px;
   left: 77px;
 }
 
 #S-Key {
   position: absolute;
-  top: 30px;
+  top: 80px;
   left: 35px;
 }
 
@@ -38,14 +38,6 @@
   position: absolute;
   top: 100px;
   right: 20px;
-}
-
-#enter-description {
-
-}
-
-#space-description {
-
 }
 
 #Space {
@@ -57,7 +49,7 @@
 #movement {
   text-align: center;
   position: absolute;
-  top: 40px;
+  top: 0px;
   width: 140px;
   left: 2px;
   
@@ -66,11 +58,11 @@
 #dash {
   position: absolute;
   top: 60px;
-  right: 32px;
+  right: 50px;
 }
 
 #attack {
   position: absolute;
   top: 110px;
-  right: 25px;
+  right: 45px;
 }
