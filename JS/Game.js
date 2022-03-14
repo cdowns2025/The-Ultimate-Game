@@ -64,6 +64,9 @@ class Game {
             });
             
             if (nextWave) {
+                if (this.map.gameObjects.allies["player"].health <=4) this.map.gameObjects.allies["player"].health += 2;
+                else if (this.map.gameObjects.allies["player"].health === 5) this.map.gameObjects.allies["player"].health++;
+             
                 this.givePointsBasedOnWave();
                 this.wave++;
                 this.map.gameObjects.enemies = {};
