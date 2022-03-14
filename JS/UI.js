@@ -146,7 +146,5 @@ class UI {
     container.appendChild(this.score);
     container.appendChild(this.health);
     container.appendChild(this.volume);
-    
-    this.newWave(1, container);
   }
 }
