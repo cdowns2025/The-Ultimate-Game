@@ -51,6 +51,7 @@ class UI {
   update(game) {
     this.actualScore = game.score;
     this.playerHealth = game.map.gameObjects.allies["player"].health;
+    this.waveNumber = game.wave;
     
     this.score.innerHTML = (`
       <p>${this.actualScore}</p>
