@@ -134,11 +134,11 @@ class UI {
     
     this.volume.addEventListener("click", () => {
       if (this.muted) {
-        this.muted = false;
-        this.update();
+        this.game.muted = false;
+        this.update(this.game);
       } else {
-        this.muted = true;
-        this.update();
+        this.game.muted = true;
+        this.update(this.game);
       }
     })
   }
