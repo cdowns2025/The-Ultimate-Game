@@ -3,7 +3,7 @@ class StartScreen {
         this.game = game;
     }
     
-    createElement(resolve) {
+    createElement(resolve, container) {
         
         this.element = document.createElement("div");
         this.element.classList.add("StartScreen");
@@ -27,6 +27,8 @@ class StartScreen {
                 <p>Have Gee: Programmer</p>
                 <p>Jimmy Giannasi: Concept Designer and Recorder</p>
             `);
+            
+            container.appendChild(this.element);
         });
         
         this.element.querySelectorAll("button").forEach(button => {
@@ -41,7 +43,7 @@ class StartScreen {
     
     init(container) {
         return new Promise(resolve => {
-            this.createElement(resolve);
+            this.createElement(resolve, container);
             container.appendChild(this.element);
         });
     }
