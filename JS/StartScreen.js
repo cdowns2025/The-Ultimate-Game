@@ -26,6 +26,7 @@ class StartScreen {
                 <p>Carter Downs: Programmer, Music Creator, and Icon Creator</p>
                 <p>Have Gee: Programmer</p>
                 <p>Jimmy Giannasi: Concept Designer and Recorder</p>
+                <p>©PIPE</p>
                 <img id="return" src="Return.png" />
             `);
             
