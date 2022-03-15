@@ -43,4 +43,17 @@
 
 .Credits {
   position: absolute;
+  top: 0;
+}
+
+.Credits h1 {
+  font-size: 25px;
+  margin: 0;
+  margin-left: 25%;
+}
+
+.Credits p {
+  font-size: 12px;
+  margin: 0;
+  margin-bottom: 10px;
 }
