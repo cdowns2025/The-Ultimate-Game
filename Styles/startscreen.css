@@ -34,3 +34,7 @@
   transform: translateX(-35%);
   width: 100%;
 }
+
+.Credits {
+  position: absolute;
+}
