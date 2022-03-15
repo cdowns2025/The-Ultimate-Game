@@ -28,7 +28,7 @@ class Spawner extends GameObject {
     }
 
     update(state) {
-        console.log(state.deltaTime);
+        console.log(this.currentTime);
         if (this.alive) {
             if (this.currentTime > this.intervalTime) {
                 this.currentTime -= this.intervalTime;
