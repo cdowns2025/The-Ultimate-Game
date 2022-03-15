@@ -98,7 +98,7 @@ class Game {
                 object.update({
                     arrow: this.directionInput.direction,
                     map: this.map,
-                    deltaTime
+                    deltaTime: deltaTime
                 })
             });
            
@@ -108,7 +108,7 @@ class Game {
                     player: this.map.gameObjects.allies.player,
                     direction: null,
                     map: this.map,
-                    deltaTime
+                    deltaTime: deltaTime
                 })
             });
          
