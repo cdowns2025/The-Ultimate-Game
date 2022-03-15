@@ -32,6 +32,7 @@ class StartScreen {
             this.element.querySelector("#return").addEventListener("click", () => {
                 this.element.remove();
                 this.createElements(resolve, container);
+                container.appendChild(this.element);
             });
             
             container.appendChild(this.element);
