@@ -39,12 +39,12 @@ class Spawner extends GameObject {
                     });
                     this.enemyCounter++;
                  
-                    if (this.enemyCounter === this.enemyCapacity) {
+                    /*if (this.enemyCounter === this.enemyCapacity) {
                         this.alive = false;
                         this.isRendered = false;
                     }
                 } else {
-                    this.isRendered = false;
+                    this.isRendered = false;*/
                 }
             }
             this.currentTime += state.deltaTime;

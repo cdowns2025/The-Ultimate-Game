@@ -94,9 +94,13 @@ class Game {
                 return;
             }
 
+            //update the colliders
+            this.map.colliderUpdate();
+
             //Update the allies
             Object.values(this.map.gameObjects.allies).forEach(object => {
                 object.update({
+                    player: this.map.gameObjects.allies.player, //for the hearts
                     arrow: this.directionInput.direction,
                     map: this.map,
                     deltaTime: deltaTime

@@ -6,6 +6,8 @@ class Map {
         this.walls = {};
         this.parseMapData(config.gridWalls);
 
+        this.gridWalls = config.gridWalls;
+
         this.lowerImage = new Image();
         this.lowerImage.src = config.lowerSrc;
 
@@ -14,6 +16,15 @@ class Map {
     }
     
     initiateWave(waveNumber, ui) {
+
+        for (let i = 0; i < this.waves[waveNumber].hearts; i++) {
+            this.gameObjects.allies["hearts" + i] = new HeartItem({
+                x: utils.asGrid(Math.floor(Math.random() * 20)),
+                y: utils.asGrid(Math.floor(Math.random() * 15)),
+                color: "#ff4d4d",
+            });
+        }
+
         for (let i = 0; i < this.waves[waveNumber].basic; i++) {
             this.gameObjects.enemies["enemy" + i] = new Enemy({
                 x: utils.asGrid(Math.floor(Math.random() * 20)),
@@ -37,7 +48,7 @@ class Map {
                     y: utils.asGrid(Math.floor(Math.random() * 15)),
                     enemyCapacity: this.waves[waveNumber].spawners[i + 1].basic,
                     intervalTime: this.waves[waveNumber].spawners[i+1].intervalTime,
-                    color: "brown",
+                    color: "#4d2600",
                 })
             }
         }
@@ -67,6 +78,28 @@ class Map {
                 this.addWall(object.x, object.y);
             }
         });
+    }
+
+    colliderUpdate() {
+        for (let r = 0; r > this.gridWalls.length; r++) {
+            for (let c = 0; c > this.gridWalls[r].length; c++) {
+                Object.values(this.gameObjects.allies).forEach(object => {
+                    if (object.collision && object.x == r * 16 && object.y == c * 16) {
+                        this.addWall(object.x, object.y);
+                    } else {
+                        this.resetWall(r * 16, c * 16);
+                    }
+                });
+                
+                Object.values(this.gameObjects.enemies).forEach(object => {
+                    if (object.collision && object.x == r * 16 && object.y == c * 16) {
+                        this.addWall(object.x, object.y);
+                    } else {
+                        this.resetWall(r * 16, c * 16);
+                    }
+                });
+            }
+        }
     }
       
     parseMapData(mapArray) {
@@ -108,6 +141,14 @@ class Map {
     
     removeWall(x, y) {
         this.walls[`${x},${y}`] = false;
+    }
+
+    resetWall(x, y) {
+        if (this.gridWalls[x / 16][y / 16] == 1) {
+            this.walls[`${x},${y}`] = true;
+        } else if (this.gridWalls[x / 16][y / 16] !== 1) {
+            this.walls[`${x},${y}`] = false;
+        }
     }
     
     moveWall(currentX, currentY, direction) {

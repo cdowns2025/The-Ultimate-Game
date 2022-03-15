@@ -61,6 +61,7 @@ window.Maps = {
                         intervalTime: 5000,
                     },
                 },
+                hearts: 3,
             },
             "2": {
                 spawners:  {
@@ -73,6 +74,7 @@ window.Maps = {
                         intervalTime: 2500,
                     }
                 },
+                hearts: 4,
             },
             "3": {
                 spawners: {
@@ -85,6 +87,7 @@ window.Maps = {
                         intervalTime: 5000,
                     }
                 },
+                hearts: 4,
             },
             "4": {
                 spawners: {
@@ -101,6 +104,7 @@ window.Maps = {
                         intervalTime: 5000,
                     }
                 },
+                hearts: 5,
             }
         }
     }
