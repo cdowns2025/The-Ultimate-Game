@@ -14,7 +14,7 @@ class StartScreen {
             <img id="credits" src="Credits.png" />
         `);
         
-        this.element.getElementById("credits").addEventListener("click", () => {
+        this.element.querySelector("#credits").addEventListener("click", () => {
             this.element.remove();
             this.element = document.createElement("div");
             this.element.classList.add("Credits");
