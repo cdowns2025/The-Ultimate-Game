@@ -38,6 +38,11 @@ class Spawner extends GameObject {
                         color: "purple",
                     });
                     this.enemyCounter++;
+                 
+                    if (this.enemyCounter === this.enemyCapacity) {
+                        this.alive = false;
+                        this.isRendered = false;
+                    }
                 } else {
                     this.isRendered = false;
                 }
