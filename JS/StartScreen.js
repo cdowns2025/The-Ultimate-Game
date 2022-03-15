@@ -20,12 +20,12 @@ class StartScreen {
             this.element.classList.add("Credits");
             
             this.element.innerHTML = (`
-                <h1>The team</h1>
+                <h1>The Team:</h1>
                 <p>Carver Snyder: Music Creator and Logistics Manager</p>
                 <p>Tyler Wiggins: Game Art Creator</p>
                 <p>Carter Downs: Programmer, Music Creator, and Icon Creator</p>
-                <p>Have Gee: Programmer</p>
-                <p>Jimmy Giannasi: Concept Designer and Recorder</p>
+                <p>Haven Gee: Programmer</p>
+                <p>Jimmy Giannasi: Concept Designer, Logo Creator, and Recorder</p>
                 <p>©PIPE</p>
                 <img id="return" src="Return.png" />
             `);
