@@ -3,7 +3,7 @@ class StartScreen {
         this.game = game;
     }
     
-    createElement(resolve, container) {
+    createElements(resolve, container) {
         
         this.element = document.createElement("div");
         this.element.classList.add("StartScreen");
@@ -26,7 +26,13 @@ class StartScreen {
                 <p>Carter Downs: Programmer, Music Creator, and Icon Creator</p>
                 <p>Have Gee: Programmer</p>
                 <p>Jimmy Giannasi: Concept Designer and Recorder</p>
+                <img id="return" src="Return.png" />
             `);
+            
+            this.element.querySelector("#return").addEventListener("click", () => {
+                this.element.remove();
+                this.createElements(resolve, container);
+            });
             
             container.appendChild(this.element);
         });
@@ -43,7 +49,7 @@ class StartScreen {
     
     init(container) {
         return new Promise(resolve => {
-            this.createElement(resolve, container);
+            this.createElements(resolve, container);
             container.appendChild(this.element);
         });
     }
