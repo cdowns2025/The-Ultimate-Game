@@ -47,7 +47,7 @@ class UI {
     });
     
     container.appendChild(this.endScreen);
-    container.appendChil(this.playAgain);
+    container.appendChild(this.playAgain);
   }
   
   newWave(waveNumber, container) {
