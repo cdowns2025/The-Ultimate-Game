@@ -1,6 +1,6 @@
 window.Maps = {
     "TestingRoom": {
-        lowerSrc: "grid2.png",
+        lowerSrc: "Brown-Floor.png",
         upperSrc: null,
         gameObjects: {
             allies: {
