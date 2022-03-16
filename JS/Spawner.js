@@ -46,6 +46,7 @@ class Spawner extends GameObject {
                     }
                 } else {
                     this.isRendered = false;
+                    this.alive = false;
                 }
             }
             this.currentTime += state.deltaTime;

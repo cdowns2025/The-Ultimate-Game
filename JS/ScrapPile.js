@@ -13,7 +13,7 @@ class ScrapPile extends GameObject {
             state.map.addWall(this.x, this.y);
         }
         if (this.gathered) {
-            state.map.resetWall(this.x, this.y);
+            state.map.removeWall(this.x, this.y);
             this.gathered = false;
         }
     }
@@ -23,7 +23,6 @@ class ScrapPile extends GameObject {
             this.alive = false;
             this.isRendered = false;
             this.collision = false;
-            //alert("interacted");
             this.gathered = true;
             hitInfo.source.scrapPileInventory++;
         }

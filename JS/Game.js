@@ -60,6 +60,7 @@ class Game {
             Object.keys(this.map.gameObjects.enemies).forEach(key => {
                 if (this.map.gameObjects.enemies[key].alive) {
                     nextWave = false;
+                    console.log(key);
                 } 
             });
             

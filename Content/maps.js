@@ -66,49 +66,6 @@ window.Maps = {
                     },
                 },
             },
-            "2": {
-                spawners:  {
-                    "1": {
-                        basic: 2,
-                        intervalTime: 5000,
-                    },
-                    "2": {
-                        basic: 4,
-                        intervalTime: 2500,
-                    }
-                },
-                hearts: 4,
-            },
-            "3": {
-                spawners: {
-                    "1": {
-                        basic: 1,
-                        intervalTime: 1000,
-                    },
-                    "2": {
-                        basic: 5,
-                        intervalTime: 5000,
-                    }
-                },
-                hearts: 4,
-            },
-            "4": {
-                spawners: {
-                    "1": {
-                        basic: 2,
-                        intervalTime: 10000,
-                    },
-                    "2": {
-                        basic: 10,
-                        intervalTime: 500,
-                    },
-                    "3": {
-                        basic: 5,
-                        intervalTime: 5000,
-                    }
-                },
-                hearts: 5,
-            }
         }
     }
 }

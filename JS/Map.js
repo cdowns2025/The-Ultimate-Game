@@ -17,7 +17,7 @@ class Map {
     
     initiateWave(waveNumber, ui) {
 
-        for (let i = 0; i < this.waves[waveNumber].hearts; i++) {
+        for (let i = 0; i < this.waves["1"].hearts + waveNumber; i++) {
             this.gameObjects.allies["hearts" + i] = new HeartItem({
                 x: utils.asGrid(Math.floor(Math.random() * 20)),
                 y: utils.asGrid(Math.floor(Math.random() * 15)),
@@ -26,7 +26,7 @@ class Map {
             });
         }
 
-        for (let i = 0; i < this.waves[waveNumber].basic; i++) {
+        for (let i = 0; i < this.waves["1"].basic + waveNumber; i++) {
             this.gameObjects.enemies["enemy" + i] = new Enemy({
                 x: utils.asGrid(Math.floor(Math.random() * 20)),
                 y: utils.asGrid(Math.floor(Math.random() * 15)),
@@ -43,20 +43,18 @@ class Map {
             }
         */
         
-        for (let i = 0; i < Object.keys(this.waves[waveNumber].spawners).length; i++) {
-            for (let j = 0; j < Object.keys(this.waves[waveNumber].spawners[i + 1]).length; j++) {
-                this.gameObjects.enemies["spawner" + i] = new Spawner({
-                    x: utils.asGrid(Math.floor(Math.random() * 20)),
-                    y: utils.asGrid(Math.floor(Math.random() * 15)),
-                    enemyCapacity: this.waves[waveNumber].spawners[i + 1].basic,
-                    intervalTime: this.waves[waveNumber].spawners[i+1].intervalTime,
-                    color: "#4d2600",
-                    images: ["floor_hole.png"],
-                })
-            }
+        for (let i = 0; i < Object.keys(this.waves["1"].spawners).length * waveNumber; i++) {
+            this.gameObjects.enemies["spawner" + i] = new Spawner({
+                x: utils.asGrid(Math.floor(Math.random() * 20)),
+                y: utils.asGrid(Math.floor(Math.random() * 15)),
+                enemyCapacity: this.waves["1"].spawners["1"].basic * Math.ceil(waveNumber / 4) + (Math.floor(Math.random() * 10) - 5),
+                intervalTime: this.waves["1"].spawners["1"].intervalTime / (waveNumber / 4) + 300,
+                color: "#4d2600",
+                images: ["floor_hole.png"],
+            });
         }
 
-        for (let i = 0; i < Object.keys(this.waves[waveNumber].spawners).length; i++) {
+        for (let i = 0; i < Object.keys(this.waves["1"].spawners).length * waveNumber; i++) {
             this.gameObjects.allies["scrapPile" + i] = new ScrapPile({
                 x: utils.asGrid(Math.floor(Math.random() * 20)),
                 y: utils.asGrid(Math.floor(Math.random() * 15)),
@@ -64,17 +62,6 @@ class Map {
                 images: [null],                             // CARTER, ADD IMAGE FOR SCRAPPILE HERE
             });
         }
-
-        /*for (let i = 0; i < this.waves[waveNumber].spawners; i++) {
-            this.gameObjects.enemies["spawner" + i] = new Spawner({
-                x: utils.asGrid(Math.floor(Math.random() * 20)),
-                y: utils.asGrid(Math.floor(Math.random() * 15)),
-                enemyCapacity: 10,
-                intervalTime: 200,
-                color: "brown",
-            });
-        }*/
-        
         ui.newWave(waveNumber, document.querySelector(".game-container"));
     }
     
