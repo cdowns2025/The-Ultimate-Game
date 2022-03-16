@@ -11,7 +11,15 @@ class Sprite {
         
         this.gameObject = config.gameObject;
         
-        this.imageFrame = "forward";
+        this.imageFrame = 0;
+    }
+    
+    updateSrc() {
+        this.isLoaded = false;
+        this.image.src = this.images[this.imageFrame];
+        this.image.onload = () => {
+            this.isLoaded = true;
+        }
     }
     
     draw(ctx, player) {
@@ -20,8 +28,7 @@ class Sprite {
         
         if (this.gameObject.isRendered == true) {
             
-            ctx.drawImage(this.image, x, y);
+            this.isLoaded && ctx.drawImage(this.image, x, y);
         }
-        //this.isLoaded && ctx.drawImage(this.image, x, y);
     }
 }
