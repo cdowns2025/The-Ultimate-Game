@@ -28,9 +28,9 @@ class Sprite {
         
         if (this.image.src === "floor_hole.png") {
             x -= 2;
-            y += 2;
-        } else if (this.image.src !== "health.png") {
-            y += 8;
+            y -= 2;
+        } else if (this.image.src === "health.png") {
+            y += 4;
             x += 4;
         } else {
             x += 2;
