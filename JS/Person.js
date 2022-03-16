@@ -31,6 +31,36 @@ class Person extends GameObject {
 
         this.interactKey = new KeyPressListener("Enter", () => {
             this.interact();
+            
+            if (this.direction === "down") {
+                this.sprite.imageFrame = 4;
+                this.sprite.updateSrc();
+            } else if (this.direction === "up") {
+                this.sprite.imageFrame = 5;
+                this.sprite.updateSrc();
+            } else if (this.direction === "left") {
+                this.sprite.imageFrame = 6;
+                this.sprite.updateSrc();
+            } else if (this.direction === "right") {
+                this.sprite.imageFrame = 7;
+                this.sprite.updateSrc();
+            }
+            
+            setTimeout(() => {
+                if (this.direction === "down") {
+                    this.sprite.imageFrame = 0;
+                    this.sprite.updateSrc();
+                } else if (this.direction === "up") {
+                    this.sprite.imageFrame = 1;
+                    this.sprite.updateSrc();
+                } else if (this.direction === "left") {
+                    this.sprite.imageFrame = 2;
+                    this.sprite.updateSrc();
+                } else if (this.direction === "right") {
+                    this.sprite.imageFrame = 3;
+                    this.sprite.updateSrc();
+            }
+            }, 500)
         });
         this.interactKey.init();
         
