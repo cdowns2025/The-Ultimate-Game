@@ -121,6 +121,7 @@ class Person extends GameObject {
     update(state) {
         
         if (state.arrow) this.moving = true;
+        else this.moving = false;
         
         this.animationCounter += state.deltaTime;
         console.log(this.animationCounter)
@@ -157,6 +158,8 @@ class Person extends GameObject {
                     this.sprite.imageFrame = 12;
                 }
                 else this.sprite.imageFrame = 12;
+                
+                console.log(this.sprite.imageFrame);
                 
             } else if (this.direction === "up") {
                 if (this.sprite.imageFrame === 13) {
