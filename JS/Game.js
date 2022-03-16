@@ -157,6 +157,8 @@ class Game {
         this.lastTime = 0;
         this.muted = false;
         this.wave = 1;
+        this.UI = null;
+        this.mainTheme = null;
      
         this.scoreCounter = 0;
      
