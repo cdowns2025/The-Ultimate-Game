@@ -43,7 +43,7 @@ class Map {
             }
         */
         
-        /*for (let i = 0; i < Object.keys(this.waves[waveNumber].spawners).length; i++) {
+        for (let i = 0; i < Object.keys(this.waves[waveNumber].spawners).length; i++) {
             for (let j = 0; j < Object.keys(this.waves[waveNumber].spawners[i + 1]).length; j++) {
                 this.gameObjects.enemies["spawner" + i] = new Spawner({
                     x: utils.asGrid(Math.floor(Math.random() * 20)),
@@ -51,9 +51,10 @@ class Map {
                     enemyCapacity: this.waves[waveNumber].spawners[i + 1].basic,
                     intervalTime: this.waves[waveNumber].spawners[i+1].intervalTime,
                     color: "#4d2600",
+                    images: ["floor_hole.png"],
                 })
             }
-        }*/
+        }
 
         /*for (let i = 0; i < this.waves[waveNumber].spawners; i++) {
             this.gameObjects.enemies["spawner" + i] = new Spawner({
