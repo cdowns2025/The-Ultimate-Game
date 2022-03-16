@@ -120,6 +120,7 @@ class Person extends GameObject {
     update(state) {
         
         this.animationCounter += state.deltaTime;
+        console.log(this.animationCounter)
         
         if (this.hit) { // decreases health when the enemy is hit
             this.color = "red";
@@ -139,11 +140,11 @@ class Person extends GameObject {
                 this.sprite.imageFrame = 3;
                 this.sprite.updateSrc();
             }
-            }
-            this.hitInterval--;
-          } else {
-            this.color = "blue";
-          }
+        }
+        this.hitInterval--;
+      } else {
+        this.color = "blue";
+      }
         
         //Animation
         if (this.movingProgressRemainging > 0 && this.animationCounter > this.animationChange) {
