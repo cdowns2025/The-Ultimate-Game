@@ -108,14 +108,14 @@ class Game {
             });
            
             //Update the enemies
-            Object.values(this.map.gameObjects.enemies).forEach(object => {
+            /*Object.values(this.map.gameObjects.enemies).forEach(object => {
                 object.update({
                     player: this.map.gameObjects.allies.player,
                     direction: null,
                     map: this.map,
                     deltaTime: deltaTime
                 })
-            });
+            });*/
          
             this.map.drawLowerLayer(this.ctx, player);
 
@@ -125,9 +125,9 @@ class Game {
             });
             
             //Draw the enemies
-            Object.values(this.map.gameObjects.enemies).forEach(object => {
+            /*Object.values(this.map.gameObjects.enemies).forEach(object => {
                 object.sprite.draw(this.ctx, player);
-            });
+            });*/
 
             //this.map.drawUpperLayer(this.ctx);
 
