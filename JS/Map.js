@@ -17,13 +17,14 @@ class Map {
     
     initiateWave(waveNumber, ui) {
 
-        /*for (let i = 0; i < this.waves[waveNumber].hearts; i++) {
+        for (let i = 0; i < this.waves[waveNumber].hearts; i++) {
             this.gameObjects.allies["hearts" + i] = new HeartItem({
                 x: utils.asGrid(Math.floor(Math.random() * 20)),
                 y: utils.asGrid(Math.floor(Math.random() * 15)),
                 color: "#ff4d4d",
+                images: ["health.png"],
             });
-        }*/
+        }
 
         for (let i = 0; i < this.waves[waveNumber].basic; i++) {
             this.gameObjects.enemies["enemy" + i] = new Enemy({
