@@ -1,7 +1,13 @@
 class Sprite {
     constructor(config) {
-        this.images = config.images;
-        console.log(this.images);
+        this.imageSources = config.images;
+        
+        this.images = [];
+        for (let i = 0; i < this.imageSources.length; i++) {
+            this.images[i] = new Image();
+            this.images[i].src = this.imageSources[i];
+            setTimeout(() => {}, 10);
+        }
         
         this.image = new Image();
         this.image.src = this.images[0];
