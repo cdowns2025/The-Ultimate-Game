@@ -60,7 +60,6 @@ class Game {
             Object.keys(this.map.gameObjects.enemies).forEach(key => {
                 if (this.map.gameObjects.enemies[key].alive) {
                     nextWave = false;
-                    console.log(key);
                 } 
             });
             
@@ -85,15 +84,21 @@ class Game {
             const player = this.map.gameObjects.allies.player; 
             
             //Checks to see if player is dead
-            if (player.health === 0) {
-                this.mainTheme.volume = 0;
-                cancelAnimationFrame((timeStamp) => {
-                    step(timeStamp);
-                });
-                
-                this.UI.endGame(document.querySelector(".game-container"));
-                alert("hey");
-                return;
+            if (!this.resetPhase) {
+                if (player.health === 0) {
+                    this.mainTheme.volume = 0;
+                    cancelAnimationFrame((timeStamp) => {
+                        step(timeStamp);
+                    });
+                    
+                    this.UI.endGame(document.querySelector(".game-container"));
+                    return;
+                }
+            } else {
+                player.health = 6;
+                player.hit = false;
+                player.sprite.imageFrame = 0;
+                this.resetPhase = false;
             }
 
             //update the colliders
@@ -135,6 +140,10 @@ class Game {
 
             //this.map.drawUpperLayer(this.ctx);
 
+
+
+            console.log(player.health);
+
             //Call this function again at earliest convience / how fast your computer can run it
             requestAnimationFrame((timeStamp) => {
               step(timeStamp);
@@ -154,6 +163,7 @@ class Game {
     async init() {
      
         this.map = null;
+        this.resetPhase = true;
         this.score = 0;
         this.lastTime = 0;
         this.muted = false;

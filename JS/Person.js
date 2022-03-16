@@ -34,7 +34,7 @@ class Person extends GameObject {
         });
         this.dashKey.init();
         
-        this.imageDirection = "down"
+        this.imageDirection = "down";
 
         this.interactKey = new KeyPressListener("Enter", () => {
             this.interact();
@@ -63,7 +63,7 @@ class Person extends GameObject {
         });
         this.interactKey.init();
         
-        this.oldDirection = "down"
+        this.oldDirection = "down";
     }
     
     dash() {
