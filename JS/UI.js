@@ -34,9 +34,20 @@ class UI {
         <p>Your final score was ${this.actualScore}!</p>
         <p>Insert another coin to play again!</p>
       `);
-    }
+    } 
+    
+    this.playAgain = document.createElement("div");
+    this.playAgain.classList.add("Again");
+    this.playAgain.innerHTML = (`
+      <button>Play Again?</button>
+    `);
+    
+    this.playAgain.addEventListener("click", () => {
+      this.game.init();
+    });
     
     container.appendChild(this.endScreen);
+    container.appendChild(this.playAgain);
   }
   
   newWave(waveNumber, container) {
