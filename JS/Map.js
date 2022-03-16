@@ -61,6 +61,7 @@ class Map {
                 x: utils.asGrid(Math.floor(Math.random() * 20)),
                 y: utils.asGrid(Math.floor(Math.random() * 15)),
                 color:"#cc6600",
+                images: [null],                             // CARTER, ADD IMAGE FOR SCRAPPILE HERE
             });
         }
 
