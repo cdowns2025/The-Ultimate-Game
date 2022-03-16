@@ -153,6 +153,16 @@ class Game {
 
     async init() {
      
+        this.map = null;
+        this.score = 0;
+        this.lastTime = 0;
+        this.muted = false;
+        this.wave = 1;
+        this.UI = null;
+        this.mainTheme = null;
+     
+        this.scoreCounter = 0;
+     
         this.startScreen = new StartScreen();
         await this.startScreen.init(document.querySelector(".game-container"));
 
