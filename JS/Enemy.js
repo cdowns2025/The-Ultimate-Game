@@ -54,6 +54,7 @@ class Enemy extends GameObject {
         this.isRendered = false;
         state.map.removeWall(utils.gridFloor(this.x + 8), utils.gridFloor(this.y + 8)); //ensures that the proper wall is removed when the enemy dies   
         this.alive = false;
+        this.collision = false;
       }
 
       if (this.movingProgressRemaining > 0) {

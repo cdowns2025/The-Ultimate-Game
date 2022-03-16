@@ -53,6 +53,14 @@ class Map {
             }
         }
 
+        for (let i = 0; i < Object.keys(this.waves[waveNumber].spawners).length; i++) {
+            this.gameObjects.allies["scrapPile" + i] = new ScrapPile({
+                x: utils.asGrid(Math.floor(Math.random() * 20)),
+                y: utils.asGrid(Math.floor(Math.random() * 15)),
+                color:"#cc6600",
+            });
+        }
+
         /*for (let i = 0; i < this.waves[waveNumber].spawners; i++) {
             this.gameObjects.enemies["spawner" + i] = new Spawner({
                 x: utils.asGrid(Math.floor(Math.random() * 20)),
@@ -81,21 +89,29 @@ class Map {
     }
 
     colliderUpdate() {
-        for (let r = 0; r > this.gridWalls.length; r++) {
-            for (let c = 0; c > this.gridWalls[r].length; c++) {
+        for (let r = 0; r < this.gridWalls.length; r++) {
+            for (let c = 0; c < this.gridWalls[r].length; c++) {
                 Object.values(this.gameObjects.allies).forEach(object => {
-                    if (object.collision && object.x == r * 16 && object.y == c * 16) {
+                    if (object.collision && object.x == (c - 1) * 16 && object.y == (r - 1) * 16) {
                         this.addWall(object.x, object.y);
                     } else {
-                        this.resetWall(r * 16, c * 16);
+                        if (this.gridWalls[r][c] === 1) {
+                            this.addWall((c - 1) * 16, (r - 1) * 16);
+                        } else if (this.gridWalls[r][c] !== 1) {
+                            this.removeWall((c - 1) * 16, (r - 1) * 16)
+                        }
                     }
                 });
                 
                 Object.values(this.gameObjects.enemies).forEach(object => {
-                    if (object.collision && object.x == r * 16 && object.y == c * 16) {
+                    if (object.collision && object.x / 16 == Math.floor(object.x / 16) && object.y / 16 == Math.floor(object.y / 16)) {
                         this.addWall(object.x, object.y);
                     } else {
-                        this.resetWall(r * 16, c * 16);
+                        if (this.gridWalls[r][c] === 1) {
+                            this.addWall((c - 1) * 16, (r - 1) * 16);
+                        } else if (this.gridWalls[r][c] !== 1) {
+                            this.removeWall((c - 1) * 16, (r - 1) * 16)
+                        }
                     }
                 });
             }
@@ -143,13 +159,13 @@ class Map {
         this.walls[`${x},${y}`] = false;
     }
 
-    resetWall(x, y) {
-        if (this.gridWalls[x / 16][y / 16] == 1) {
+    /*resetWall(x, y) {
+        if (this.gridWalls[y / 16][x / 16] == 1) {
             this.walls[`${x},${y}`] = true;
-        } else if (this.gridWalls[x / 16][y / 16] !== 1) {
+        } else if (this.gridWalls[y / 16][x / 16] !== 1) {
             this.walls[`${x},${y}`] = false;
         }
-    }
+    }*/
     
     moveWall(currentX, currentY, direction) {
         this.removeWall(currentX, currentY);

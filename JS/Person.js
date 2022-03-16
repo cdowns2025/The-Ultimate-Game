@@ -10,6 +10,7 @@ class Person extends GameObject {
         this.health = 6;
         this.hit = false;
         this.hitInterval = 0;
+        this.scrapPileInventory = 0;
         
         this.movingProgressRemaining = 0;
         
@@ -95,11 +96,25 @@ class Person extends GameObject {
         }
         if (this.isInteracting && !this.isDashing) { //Checks the cell in the players direction and activates the object's on-interact script function
             Object.values(state.map.gameObjects.enemies).forEach(object => {
-                if (object.x === Object.values(utils.getNextCoord(this.x, this.y, this.direction))[0] && object.y === Object.values(utils.getNextCoord(this.x, this.y, this.direction))[1]) {
-                    object.onInteracted({
-                        damage: 1,
-                        direction: this.direction,
-                    });
+                if (object.x === utils.gridFloor(Object.values(utils.getNextCoord(this.x, this.y, this.direction))[0] + 8) && object.y === utils.gridFloor(Object.values(utils.getNextCoord(this.x, this.y, this.direction))[1] + 8)) {
+                    if (typeof object.onInteracted === "function") {
+                        object.onInteracted({
+                            damage: 1,
+                            direction: this.direction,
+                            source: this,
+                        });
+                    }
+                }
+            });
+            Object.values(state.map.gameObjects.allies).forEach(object => {
+                if (object.x === utils.gridFloor(Object.values(utils.getNextCoord(this.x, this.y, this.direction))[0] + 8) && object.y === utils.gridFloor(Object.values(utils.getNextCoord(this.x, this.y, this.direction))[1] + 8)) {
+                    if (typeof object.onInteracted === "function") {
+                        object.onInteracted({
+                            damage: 1,
+                            direction: this.direction,
+                            source: this,
+                        });
+                    }
                 }
             });
             this.isInteracting = false;
