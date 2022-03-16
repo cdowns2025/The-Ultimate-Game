@@ -9,7 +9,7 @@ window.Maps = {
                     x: utils.asGrid(0),
                     y: utils.asGrid(0),
                     color: "blue",
-                    images: ["standF.PNG", "standB.PNG", "standL.PNG", "standR.PNG", "attackF.PNG", "attackB.PNG", "attackL.PNG", "attackR.PNG", "damageF.PNG", "damageB.PNG", "damageL.PNG", "damageR.PNG"],
+                    images: ["standF.PNG", "standB.PNG", "standL.PNG", "standR.PNG", "attackF.PNG", "attackB.PNG", "attackL.PNG", "attackR.PNG", "damageF.PNG", "damageB.PNG", "damageL.PNG", "damageR.PNG", "walkF1.PNG", "walk1B1.PNG", "walkL1.PNG", "walkR1.PNG", "walkF2.PNG", "walk1B2.PNG", "walkL2.PNG", "walkR2.PNG"],
                 }),
             }, 
             enemies: {
