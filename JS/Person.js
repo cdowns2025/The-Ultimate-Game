@@ -108,13 +108,13 @@ class Person extends GameObject {
             this.hitInterval = 30;
             this.health -= damageLevel;
             
-            if (this.imageDirection === "down") this.direction = "up";
+            /*if (this.imageDirection === "down") this.direction = "up";
             else if (this.imageDirection === "up") this.direction = "down";
             else if (this.imageDirection === "left") this.direction = "right";
             else this.direction = "left";
             this.movingProgressRemaining = 16;
             
-            this.map.moveWall(this.x, this.y, this.direction);
+            this.map.moveWall(this.x, this.y, this.direction);*/
         }
     }
 
@@ -146,7 +146,7 @@ class Person extends GameObject {
       }
         
         //Animation
-        if (this.animationCounter > this.animationChange && !this.hit) {
+        /*if (this.animationCounter > this.animationChange && !this.hit) {
             this.animationCounter = 0;
             
             if (this.direction === "down") {
@@ -206,7 +206,7 @@ class Person extends GameObject {
             } else if (this.imageDirection === "right") {
                 this.sprite.imageFrame = 3;
             }
-        }
+        }*/
 
         if (this.movingProgressRemaining > 0) {
             this.updatePosition(); //updates the player's position
