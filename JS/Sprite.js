@@ -23,8 +23,13 @@ class Sprite {
     }
     
     draw(ctx, player) {
-        const x = this.gameObject.x + utils.asGrid(7.5) - player.x + 2;
-        const y = this.gameObject.y + utils.asGrid(4.5) - player.y - 1;
+        let x = this.gameObject.x + utils.asGrid(7.5) - player.x;
+        let y = this.gameObject.y + utils.asGrid(4.5) - player.y;
+        
+        if (this.image.src !== "floor_hole.png" && this.image.src !== "health.png") {
+            x += 2;
+            y -= 1;
+        }
         
         if (this.gameObject.isRendered == true) {
             
