@@ -124,7 +124,6 @@ class Person extends GameObject {
         else this.moving = false;
         
         this.animationCounter += state.deltaTime;
-        console.log(this.animationCounter)
         
         if (this.hit) { // decreases health when the enemy is hit
             this.color = "red";
@@ -153,11 +152,11 @@ class Person extends GameObject {
             if (this.direction === "down") {
                 if (this.sprite.imageFrame === 12) {
                     this.sprite.imageFrame = 16;
-                }
-                else if (this.sprite.imageFrame === 16) {
+                } else if (this.sprite.imageFrame === 16) {
+                    this.sprite.imageFrame = 12;
+                } else {
                     this.sprite.imageFrame = 12;
                 }
-                else this.sprite.imageFrame = 12;
                 
                 console.log(this.sprite.imageFrame);
                 
@@ -168,8 +167,11 @@ class Person extends GameObject {
                 else if (this.sprite.imageFrame === 17) {
                     this.sprite.imageFrame = 13;
                 }
-                else this.sprite.imageFrame = 13;
+                else {
+                    this.sprite.imageFrame = 13;
+                }
                 
+                console.log(this.sprite.imageFrame);
             } else if (this.direction === "left") {
                 if (this.sprite.imageFrame === 14) {
                     this.sprite.imageFrame = 18;
@@ -177,8 +179,10 @@ class Person extends GameObject {
                 else if (this.sprite.imageFrame === 18) {
                     this.sprite.imageFrame = 14;
                 }
-                else this.sprite.imageFrame = 14;
-                
+                else {
+                    this.sprite.imageFrame = 14;
+                }
+                console.log(this.sprite.imageFrame);
             } else if (this.direction === "right") {
                 if (this.sprite.imageFrame === 15) {
                     this.sprite.imageFrame = 19;
@@ -186,8 +190,10 @@ class Person extends GameObject {
                 else if (this.sprite.imageFrame === 19) {
                     this.sprite.imageFrame = 15;
                 }
-                else this.sprite.imageFrame = 15;
-                
+                else {
+                    this.sprite.imageFrame = 15;
+                }
+                console.log(this.sprite.imageFrame);
             }   
         } else {
             if (this.imageDirection === "down") {
