@@ -10,6 +10,9 @@ class Map {
 
         this.lowerImage = new Image();
         this.lowerImage.src = config.lowerSrc;
+        this.lowerImage.onload = () => {
+            this.lowerImageLoaded = true;
+        }
 
         this.upperImage = new Image();
         this.upperImage.src = config.upperSrc;
@@ -177,7 +180,7 @@ class Map {
     }
 
     drawLowerLayer(ctx, player) { 
-        ctx.drawImage(this.lowerImage, utils.asGrid(7.5) - player.x, utils.asGrid(4.5) - player.y);
+        this.lowerImageLoaded && ctx.drawImage(this.lowerImage, utils.asGrid(7.5) - player.x, utils.asGrid(4.5) - player.y);
     }
     
     

@@ -31,10 +31,10 @@ class Sprite {
         let x = this.gameObject.x + utils.asGrid(7.5) - player.x;
         let y = this.gameObject.y + utils.asGrid(4.5) - player.y;
         
-        if (this.images[this.imageFrame] === "floor_hole.png") {
-            x -= 1;
-            y += -1;
-        } else if (this.images[this.imageFrame] === "health.png") {
+        if (this.imageSources[this.imageFrame] === "floor_hole.png") {
+            x += 1;
+            y += 1;
+        } else if (this.imageSources[this.imageFrame] === "health.png") {
             y += 4;
             x += 4;
         } else {
