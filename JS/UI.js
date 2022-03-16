@@ -22,8 +22,6 @@ class UI {
         <p>Your final score was ${this.actualScore}!</p>
         <p>Insert another coin to play again!</p>
       `);
-      
-      this.endScreen.
     } else if (this.waveNumber === 2) {
       this.endScreen.innerHTML = (`
         <p>You survived ${this.waveNumber - 1} round!</p>
