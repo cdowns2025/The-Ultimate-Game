@@ -17,7 +17,7 @@ window.Maps = {
                     x: utils.asGrid(5),
                     y: utils.asGrid(5),
                     color: "purple",
-                    images: ["squidF.PNG", "squidB.PNG", "squidL.PNG", "squidR.PNG"];
+                    images: ["squidF.PNG", "squidB.PNG", "squidL.PNG", "squidR.PNG"],
                 }),
                 /*enemy2: new Enemy({
                     x: utils.asGrid(10),
