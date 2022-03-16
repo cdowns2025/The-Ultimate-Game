@@ -129,16 +129,12 @@ class Person extends GameObject {
               
              if (this.imageDirection === "down") {
                 this.sprite.imageFrame = 0;
-                this.sprite.updateSrc();
             } else if (this.imageDirection === "up") {
                 this.sprite.imageFrame = 1;
-                this.sprite.updateSrc();
             } else if (this.imageDirection === "left") {
                 this.sprite.imageFrame = 2;
-                this.sprite.updateSrc();
             } else if (this.imageDirection === "right") {
                 this.sprite.imageFrame = 3;
-                this.sprite.updateSrc();
             }
         }
         this.hitInterval--;
@@ -151,28 +147,38 @@ class Person extends GameObject {
             this.animationCounter -= this.animationChange;
             console.log("animation");
             
-            if (this.imageDirection === "down") {
+            if (this.direction === "down") {
                 if (this.sprite.imageFrame === 12) this.sprite.imageFrame = 16;
-                if (this.sprite.imageFrame === 15) this.sprite.imageFrame = 12;
+                if (this.sprite.imageFrame === 16) this.sprite.imageFrame = 12;
                 else this.sprite.imageFrame = 12;
                 console.log("down");
-            } else if (this.imageDirection === "up") {
+            } else if (this.direction === "up") {
                 if (this.sprite.imageFrame === 13) this.sprite.imageFrame = 17;
-                if (this.sprite.imageFrame === 16) this.sprite.imageFrame = 13;
+                if (this.sprite.imageFrame === 17) this.sprite.imageFrame = 13;
                 else this.sprite.imageFrame = 13;
                 console.log("up");
-            } else if (this.imageDirection === "left") {
+            } else if (this.direction === "left") {
                 if (this.sprite.imageFrame === 14) this.sprite.imageFrame = 18;
-                if (this.sprite.imageFrame === 17) this.sprite.imageFrame = 14;
+                if (this.sprite.imageFrame === 18) this.sprite.imageFrame = 14;
                 else this.sprite.imageFrame = 14;
                 console.log("left");
-            } else if (this.imageDirection === "right") {
+            } else if (this.direction === "right") {
                 if (this.sprite.imageFrame === 15) this.sprite.imageFrame = 19;
-                if (this.sprite.imageFrame === 18) this.sprite.imageFrame = 15;
+                if (this.sprite.imageFrame === 19) this.sprite.imageFrame = 15;
                 else this.sprite.imageFrame = 15;
                 console.log("rigjt");
             }   
             
+        } else {
+            if (this.imageDirection === "down") {
+                this.sprite.imageFrame = 0;
+            } else if (this.imageDirection === "up") {
+                this.sprite.imageFrame = 1;
+            } else if (this.imageDirection === "left") {
+                this.sprite.imageFrame = 2;
+            } else if (this.imageDirection === "right") {
+                this.sprite.imageFrame = 3;
+            }
         }
 
         if (this.movingProgressRemaining > 0) {
