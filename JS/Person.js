@@ -13,7 +13,7 @@ class Person extends GameObject {
         this.scrapPileInventory = 0;
         
         this.animationCounter = 0;
-        this.animationChange = 1000 / 30;
+        this.animationChange = 1000 / 3;
         
         this.movingProgressRemaining = 0;
         
@@ -143,7 +143,7 @@ class Person extends GameObject {
       }
         
         //Animation
-        if (this.movingProgressRemaining > 0 && this.animationCounter > this.animationChange) {
+        if (this.movingProgressRemaining > 0 && this.animationCounter > this.animationChange && !this.hit) {
             this.animationCounter -= this.animationChange;
             
             if (this.direction === "down") {
