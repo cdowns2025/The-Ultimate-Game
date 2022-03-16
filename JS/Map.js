@@ -23,13 +23,14 @@ class Map {
                 y: utils.asGrid(Math.floor(Math.random() * 15)),
                 color: "#ff4d4d",
             });
-        }
+        }*/
 
         for (let i = 0; i < this.waves[waveNumber].basic; i++) {
             this.gameObjects.enemies["enemy" + i] = new Enemy({
                 x: utils.asGrid(Math.floor(Math.random() * 20)),
                 y: utils.asGrid(Math.floor(Math.random() * 15)),
                 color: "purple",
+                images: ["squidF.PNG", "squidB.PNG", "squidL.PNG", "squidR.PNG"],
             });
         }
         
