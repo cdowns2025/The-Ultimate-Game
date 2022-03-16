@@ -13,7 +13,7 @@ class Person extends GameObject {
         this.scrapPileInventory = 0;
         
         this.animationCounter = 0;
-        this.animationChange = 1000 / 30;
+        this.animationChange = 1000 / 3;
         
         this.movingProgressRemaining = 0;
         
