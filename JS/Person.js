@@ -12,6 +12,9 @@ class Person extends GameObject {
         this.hitInterval = 0;
         this.scrapPileInventory = 0;
         
+        this.animationCounter = 0;
+        this.animationChange = 1000 / 30;
+        
         this.movingProgressRemaining = 0;
         
         this.isPlayerControlled = config.isPlayerControlled || false;
@@ -115,6 +118,9 @@ class Person extends GameObject {
     }
 
     update(state) {
+        
+        this.animationCounter += state.deltaTime;
+        
         if (this.hit) { // decreases health when the enemy is hit
             this.color = "red";
             if (this.hitInterval == 0) {
@@ -138,6 +144,30 @@ class Person extends GameObject {
           } else {
             this.color = "blue";
           }
+        
+        //Animation
+        if (this.movingProgressRemainging > 0 && this.animationCounter > this.animationChange) {
+            this.animationCounter -= this.animationChange;
+            
+            if (this.imageDirection === "down") {
+                if (this.sprite.imageFrame === 12) this.imageFrame = 16;
+                if (this.sprite.imageFrame === 15) this.imageFrame = 12;
+                else this.imageFrame = 12;
+            } else if (this.imageDirection === "up") {
+                if (this.sprite.imageFrame === 13) this.imageFrame = 17;
+                if (this.sprite.imageFrame === 16) this.imageFrame = 13;
+                else this.imageFrame = 13;
+            } else if (this.imageDirection === "left") {
+                if (this.sprite.imageFrame === 14) this.imageFrame = 18;
+                if (this.sprite.imageFrame === 17) this.imageFrame = 14;
+                else this.imageFrame = 14;
+            } else if (this.imageDirection === "right") {
+                if (this.sprite.imageFrame === 15) this.imageFrame = 19;
+                if (this.sprite.imageFrame === 18) this.imageFrame = 15;
+                else this.imageFrame = 15;
+            }   
+            
+        }
 
         if (this.movingProgressRemaining > 0) {
             this.updatePosition(); //updates the player's position
