@@ -36,6 +36,7 @@ class Spawner extends GameObject {
                         x: this.x,
                         y: this.y,
                         color: "purple",
+                        images: ["squidF.png", "squidB.png", "squidL.png", "squidR.png"]
                     });
                     this.enemyCounter++;
                  
