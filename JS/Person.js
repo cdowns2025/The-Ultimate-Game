@@ -155,6 +155,8 @@ class Person extends GameObject {
                 } else {
                     this.sprite.imageFrame += 4;
                     
+                    return;
+                    
                     if (this.sprite.imageFrame > 16) {
                         this.sprite.imageFrame -= 8;
                     }
