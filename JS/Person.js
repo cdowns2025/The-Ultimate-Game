@@ -147,7 +147,7 @@ class Person extends GameObject {
       }
         
         //Animation
-        if (this.movingProgressRemainging > 0 && this.animationCounter > this.animationChange) {
+        if (this.movingProgressRemaining > 0 && this.animationCounter > this.animationChange) {
             this.animationCounter -= this.animationChange;
             console.log("animation");
             
