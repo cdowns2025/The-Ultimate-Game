@@ -37,31 +37,23 @@ class Person extends GameObject {
             
             if (this.imageDirection === "down") {
                 this.sprite.imageFrame = 4;
-                this.sprite.updateSrc();
             } else if (this.imageDirection === "up") {
                 this.sprite.imageFrame = 5;
-                this.sprite.updateSrc();
             } else if (this.imageDirection === "left") {
                 this.sprite.imageFrame = 6;
-                this.sprite.updateSrc();
             } else if (this.imageDirection === "right") {
                 this.sprite.imageFrame = 7;
-                this.sprite.updateSrc();
             }
             
             setTimeout(() => {
                 if (this.imageDirection === "down") {
                     this.sprite.imageFrame = 0;
-                    this.sprite.updateSrc();
                 } else if (this.imageDirection === "up") {
                     this.sprite.imageFrame = 1;
-                    this.sprite.updateSrc();
                 } else if (this.imageDirection === "left") {
                     this.sprite.imageFrame = 2;
-                    this.sprite.updateSrc();
                 } else if (this.imageDirection === "right") {
                     this.sprite.imageFrame = 3;
-                    this.sprite.updateSrc();
                 }
             }, 500)
         });
@@ -100,29 +92,25 @@ class Person extends GameObject {
         if (!this.hit) {
             if (this.imageDirection === "down") {
                 this.sprite.imageFrame = 8;
-                this.sprite.updateSrc();
             } else if (this.imageDirection === "up") {
                 this.sprite.imageFrame = 9;
-                this.sprite.updateSrc();
             } else if (this.imageDirection === "left") {
                 this.sprite.imageFrame = 10;
-                this.sprite.updateSrc();
             } else if (this.imageDirection === "right") {
                 this.sprite.imageFrame = 11;
-                this.sprite.updateSrc();
             }
             
             this.hit = true;
             this.hitInterval = 30;
             this.health -= damageLevel;
             
-            /*if (this.imageDirection === "down") this.direction = "up";
+            if (this.imageDirection === "down") this.direction = "up";
             else if (this.imageDirection === "up") this.direction = "down";
             else if (this.imageDirection === "left") this.direction = "right";
             else this.direction = "left";
             this.movingProgressRemaining = 16;
             
-            this.map.moveWall(this.x, this.y, this.direction);*/
+            this.map.moveWall(this.x, this.y, this.direction);
         }
     }
 
