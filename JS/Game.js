@@ -87,6 +87,7 @@ class Game {
             
             //Checks to see if player is dead
             if (!this.resetPhase) {
+              console.log("hi");
                 if (player.health === 0) {
                     this.mainTheme.volume = 0;
                     cancelAnimationFrame((timeStamp) => {
