@@ -1,6 +1,7 @@
 class Sprite {
     constructor(config) {
         this.images = config.images;
+        console.log(this.images);
         
         this.image = new Image();
         this.image.src = this.images[0];
