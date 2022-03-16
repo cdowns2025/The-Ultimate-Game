@@ -12,6 +12,7 @@ class UI {
   endGame(container) {
     this.score.remove();
     this.health.remove();
+    this.volume.remove();
     
     this.endScreen = document.createElement("div");
     this.endScreen.classList.add("EndScreen");
