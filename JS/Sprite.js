@@ -26,6 +26,7 @@ class Sprite {
         let x = this.gameObject.x + utils.asGrid(7.5) - player.x;
         let y = this.gameObject.y + utils.asGrid(4.5) - player.y;
         
+        console.log(this.image.src);
         if (this.image.src === "floor_hole.png") {
             x -= 10;
             y += 10;
