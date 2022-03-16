@@ -153,18 +153,22 @@ class Person extends GameObject {
                 if (this.sprite.imageFrame === 12) this.sprite.imageFrame = 16;
                 if (this.sprite.imageFrame === 15) this.sprite.imageFrame = 12;
                 else this.sprite.imageFrame = 12;
+                console.log("down");
             } else if (this.imageDirection === "up") {
                 if (this.sprite.imageFrame === 13) this.sprite.imageFrame = 17;
                 if (this.sprite.imageFrame === 16) this.sprite.imageFrame = 13;
                 else this.sprite.imageFrame = 13;
+                console.log("up");
             } else if (this.imageDirection === "left") {
                 if (this.sprite.imageFrame === 14) this.sprite.imageFrame = 18;
                 if (this.sprite.imageFrame === 17) this.sprite.imageFrame = 14;
                 else this.sprite.imageFrame = 14;
+                console.log("left");
             } else if (this.imageDirection === "right") {
                 if (this.sprite.imageFrame === 15) this.sprite.imageFrame = 19;
                 if (this.sprite.imageFrame === 18) this.sprite.imageFrame = 15;
                 else this.sprite.imageFrame = 15;
+                console.log("rigjt");
             }   
             
         }
