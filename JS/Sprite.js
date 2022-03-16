@@ -15,11 +15,11 @@ class Sprite {
     }
     
     updateSrc() {
-        this.isLoaded = false;
+       /* this.isLoaded = false;
         this.image.src = this.images[this.imageFrame];
         this.image.onload = () => {
             this.isLoaded = true;
-        }
+        }*/
     }
     
     draw(ctx, player) {
