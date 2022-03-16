@@ -149,33 +149,27 @@ class Person extends GameObject {
             if (this.direction === "down") {
                 if (this.sprite.imageFrame === 12) {
                     this.sprite.imageFrame = 16;
-                    return;
                 }
-                if (this.sprite.imageFrame === 16) {
+                else if (this.sprite.imageFrame === 16) {
                     this.sprite.imageFrame = 12;
-                    return;
                 }
                 else this.sprite.imageFrame = 12;
                 
             } else if (this.direction === "up") {
                 if (this.sprite.imageFrame === 13) {
                     this.sprite.imageFrame = 17;
-                    return;
                 }
-                if (this.sprite.imageFrame === 17) {
+                else if (this.sprite.imageFrame === 17) {
                     this.sprite.imageFrame = 13;
-                    return;
                 }
                 else this.sprite.imageFrame = 13;
                 
             } else if (this.direction === "left") {
                 if (this.sprite.imageFrame === 14) {
                     this.sprite.imageFrame = 18;
-                    return;
                 }
-                if (this.sprite.imageFrame === 18) {
+                else if (this.sprite.imageFrame === 18) {
                     this.sprite.imageFrame = 14;
-                    return;
                 }
                 else this.sprite.imageFrame = 14;
                 
@@ -183,9 +177,8 @@ class Person extends GameObject {
                 if (this.sprite.imageFrame === 15) {
                     this.sprite.imageFrame = 19;
                 }
-                if (this.sprite.imageFrame === 19) {
+                else if (this.sprite.imageFrame === 19) {
                     this.sprite.imageFrame = 15;
-                    return;
                 }
                 else this.sprite.imageFrame = 15;
                 
