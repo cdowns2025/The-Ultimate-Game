@@ -4,9 +4,14 @@ class Sprite {
         
         this.images = [];
         for (let i = 0; i < this.imageSources.length; i++) {
-            this.images[i] = new Image();
-            this.images[i].src = this.imageSources[i];
-            setTimeout(() => {}, 10);
+            this.images[i] = {
+                image: new Image(),
+                isLoaded: false,
+            }   
+            this.images[i].image.src = this.imageSources[i];
+            this.images[i].image.onLoad(() => {
+                this.images[i].isLoaded = true;
+            });
         }
         
         this.gameObject = config.gameObject;
@@ -38,7 +43,7 @@ class Sprite {
         
         if (this.gameObject.isRendered == true) {
             
-            ctx.drawImage(this.images[this.imageFrame], x, y);
+            this.images[this.imageFrame].isLoaded && ctx.drawImage(this.images[this.imageFrame].image, x, y);
         }
     }
 }
