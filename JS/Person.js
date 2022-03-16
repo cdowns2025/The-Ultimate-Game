@@ -59,7 +59,7 @@ class Person extends GameObject {
                 } else if (this.direction === "right") {
                     this.sprite.imageFrame = 3;
                     this.sprite.updateSrc();
-            }
+                }
             }, 500)
         });
         this.interactKey.init();
@@ -95,6 +95,20 @@ class Person extends GameObject {
     
     gotHurt(damageLevel) {
         if (!this.hit) {
+            if (this.direction === "down") {
+                this.sprite.imageFrame = 8;
+                this.sprite.updateSrc();
+            } else if (this.direction === "up") {
+                this.sprite.imageFrame = 9;
+                this.sprite.updateSrc();
+            } else if (this.direction === "left") {
+                this.sprite.imageFrame = 10;
+                this.sprite.updateSrc();
+            } else if (this.direction === "right") {
+                this.sprite.imageFrame = 11;
+                this.sprite.updateSrc();
+            }
+            
             this.hit = true;
             this.hitInterval = 30;
             this.health -= damageLevel;
@@ -106,6 +120,20 @@ class Person extends GameObject {
             this.color = "red";
             if (this.hitInterval == 0) {
               this.hit = false;
+              
+             if (this.direction === "down") {
+                this.sprite.imageFrame = 0;
+                this.sprite.updateSrc();
+            } else if (this.direction === "up") {
+                this.sprite.imageFrame = 1;
+                this.sprite.updateSrc();
+            } else if (this.direction === "left") {
+                this.sprite.imageFrame = 2;
+                this.sprite.updateSrc();
+            } else if (this.direction === "right") {
+                this.sprite.imageFrame = 3;
+                this.sprite.updateSrc();
+            }
             }
             this.hitInterval--;
           } else {
