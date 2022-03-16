@@ -146,7 +146,7 @@ class Person extends GameObject {
       }
         
         //Animation
-        if (this.moving && this.animationCounter > this.animationChange && !this.hit) {
+        if (this.animationCounter > this.animationChange && !this.hit) {
             this.animationCounter = 0;
             
             if (this.direction === "down") {
