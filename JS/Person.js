@@ -144,7 +144,7 @@ class Person extends GameObject {
         
         //Animation
         if (this.movingProgressRemaining > 0 && this.animationCounter > this.animationChange && !this.hit) {
-            this.animationCounter -= this.animationChange;
+            this.animationCounter = 0;
             
             if (this.direction === "down") {
                 if (this.sprite.imageFrame === 12) {
