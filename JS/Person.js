@@ -120,6 +120,8 @@ class Person extends GameObject {
             else if (this.direction === "left") this.direction = "right";
             else this.direction = "left";
             this.movingProgressRemaining = 16;
+            
+            this.map.moveWall(this.x, this.y, this.direction);
         }
     }
 
