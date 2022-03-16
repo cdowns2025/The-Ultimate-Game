@@ -158,7 +158,6 @@ class Person extends GameObject {
                 } else {
                     this.sprite.imageFrame = 12;
                 }
-                console.log(this.sprite.imageFrame);
                                 
             } else if (this.direction === "up") {
                 if (this.sprite.imageFrame === 13) {
