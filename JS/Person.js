@@ -150,21 +150,21 @@ class Person extends GameObject {
             this.animationCounter -= this.animationChange;
             
             if (this.imageDirection === "down") {
-                if (this.sprite.imageFrame === 12) this.imageFrame = 16;
-                if (this.sprite.imageFrame === 15) this.imageFrame = 12;
-                else this.imageFrame = 12;
+                if (this.sprite.imageFrame === 12) this.sprite.imageFrame = 16;
+                if (this.sprite.imageFrame === 15) this.sprite.imageFrame = 12;
+                else this.sprite.imageFrame = 12;
             } else if (this.imageDirection === "up") {
-                if (this.sprite.imageFrame === 13) this.imageFrame = 17;
-                if (this.sprite.imageFrame === 16) this.imageFrame = 13;
-                else this.imageFrame = 13;
+                if (this.sprite.imageFrame === 13) this.sprite.imageFrame = 17;
+                if (this.sprite.imageFrame === 16) this.sprite.imageFrame = 13;
+                else this.sprite.imageFrame = 13;
             } else if (this.imageDirection === "left") {
-                if (this.sprite.imageFrame === 14) this.imageFrame = 18;
-                if (this.sprite.imageFrame === 17) this.imageFrame = 14;
-                else this.imageFrame = 14;
+                if (this.sprite.imageFrame === 14) this.sprite.imageFrame = 18;
+                if (this.sprite.imageFrame === 17) this.sprite.imageFrame = 14;
+                else this.sprite.imageFrame = 14;
             } else if (this.imageDirection === "right") {
-                if (this.sprite.imageFrame === 15) this.imageFrame = 19;
-                if (this.sprite.imageFrame === 18) this.imageFrame = 15;
-                else this.imageFrame = 15;
+                if (this.sprite.imageFrame === 15) this.sprite.imageFrame = 19;
+                if (this.sprite.imageFrame === 18) this.sprite.imageFrame = 15;
+                else this.sprite.imageFrame = 15;
             }   
             
         }
