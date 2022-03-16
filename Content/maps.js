@@ -9,6 +9,7 @@ window.Maps = {
                     x: utils.asGrid(0),
                     y: utils.asGrid(0),
                     color: "blue",
+                    images: ["standF.PNG", "standB.PNG", "standL.PNG", "standR.PNG"],
                 }),
             }, 
             enemies: {
@@ -16,6 +17,7 @@ window.Maps = {
                     x: utils.asGrid(5),
                     y: utils.asGrid(5),
                     color: "purple",
+                    images: ["squidF.PNG", "squidB.PNG", "squidL.PNG", "squidR.PNG"],
                 }),
                 enemy2: new Enemy({
                     x: utils.asGrid(10),
@@ -55,13 +57,14 @@ window.Maps = {
         ],
         waves: {
             "1": {
+                basic: 2,
+                hearts: 3,
                 spawners: {
                     "1": {
                         basic: 2,
                         intervalTime: 5000,
                     },
                 },
-                hearts: 3,
             },
             "2": {
                 spawners:  {

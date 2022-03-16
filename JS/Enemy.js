@@ -19,6 +19,8 @@ class Enemy extends GameObject {
       "left": ["x", -1],
     }
     
+    this.oldDirection = "down";
+    
   }
   
   update(state) {
@@ -66,6 +68,23 @@ class Enemy extends GameObject {
           state.map.moveWall(this.x, this.y, this.direction);
         }
       }
+      
+      if (this.oldDirection !== this.direction) {
+            this.oldDirection = this.direction;
+            if (this.direction === "down") {
+                this.sprite.imageFrame = 0;
+                this.sprite.updateSrc();
+            } else if (this.direction === "up") {
+                this.sprite.imageFrame = 1;
+                this.sprite.updateSrc();
+            } else if (this.direction === "left") {
+                this.sprite.imageFrame = 2;
+                this.sprite.updateSrc();
+            } else if (this.direction === "right") {
+                this.sprite.imageFrame = 3;
+                this.sprite.updateSrc();
+            }
+        }
     }
   }
   

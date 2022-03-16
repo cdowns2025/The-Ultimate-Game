@@ -36,15 +36,16 @@ class Spawner extends GameObject {
                         x: this.x,
                         y: this.y,
                         color: "purple",
+                        images: ["squidF.png", "squidB.png", "squidL.png", "squidR.png"]
                     });
                     this.enemyCounter++;
                  
-                    /*if (this.enemyCounter === this.enemyCapacity) {
+                    if (this.enemyCounter === this.enemyCapacity) {
                         this.alive = false;
                         this.isRendered = false;
                     }
                 } else {
-                    this.isRendered = false;*/
+                    this.isRendered = false;
                 }
             }
             this.currentTime += state.deltaTime;

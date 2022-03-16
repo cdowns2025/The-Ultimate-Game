@@ -22,6 +22,7 @@ class Map {
                 x: utils.asGrid(Math.floor(Math.random() * 20)),
                 y: utils.asGrid(Math.floor(Math.random() * 15)),
                 color: "#ff4d4d",
+                images: ["health.png"],
             });
         }
 
@@ -30,6 +31,7 @@ class Map {
                 x: utils.asGrid(Math.floor(Math.random() * 20)),
                 y: utils.asGrid(Math.floor(Math.random() * 15)),
                 color: "purple",
+                images: ["squidF.PNG", "squidB.PNG", "squidL.PNG", "squidR.PNG"],
             });
         }
         
@@ -49,6 +51,7 @@ class Map {
                     enemyCapacity: this.waves[waveNumber].spawners[i + 1].basic,
                     intervalTime: this.waves[waveNumber].spawners[i+1].intervalTime,
                     color: "#4d2600",
+                    images: ["floor_hole.png"],
                 })
             }
         }

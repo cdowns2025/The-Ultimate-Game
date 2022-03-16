@@ -9,9 +9,11 @@ class GameObject {
         
         this.color = config.color || null;
         
+        console.log(config.images);
+        
         this.sprite = new Sprite({
             gameObject: this,
-            src: config.src,
+            images: config.images,
         });
         this.isRendered = true;
     }
