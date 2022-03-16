@@ -13,9 +13,10 @@ class Person extends GameObject {
         this.scrapPileInventory = 0;
         
         this.animationCounter = 0;
-        this.animationChange = 1000 / 3;
+        this.animationChange = 1000;
         
         this.movingProgressRemaining = 0;
+        this.moving = false;
         
         this.isPlayerControlled = config.isPlayerControlled || false;
         
@@ -119,6 +120,8 @@ class Person extends GameObject {
 
     update(state) {
         
+        if (state.arrow) this.moving = true;
+        
         this.animationCounter += state.deltaTime;
         console.log(this.animationCounter)
         
@@ -143,7 +146,7 @@ class Person extends GameObject {
       }
         
         //Animation
-        if (this.movingProgressRemaining > 0 && this.animationCounter > this.animationChange && !this.hit) {
+        if (this.moving && this.animationCounter > this.animationChange && !this.hit) {
             this.animationCounter = 0;
             
             if (this.direction === "down") {
@@ -183,7 +186,6 @@ class Person extends GameObject {
                 else this.sprite.imageFrame = 15;
                 
             }   
-            
         } else {
             if (this.imageDirection === "down") {
                 this.sprite.imageFrame = 0;
