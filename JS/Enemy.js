@@ -163,7 +163,8 @@ class Enemy extends GameObject {
     if (!this.hit && this.hitInterval < 0) {
       this.hit = true; //initial hit boolean
       this.hitInterval = 15;
-      this.idleTime = 0;
+      this.idleTime = 0;  
+      
       this.direction = hitInfo.direction;
     }
   }
