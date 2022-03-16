@@ -13,7 +13,7 @@ class Person extends GameObject {
         this.scrapPileInventory = 0;
         
         this.animationCounter = 0;
-        this.animationChange = 1000 / 3;
+        this.animationChange = 1000;
         
         this.movingProgressRemaining = 0;
         
@@ -145,28 +145,50 @@ class Person extends GameObject {
         //Animation
         if (this.movingProgressRemaining > 0 && this.animationCounter > this.animationChange) {
             this.animationCounter -= this.animationChange;
-            console.log("animation");
             
             if (this.direction === "down") {
-                if (this.sprite.imageFrame === 12) this.sprite.imageFrame = 16;
-                if (this.sprite.imageFrame === 16) this.sprite.imageFrame = 12;
+                if (this.sprite.imageFrame === 12) {
+                    this.sprite.imageFrame = 16;
+                    return;
+                }
+                if (this.sprite.imageFrame === 16) {
+                    this.sprite.imageFrame = 12;
+                    return;
+                }
                 else this.sprite.imageFrame = 12;
-                console.log("down");
+                
             } else if (this.direction === "up") {
-                if (this.sprite.imageFrame === 13) this.sprite.imageFrame = 17;
-                if (this.sprite.imageFrame === 17) this.sprite.imageFrame = 13;
+                if (this.sprite.imageFrame === 13) {
+                    this.sprite.imageFrame = 17;
+                    return;
+                }
+                if (this.sprite.imageFrame === 17) {
+                    this.sprite.imageFrame = 13;
+                    return;
+                }
                 else this.sprite.imageFrame = 13;
-                console.log("up");
+                
             } else if (this.direction === "left") {
-                if (this.sprite.imageFrame === 14) this.sprite.imageFrame = 18;
-                if (this.sprite.imageFrame === 18) this.sprite.imageFrame = 14;
+                if (this.sprite.imageFrame === 14) {
+                    this.sprite.imageFrame = 18;
+                    return;
+                }
+                if (this.sprite.imageFrame === 18) {
+                    this.sprite.imageFrame = 14;
+                    return;
+                }
                 else this.sprite.imageFrame = 14;
-                console.log("left");
+                
             } else if (this.direction === "right") {
-                if (this.sprite.imageFrame === 15) this.sprite.imageFrame = 19;
-                if (this.sprite.imageFrame === 19) this.sprite.imageFrame = 15;
+                if (this.sprite.imageFrame === 15) {
+                    this.sprite.imageFrame = 19;
+                }
+                if (this.sprite.imageFrame === 19) {
+                    this.sprite.imageFrame = 15;
+                    return;
+                }
                 else this.sprite.imageFrame = 15;
-                console.log("rigjt");
+                
             }   
             
         } else {
