@@ -76,7 +76,8 @@ class Game {
             //Clear the screen
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
          
-            this.oceanLoaded && this.ctx.drawImage(this.ocean, -100, -100);
+            this.oceanLoaded && this.ctx.drawImage(this.ocean, 0, 0);
+            this.oceanLoaded && this.ctx.drawImage(this.ocean, this.ocean.width, 0);
          
             this.UI.update(this);
          
