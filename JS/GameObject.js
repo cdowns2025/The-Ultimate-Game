@@ -11,7 +11,7 @@ class GameObject {
         
         this.sprite = new Sprite({
             gameObject: this,
-            src: config.src,
+            images: config.images,
         });
         this.isRendered = true;
     }
