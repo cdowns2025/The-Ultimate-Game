@@ -14,8 +14,11 @@ class Sprite {
         const y = this.gameObject.y + utils.asGrid(4.5) - player.y + 6;
         
         if (this.gameObject.isRendered == true) {
-            ctx.fillStyle = this.gameObject.color;
-            ctx.fillRect(x, y, 5, 5);
+            //ctx.fillStyle = this.gameObject.color;
+            //ctx.fillRect(x, y, 5, 5);
+            let image = new Image();
+            image.src = "standF.PNG";
+            ctx.drawImage(image, x, y);
         }
         //this.isLoaded && ctx.drawImage(this.image, x, y);
     }
