@@ -152,7 +152,7 @@ class Person extends GameObject {
         } else {            
             if (state.arrow) {
                 this.direction = state.arrow;
-                this.imageDirection = state.arrow();
+                this.imageDirection = state.arrow;
             }
             if (this.isPlayerControlled && state.arrow && !this.isDashing && !state.map.isNextSpaceTaken(this.x, this.y, state.arrow, 16)) { //function that makes the player move normally, only happens if space isn't pressed
                 this.speed = 1;
