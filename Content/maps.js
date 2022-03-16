@@ -59,13 +59,12 @@ window.Maps = {
             "1": {
                 basic: 2,
                 hearts: 3,
-                /*spawners: {
+                spawners: {
                     "1": {
                         basic: 2,
                         intervalTime: 5000,
                     },
                 },
-                hearts: 3,*/
             },
             "2": {
                 spawners:  {
