@@ -9,9 +9,9 @@ class Sprite {
                 isLoaded: false,
             }   
             this.images[i].image.src = this.imageSources[i];
-            this.images[i].image.onLoad(() => {
+            this.images[i].image.onload = () => {
                 this.images[i].isLoaded = true;
-            });
+            };
         }
         
         this.gameObject = config.gameObject;
