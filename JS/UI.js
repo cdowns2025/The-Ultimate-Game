@@ -15,15 +15,22 @@ class UI {
     
     this.endScreen = document.createElement("div");
     this.endScreen.classList.add("EndScreen");
+    
     if (this.waveNumber === 1) {
       this.endScreen.innerHTML = (`
-        <p>You survived ${this.waveNumber} round!</p>
+        <p>You didn't survive any rounds.</p>
+        <p>Your final score was ${this.actualScore}!</p>
+        <p>Insert another coin to play again!</p>
+      `);
+    } else if (this.waveNumber === 2) {
+      this.endScreen.innerHTML = (`
+        <p>You survived ${this.waveNumber - 1} round!</p>
         <p>Your final score was ${this.actualScore}!</p>
         <p>Insert another coin to play again!</p>
       `);
     } else {
       this.endScreen.innerHTML = (`
-        <p>You survived ${this.waveNumber} rounds!</p>
+        <p>You survived ${this.waveNumber - 1} rounds!</p>
         <p>Your final score was ${this.actualScore}!</p>
         <p>Insert another coin to play again!</p>
       `);
