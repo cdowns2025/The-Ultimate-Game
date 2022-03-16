@@ -12,7 +12,11 @@ class Person extends GameObject {
         this.hitInterval = 0;
         this.scrapPileInventory = 0;
         
+        this.animationCounter = 0;
+        this.animationChange = 1000;
+        
         this.movingProgressRemaining = 0;
+        this.moving = false;
         
         this.isPlayerControlled = config.isPlayerControlled || false;
         
@@ -37,31 +41,23 @@ class Person extends GameObject {
             
             if (this.imageDirection === "down") {
                 this.sprite.imageFrame = 4;
-                this.sprite.updateSrc();
             } else if (this.imageDirection === "up") {
                 this.sprite.imageFrame = 5;
-                this.sprite.updateSrc();
             } else if (this.imageDirection === "left") {
                 this.sprite.imageFrame = 6;
-                this.sprite.updateSrc();
             } else if (this.imageDirection === "right") {
                 this.sprite.imageFrame = 7;
-                this.sprite.updateSrc();
             }
             
             setTimeout(() => {
                 if (this.imageDirection === "down") {
                     this.sprite.imageFrame = 0;
-                    this.sprite.updateSrc();
                 } else if (this.imageDirection === "up") {
                     this.sprite.imageFrame = 1;
-                    this.sprite.updateSrc();
                 } else if (this.imageDirection === "left") {
                     this.sprite.imageFrame = 2;
-                    this.sprite.updateSrc();
                 } else if (this.imageDirection === "right") {
                     this.sprite.imageFrame = 3;
-                    this.sprite.updateSrc();
                 }
             }, 500)
         });
@@ -100,33 +96,35 @@ class Person extends GameObject {
         if (!this.hit) {
             if (this.imageDirection === "down") {
                 this.sprite.imageFrame = 8;
-                this.sprite.updateSrc();
             } else if (this.imageDirection === "up") {
                 this.sprite.imageFrame = 9;
-                this.sprite.updateSrc();
             } else if (this.imageDirection === "left") {
                 this.sprite.imageFrame = 10;
-                this.sprite.updateSrc();
             } else if (this.imageDirection === "right") {
                 this.sprite.imageFrame = 11;
-                this.sprite.updateSrc();
             }
             
             this.hit = true;
             this.hitInterval = 30;
             this.health -= damageLevel;
             
-            /*if (this.imageDirection === "down") this.direction = "up";
+            if (this.imageDirection === "down") this.direction = "up";
             else if (this.imageDirection === "up") this.direction = "down";
             else if (this.imageDirection === "left") this.direction = "right";
             else this.direction = "left";
             this.movingProgressRemaining = 16;
             
-            this.map.moveWall(this.x, this.y, this.direction);*/
+            this.map.moveWall(this.x, this.y, this.direction);
         }
     }
 
     update(state) {
+        
+        if (state.arrow) this.moving = true;
+        else this.moving = false;
+        
+        this.animationCounter += state.deltaTime;
+        
         if (this.hit) { // decreases health when the enemy is hit
             this.color = "red";
             if (this.hitInterval == 0) {
@@ -134,22 +132,79 @@ class Person extends GameObject {
               
              if (this.imageDirection === "down") {
                 this.sprite.imageFrame = 0;
-                this.sprite.updateSrc();
             } else if (this.imageDirection === "up") {
                 this.sprite.imageFrame = 1;
-                this.sprite.updateSrc();
             } else if (this.imageDirection === "left") {
                 this.sprite.imageFrame = 2;
-                this.sprite.updateSrc();
             } else if (this.imageDirection === "right") {
                 this.sprite.imageFrame = 3;
-                this.sprite.updateSrc();
             }
+        }
+        this.hitInterval--;
+      } else {
+        this.color = "blue";
+      }
+        
+        //Animation
+        if (this.moving && this.animationCounter > this.animationChange && !this.hit) {
+            this.animationCounter = 0;
+            
+            if (this.direction === "down") {
+                if (this.sprite.imageFrame !== 12 && this.sprite.imageFrame !== 16) {
+                    this.sprite.imageFrame = 12;
+                } else {
+                    this.sprite.imageFrame += 4;
+                    
+                    if (this.sprite.imageFrame > 16) {
+                        this.sprite.imageFrame -= 8;
+                    }
+                }
+                                
+            } else if (this.direction === "up") {
+                if (this.sprite.imageFrame === 13) {
+                    this.sprite.imageFrame = 17;
+                }
+                else if (this.sprite.imageFrame === 17) {
+                    this.sprite.imageFrame = 13;
+                }
+                else {
+                    this.sprite.imageFrame = 13;
+                }
+                
+            } else if (this.direction === "left") {
+                if (this.sprite.imageFrame === 14) {
+                    this.sprite.imageFrame = 18;
+                }
+                else if (this.sprite.imageFrame === 18) {
+                    this.sprite.imageFrame = 14;
+                }
+                else {
+                    this.sprite.imageFrame = 14;
+                }
+                
+            } else if (this.direction === "right") {
+                if (this.sprite.imageFrame === 15) {
+                    this.sprite.imageFrame = 19;
+                }
+                else if (this.sprite.imageFrame === 19) {
+                    this.sprite.imageFrame = 15;
+                }
+                else {
+                    this.sprite.imageFrame = 15;
+                }
+
+            }   
+        } else {
+            if (this.imageDirection === "down") {
+                this.sprite.imageFrame = 0;
+            } else if (this.imageDirection === "up") {
+                this.sprite.imageFrame = 1;
+            } else if (this.imageDirection === "left") {
+                this.sprite.imageFrame = 2;
+            } else if (this.imageDirection === "right") {
+                this.sprite.imageFrame = 3;
             }
-            this.hitInterval--;
-          } else {
-            this.color = "blue";
-          }
+        }
 
         if (this.movingProgressRemaining > 0) {
             this.updatePosition(); //updates the player's position

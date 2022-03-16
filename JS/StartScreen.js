@@ -24,8 +24,8 @@ class StartScreen {
                 <p>Carver Snyder: Music Creator and Logistics Manager</p>
                 <p>Tyler Wiggins: Game Art Creator</p>
                 <p>Carter Downs: Programmer, Music Creator, and Icon Creator</p>
-                <p>Haven Gee: Programmer</p>
-                <p>Jimmy Giannasi: Concept Designer, Logo Creator, and Recorder</p>
+                <p>Haven Gee: Programmer, Team Captain</p>
+                <p>Jimmy Giannasi: Concept Designer, Logo Creator, Icon Creator, and Recorder</p>
                 <p>©PIPE</p>
                 <img id="return" src="Return.png" />
             `);
