@@ -29,9 +29,41 @@ class Person extends GameObject {
             }
         });
         this.dashKey.init();
+        
+        this.imageDirection = "down"
 
         this.interactKey = new KeyPressListener("Enter", () => {
             this.interact();
+            
+            if (this.imageDirection === "down") {
+                this.sprite.imageFrame = 4;
+                this.sprite.updateSrc();
+            } else if (this.imageDirection === "up") {
+                this.sprite.imageFrame = 5;
+                this.sprite.updateSrc();
+            } else if (this.imageDirection === "left") {
+                this.sprite.imageFrame = 6;
+                this.sprite.updateSrc();
+            } else if (this.imageDirection === "right") {
+                this.sprite.imageFrame = 7;
+                this.sprite.updateSrc();
+            }
+            
+            setTimeout(() => {
+                if (this.imageDirection === "down") {
+                    this.sprite.imageFrame = 0;
+                    this.sprite.updateSrc();
+                } else if (this.imageDirection === "up") {
+                    this.sprite.imageFrame = 1;
+                    this.sprite.updateSrc();
+                } else if (this.imageDirection === "left") {
+                    this.sprite.imageFrame = 2;
+                    this.sprite.updateSrc();
+                } else if (this.imageDirection === "right") {
+                    this.sprite.imageFrame = 3;
+                    this.sprite.updateSrc();
+                }
+            }, 500)
         });
         this.interactKey.init();
         
@@ -66,9 +98,31 @@ class Person extends GameObject {
     
     gotHurt(damageLevel) {
         if (!this.hit) {
+            if (this.imageDirection === "down") {
+                this.sprite.imageFrame = 8;
+                this.sprite.updateSrc();
+            } else if (this.imageDirection === "up") {
+                this.sprite.imageFrame = 9;
+                this.sprite.updateSrc();
+            } else if (this.imageDirection === "left") {
+                this.sprite.imageFrame = 10;
+                this.sprite.updateSrc();
+            } else if (this.imageDirection === "right") {
+                this.sprite.imageFrame = 11;
+                this.sprite.updateSrc();
+            }
+            
             this.hit = true;
             this.hitInterval = 30;
             this.health -= damageLevel;
+            
+            /*if (this.imageDirection === "down") this.direction = "up";
+            else if (this.imageDirection === "up") this.direction = "down";
+            else if (this.imageDirection === "left") this.direction = "right";
+            else this.direction = "left";
+            this.movingProgressRemaining = 16;
+            
+            this.map.moveWall(this.x, this.y, this.direction);*/
         }
     }
 
@@ -77,6 +131,20 @@ class Person extends GameObject {
             this.color = "red";
             if (this.hitInterval == 0) {
               this.hit = false;
+              
+             if (this.imageDirection === "down") {
+                this.sprite.imageFrame = 0;
+                this.sprite.updateSrc();
+            } else if (this.imageDirection === "up") {
+                this.sprite.imageFrame = 1;
+                this.sprite.updateSrc();
+            } else if (this.imageDirection === "left") {
+                this.sprite.imageFrame = 2;
+                this.sprite.updateSrc();
+            } else if (this.imageDirection === "right") {
+                this.sprite.imageFrame = 3;
+                this.sprite.updateSrc();
+            }
             }
             this.hitInterval--;
           } else {
@@ -88,6 +156,7 @@ class Person extends GameObject {
         } else {            
             if (state.arrow) {
                 this.direction = state.arrow;
+                this.imageDirection = state.arrow;
             }
             if (this.isPlayerControlled && state.arrow && !this.isDashing && !state.map.isNextSpaceTaken(this.x, this.y, state.arrow, 16)) { //function that makes the player move normally, only happens if space isn't pressed
                 this.speed = 1;
@@ -122,18 +191,18 @@ class Person extends GameObject {
             this.isInteracting = false;
         }
         
-        if (this.oldDirection !== this.direction) {
+        if (this.oldDirection !== this.direction && !this.hit) {
             this.oldDirection = this.direction;
-            if (this.direction === "down") {
+            if (this.imageDirection === "down") {
                 this.sprite.imageFrame = 0;
                 this.sprite.updateSrc();
-            } else if (this.direction === "up") {
+            } else if (this.imageDirection === "up") {
                 this.sprite.imageFrame = 1;
                 this.sprite.updateSrc();
-            } else if (this.direction === "left") {
+            } else if (this.imageDirection === "left") {
                 this.sprite.imageFrame = 2;
                 this.sprite.updateSrc();
-            } else if (this.direction === "right") {
+            } else if (this.imageDirection === "right") {
                 this.sprite.imageFrame = 3;
                 this.sprite.updateSrc();
             }

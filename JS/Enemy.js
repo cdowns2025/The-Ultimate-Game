@@ -57,6 +57,7 @@ class Enemy extends GameObject {
         state.map.removeWall(utils.gridFloor(this.x + 8), utils.gridFloor(this.y + 8)); //ensures that the proper wall is removed when the enemy dies   
         this.alive = false;
         this.collision = false;
+        state.game.score += 2;
       }
 
       if (this.movingProgressRemaining > 0) {
@@ -98,7 +99,7 @@ class Enemy extends GameObject {
   //GOVERNS ALL ACTIONS, BRAIN
   searchAlgorithm(state) { 
     let r = Math.random(); //randomized variable for multiple purposes, whether it's randomized direction or what axis to choose to match the player in.
-    if (this.idleTime >= 15) { //checks if enough idle time has passed
+    if (this.idleTime >= 10) { //checks if enough idle time has passed
 
       //SEARCHING
       if (utils.distanceFormula(this.x, state.player.x, this.y, state.player.y) > 16) { //checks if the player is more than one cell away, then runs the rest of the function if they are
@@ -126,7 +127,7 @@ class Enemy extends GameObject {
         }
       }
       //ATTACKING
-      if (utils.distanceFormula(this.x, state.player.x, this.y, state.player.y) == 16) { //checks if enemy is one space away from player, goes into attack phase when he is.
+      if (utils.distanceFormula(this.x, state.player.x, this.y, state.player.y) < 25 && utils.distanceFormula(this.x, state.player.x, this.y, state.player.y) >= 16) { //checks if enemy is one space away from player, goes into attack phase when he is.
         if (this.phase == "attackPose") {//doesn't need to check player coords because they are already positioned
             state.player.gotHurt(1);
             this.phase = "search";
@@ -163,7 +164,8 @@ class Enemy extends GameObject {
     if (!this.hit && this.hitInterval < 0) {
       this.hit = true; //initial hit boolean
       this.hitInterval = 15;
-      this.idleTime = 0;
+      this.idleTime = 0;  
+      
       this.direction = hitInfo.direction;
     }
   }

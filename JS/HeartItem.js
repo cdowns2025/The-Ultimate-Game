@@ -11,7 +11,9 @@ class HeartItem extends GameObject {
     update(state) {
         if (this.alive) {
             if (utils.gridFloor(state.player.x + 8) == this.x && utils.gridFloor(state.player.y + 8) == this.y) {
-                state.player.health++;
+                if (state.player.health < 6) {
+                    state.player.health++;
+                }
                 this.alive = false;
                 this.isRendered = false;
             }

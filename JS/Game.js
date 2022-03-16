@@ -103,7 +103,8 @@ class Game {
                     player: this.map.gameObjects.allies.player, //for the hearts
                     arrow: this.directionInput.direction,
                     map: this.map,
-                    deltaTime: deltaTime
+                    deltaTime: deltaTime,
+                    game: this,
                 })
             });
            
@@ -113,19 +114,20 @@ class Game {
                     player: this.map.gameObjects.allies.player,
                     direction: null,
                     map: this.map,
-                    deltaTime: deltaTime
+                    deltaTime: deltaTime,
+                    game: this,
                 })
             });
          
             this.map.drawLowerLayer(this.ctx, player);
-
-            //Draw the allies
-            Object.values(this.map.gameObjects.allies).forEach(object => {
-                object.sprite.draw(this.ctx, player);
-            });
             
             //Draw the enemies
             Object.values(this.map.gameObjects.enemies).forEach(object => {
+                object.sprite.draw(this.ctx, player);
+            });
+         
+            //Draw the allies
+            Object.values(this.map.gameObjects.allies).forEach(object => {
                 object.sprite.draw(this.ctx, player);
             });
 
@@ -149,8 +151,8 @@ class Game {
 
     async init() {
      
-        //this.startScreen = new StartScreen();
-        //await this.startScreen.init(document.querySelector(".game-container"));
+        this.startScreen = new StartScreen();
+        await this.startScreen.init(document.querySelector(".game-container"));
 
         this.map = new Map(window.Maps["TestingRoom"]);
         this.map.mountObjects();
