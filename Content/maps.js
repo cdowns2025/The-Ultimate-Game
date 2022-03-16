@@ -58,6 +58,7 @@ window.Maps = {
         waves: {
             "1": {
                 basic: 2,
+                hearts: 3,
                 /*spawners: {
                     "1": {
                         basic: 2,
