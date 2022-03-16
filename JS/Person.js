@@ -150,7 +150,7 @@ class Person extends GameObject {
             this.animationCounter = 0;
             
             if (this.direction === "down") {
-                if (this.sprite.imageFrame !== 12 &^ this.sprite.imageFrame !== 16) {
+                if (this.sprite.imageFrame !== 12 && this.sprite.imageFrame !== 16) {
                     this.sprite.imageFrame = 12;
                 } else {
                     this.sprite.imageFrame += 4;
