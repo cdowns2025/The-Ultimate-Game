@@ -9,6 +9,7 @@ window.Maps = {
                     x: utils.asGrid(0),
                     y: utils.asGrid(0),
                     color: "blue",
+                    images: ["standF.PNG", "standB.PNG", "standL.png", "standR.png"],
                 }),
             }, 
             enemies: {
