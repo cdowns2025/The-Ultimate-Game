@@ -9,12 +9,6 @@ class Sprite {
             setTimeout(() => {}, 10);
         }
         
-        this.image = new Image();
-        this.image.src = this.images[0];
-        this.image.onload = () => {
-            this.isLoaded = true;
-        }
-        
         this.gameObject = config.gameObject;
         
         this.imageFrame = 0;
@@ -44,7 +38,7 @@ class Sprite {
         
         if (this.gameObject.isRendered == true) {
             
-            this.isLoaded && ctx.drawImage(this.image, x, y);
+            ctx.drawImage(this.images[this.imageFrame], x, y);
         }
     }
 }
