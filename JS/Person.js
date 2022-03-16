@@ -33,6 +33,8 @@ class Person extends GameObject {
             this.interact();
         });
         this.interactKey.init();
+        
+        this.oldDirection = "down"
     }
     
     dash() {
@@ -70,22 +72,6 @@ class Person extends GameObject {
     }
 
     update(state) {
-        if (state.arrow && state.arrow !== this.direction) {
-            if (this.direction === "down") {
-                this.sprite.imageFrame = 1;
-                this.sprite.updateSrc();
-            } else if (this.direction === "up") {
-                this.sprite.imageFrame = 0;
-                this.sprite.updateSrc();
-            } else if (this.direction === "left") {
-                this.sprite.imageFrame = 2;
-                this.sprite.updateSrc();
-            } else if (this.direction === "right") {
-                this.sprite.imageFrame = 3;
-                this.sprite.updateSrc();
-            }
-        }
-        
         if (this.hit) { // decreases health when the enemy is hit
             this.color = "red";
             if (this.hitInterval == 0) {
@@ -119,6 +105,23 @@ class Person extends GameObject {
                 }
             });
             this.isInteracting = false;
+        }
+        
+        if (this.oldDirection !== this.direction) {
+            this.oldDirection = this.direction;
+            if (this.direction === "down") {
+                this.sprite.imageFrame = 0;
+                this.sprite.updateSrc();
+            } else if (this.direction === "up") {
+                this.sprite.imageFrame = 1;
+                this.sprite.updateSrc();
+            } else if (this.direction === "left") {
+                this.sprite.imageFrame = 2;
+                this.sprite.updateSrc();
+            } else if (this.direction === "right") {
+                this.sprite.imageFrame = 3;
+                this.sprite.updateSrc();
+            }
         }
     }
     
