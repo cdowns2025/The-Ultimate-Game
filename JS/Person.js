@@ -115,13 +115,13 @@ class Person extends GameObject {
             this.hitInterval = 30;
             this.health -= damageLevel;
             
-            if (this.direction === "down") this.direction = "up";
+            /*if (this.direction === "down") this.direction = "up";
             else if (this.direction === "up") this.direction = "down";
             else if (this.direction === "left") this.direction = "right";
             else this.direction = "left";
             this.movingProgressRemaining = 16;
             
-            this.map.moveWall(this.x, this.y, this.direction);
+            this.map.moveWall(this.x, this.y, this.direction);*/
         }
     }
 
