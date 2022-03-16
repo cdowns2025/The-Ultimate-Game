@@ -72,17 +72,17 @@ class Person extends GameObject {
     update(state) {
         if (state.arrow !== this.direction) {
             if (this.direction === "down") {
-                this.imageFrame = 0;
-                this.updateSrc();
+                this.sprite.imageFrame = 0;
+                this.sprite.updateSrc();
             } else if (this.direction === "up") {
-                this.imageFrame = 1;
-                this.updateSrc();
+                this.sprite.imageFrame = 1;
+                this.sprite.updateSrc();
             } else if (this.direction === "left") {
-                this.imageFrame = 2;
-                this.updateSrc();
+                this.sprite.imageFrame = 2;
+                this.sprite.updateSrc();
             } else if (this.direction === "right") {
-                this.imageFrame = 3;
-                this.updateSrc();
+                this.sprite.imageFrame = 3;
+                this.sprite.updateSrc();
             }
         }
         
