@@ -13,13 +13,13 @@ window.Maps = {
                 }),
             }, 
             enemies: {
-                enemy1: new Enemy({
+                /*enemy1: new Enemy({
                     x: utils.asGrid(5),
                     y: utils.asGrid(5),
                     color: "purple",
                     images: ["squidF.PNG", "squidB.PNG", "squidL.PNG", "squidR.PNG"],
                 }),
-                /*enemy2: new Enemy({
+                enemy2: new Enemy({
                     x: utils.asGrid(10),
                     y: utils.asGrid(5),
                     color: "purple",
