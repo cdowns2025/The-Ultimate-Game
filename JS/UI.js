@@ -44,6 +44,9 @@ class UI {
     
     this.playAgain.addEventListener("click", () => {
       this.game.init();
+      
+      this.endScreen.remove();
+      this.playAgain.remove();
     });
     
     container.appendChild(this.endScreen);
