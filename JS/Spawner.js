@@ -54,7 +54,9 @@ class Spawner extends GameObject {
     }
 
     onInteracted(hitInfo) {
-        this.alive = false;
-        this.isRendered = false;
+        //if (hitInfo.source.scrapPileInventory > 0) {
+            this.alive = false;
+            this.isRendered = false;
+        //}
     }
 }

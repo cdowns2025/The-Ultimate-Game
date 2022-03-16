@@ -2,8 +2,8 @@ class ScrapPile extends GameObject {
     constructor(config) {
         super(config);
 
-        this.alive = true;
-        this.collision = true;
+        this.alive = false;//change this to true if we want to have the scrapPile in the game.
+        this.collision = true; 
         this.color = "#cc6600";
         this.gathered = false;
     }

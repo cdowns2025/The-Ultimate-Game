@@ -92,6 +92,7 @@ class Game {
                 });
                 
                 this.UI.endGame(document.querySelector(".game-container"));
+                alert("hey");
                 return;
             }
 
