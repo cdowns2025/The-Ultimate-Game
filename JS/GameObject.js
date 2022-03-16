@@ -9,6 +9,8 @@ class GameObject {
         
         this.color = config.color || null;
         
+        console.log(config.images);
+        
         this.sprite = new Sprite({
             gameObject: this,
             images: config.images,
