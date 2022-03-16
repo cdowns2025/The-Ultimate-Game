@@ -76,6 +76,8 @@ class Game {
             //Clear the screen
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
          
+            this.oceanLoaded && this.drawImage(this.ocean, -100, -100);
+         
             this.UI.update(this);
          
             if (this.muted) this.mainTheme.volume = 0;
@@ -170,6 +172,11 @@ class Game {
         this.wave = 1;
         this.UI = null;
         this.mainTheme = null;
+        this.ocean = new Image();
+        this.ocean.src = "Ocean.png";
+        this.ocean.onload = () => {
+            this.oceanLoaded = true;
+        }.
      
         this.scoreCounter = 0;
      
