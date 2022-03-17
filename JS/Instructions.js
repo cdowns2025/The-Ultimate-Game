@@ -32,10 +32,10 @@ class Instructions {
     
     container.appendChild(this.element);
     
-    /*setTimeout(() => {
+    setTimeout(() => {
       this.element.remove();
       this.musicElement.volume = 0;
       resolve();
-    }, 6000)*/
+    }, 6000);
   }
 }
