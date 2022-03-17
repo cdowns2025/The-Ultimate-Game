@@ -36,6 +36,6 @@ class Instructions {
       this.element.remove();
       this.musicElement.volume = 0;
       resolve();
-    }, 6000);
+    }, 7500);
   }
 }
