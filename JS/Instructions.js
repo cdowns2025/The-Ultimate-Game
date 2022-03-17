@@ -23,6 +23,7 @@ class Instructions {
       <img id="D-Key" src="D-Key.png" />
       <img id="Space" src="Space.png" />
       <img id="Enter" src="Enter.png" />
+      <p id="instructions">Destroy the holes and attack the enemies!</p>
     `);
   }
   
