@@ -88,7 +88,6 @@ class Game {
             
             //Checks to see if player is dead
             if (!this.resetPhase) {
-              console.log("hi");
                 if (player.health === 0) {
                     this.mainTheme.volume = 0;
                     cancelAnimationFrame((timeStamp) => {
@@ -213,7 +212,7 @@ class Game {
         });
         this.UI.init(document.querySelector(".game-container"));
      
-        this.map.initiateWave(this.wave, this.UI);
+        this.map.initiateWave(1, this.UI);
      
         this.mainTheme = document.createElement("audio");
         this.mainTheme.setAttribute("src", "main-song.wav");
