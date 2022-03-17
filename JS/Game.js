@@ -90,6 +90,7 @@ class Game {
             if (!this.resetPhase) {
                 if (player.health === 0) {
                     this.mainTheme.volume = 0;
+                    this.ocean.src = "";
                     cancelAnimationFrame((timeStamp) => {
                         step(timeStamp);
                     });
@@ -166,6 +167,7 @@ class Game {
     async init() {
      
         this.map = null;
+        console.log(this.map);
         this.resetPhase = true;
         this.score = 0;
         this.lastTime = 0;
@@ -186,6 +188,7 @@ class Game {
 
         this.map = new Map(window.Maps["TestingRoom"]);
         this.map.mountObjects();
+        console.log(this.map);
                  
         this.grid = new Grid({
             canvas: this.canvas,
