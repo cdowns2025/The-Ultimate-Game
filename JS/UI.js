@@ -44,10 +44,11 @@ class UI {
     `);
     
     this.playAgain.addEventListener("click", () => {
-      this.game.init();
+      /*this.game.init();
       
       this.endScreen.remove();
-      this.playAgain.remove();
+      this.playAgain.remove();*/
+      document.location.reload()
     });
     
     container.appendChild(this.endScreen);
